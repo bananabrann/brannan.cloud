@@ -50,32 +50,33 @@ p {
 */
 
 #clouds {
-  background-color: blue;
+  /* background-color: blue; */
 
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 20vh;
+  height: 25vh;
   width: 100vw;
 }
 
 .cloud-row {
-  background-color: aqua;
-
+  /* background-color: aqua; */
+  position: absolute;
+  bottom: 0;
   height: 100%;
   display: flex;
 
 
-  flex-direction: row;
+  /* flex-direction: row;
   align-items: flex-end;
-  justify-content: flex-start;
+  justify-content: flex-start; */
 
 }
 
 .cloud-row > * {
   position: relative;
-  display: inline;
-  transition: all;
+  /* display: inline; */
+  /* transition: all; */
   /* transition-duration: 1s;
   transition-timing-function: linear; */
 }

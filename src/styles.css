@@ -41,6 +41,38 @@ p {
   font-size: 1.225em;
 }
 
+content {
+  width: 50vw;
+  min-width: 625px;
+  margin: 5vh auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3em;
+}
+
+#sign-off {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100px;
+  margin: 0.5em;
+}
+
+#sign-off > * {
+  margin: 2 0;
+}
+
+@media (max-width: 670px) {
+  content {
+    min-width: auto;
+    width: 80vw;
+    padding: 1em;
+  }
+}
+
+
 /*
  SECTION - Stars
 */

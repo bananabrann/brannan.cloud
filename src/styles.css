@@ -41,35 +41,41 @@ p {
   font-size: 1.225em;
 }
 
-/* 
-  SECTION - Art stuff
+/*
+ SECTION - Stars
 */
 
-#artboard {
+/* 
+  SECTION - Clouds
+*/
+
+#clouds {
+  background-color: blue;
+
   position: absolute;
-  top: 0;
-  height: 100vh;
+  bottom: 0;
+  left: 0;
+  height: 20vh;
   width: 100vw;
 }
 
-#stars {
-  position: absolute;
+.cloud-row {
+  background-color: aqua;
+
+  height: 100%;
+  display: flex;
+
+
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+
 }
 
-#clouds1 {
-  position: absolute;
-  width: 140%;
-  bottom: 0;
-}
-
-#clouds2 {
-  position: absolute;
-  width: 140%;
-  bottom: 0;
-}
-
-#clouds3 {
-  position: absolute;
-  width: 140%;
-  bottom: 0;
+.cloud-row > * {
+  position: relative;
+  display: inline;
+  transition: all;
+  /* transition-duration: 1s;
+  transition-timing-function: linear; */
 }

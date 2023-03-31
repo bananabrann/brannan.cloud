@@ -44,14 +44,30 @@ p {
 /*
  SECTION - Stars
 */
+#stars {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  animation: rotate 30s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
 
 /* 
   SECTION - Clouds
 */
 
 #clouds {
-  /* background-color: blue; */
-
   position: absolute;
   bottom: 0;
   left: 0;
@@ -60,23 +76,12 @@ p {
 }
 
 .cloud-row {
-  /* background-color: aqua; */
   position: absolute;
   bottom: 0;
   height: 100%;
   display: flex;
-
-
-  /* flex-direction: row;
-  align-items: flex-end;
-  justify-content: flex-start; */
-
 }
 
 .cloud-row > * {
   position: relative;
-  /* display: inline; */
-  /* transition: all; */
-  /* transition-duration: 1s;
-  transition-timing-function: linear; */
 }

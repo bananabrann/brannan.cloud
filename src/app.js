@@ -18,6 +18,12 @@ const clouds2 = document.getElementById("clouds2");
 const clouds3 = document.getElementById("clouds3");
 
 // Do the work.
+// TODO - Instead of animating every x miliseconds, move every one or 
+// two seconds and add a CSS transition. I actually got this to work,
+// but when the element resets to the right, you see the transition of
+// the cloud rush across the screen to the right after moving slowly to
+// the left. So code needs to be added that removes the element and re-
+// adds it instead.
 setInterval(animate, animationInterval);
 
 // Moves a given cloud based on the configurations, multiplied by a given
@@ -37,9 +43,9 @@ function moveCloud(cloudName, cloudElement, coeffecient) {
 
 // High-level logic for the main animation frames.
 function animate() {
-  moveCloud("clouds1", clouds1, 0.125);
-  moveCloud("clouds2", clouds2, 0.028);
-  moveCloud("clouds3", clouds3, 0.01);
+  moveCloud("clouds1", clouds1, 0.05);
+  moveCloud("clouds2", clouds2, 0.015);
+  moveCloud("clouds3", clouds3, 0.002);
 }
 
 // Readjust window variables if window is resized.

@@ -27,7 +27,7 @@ const clouds3 = document.getElementById("clouds3");
 setInterval(animate, animationInterval);
 
 // Moves a given cloud based on the configurations, multiplied by a given
-// coeffecient.
+// coefficient.
 function moveCloud(cloudName, cloudElement, coeffecient) {
   // Calculate the new position.
   positions[cloudName] -=

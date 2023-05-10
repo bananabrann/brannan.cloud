@@ -61,7 +61,7 @@ content {
 }
 
 #sign-off > * {
-  margin: 2 0;
+  margin: 2px 0;
 }
 
 @media (max-width: 670px) {

@@ -1,6 +1,6 @@
 {
   "name": "brannan.cloud",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The website of brannan.cloud, the root website of my stuff.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

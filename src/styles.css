@@ -64,6 +64,18 @@ content {
   margin: 2px 0;
 }
 
+a:visited, a:hover, a:active {
+  color: inherit;
+}
+
+a:hover {
+  color: pink;
+}
+
+a {
+  text-decoration: none;
+}
+
 @media (max-width: 670px) {
   content {
     min-width: auto;

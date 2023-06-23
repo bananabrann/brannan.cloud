@@ -1,30 +1,38 @@
-# About this site
-This is brannan.cloud, the root domain for all my things, hosting everything from this website to the TV application in my grandma's living room.
+# create-svelte
 
-> *"But, like, this site is just HTML!"* 
-> 
-> -You, maybe?
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
-Yup, you're right! And that's all it needs to be. A core software philosophy of mine is using only the minimum needed to get the job *(you better have a million-dollar reason not to!)*.
+## Creating a project
 
-All this site does is tell you a little about me and offers a few links to some other sites. Though I do work with Next.js and React, there's no need for large interface libraries or hosting solutions for this little website. Basic HTML with vanilla CSS and JavaScript is fine.
+If you're seeing this, you've probably already done this step. Congrats!
 
-# Local server for development
 ```bash
-npm start
+# create a new project in the current directory
+npm create svelte@latest
+
+# create a new project in my-app
+npm create svelte@latest my-app
 ```
 
+## Developing
 
-# Building this code
-This website uses [Parcel](https://github.com/parcel-bundler/parcel).
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+
+```bash
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
+
+## Building
+
+To create a production version of your app:
 
 ```bash
 npm run build
 ```
 
-> For more information on optimization features or other config options, visit Parcel's website on production deployments: https://parceljs.org/features/production/
+You can preview the production build with `npm run preview`.
 
-Use this commmand when 
-
-# Deploying this website
-DigitalOcean is configured to automatically deploy off of the 'main' branch. To make changes to this process, go to DigitalOcean.
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.

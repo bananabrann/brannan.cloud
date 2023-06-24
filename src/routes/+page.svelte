@@ -1,7 +1,9 @@
 <script lang="ts">
   import StackExchange from "svelte-material-icons/StackExchange.svelte";
   import GitHub from "svelte-material-icons/Github.svelte";
+  import OpenInNew from "svelte-material-icons/OpenInNew.svelte";
   import { version } from "$app/environment";
+  import Directory from "$lib/components/Directory.svelte";
 
   export let socialMediaIconHeight: string = "2rem";
 </script>
@@ -9,12 +11,13 @@
 <main>
   <section>
     <p>
-      <span>Hello!</span> This is brannan.cloud, the root domain for all my services, hosting everything
+      <span>Hello!</span> This is brannan.cloud, the root domain for all my stuff, hosting everything
       from the website you see here to the TV application in my grandma's living room.
     </p>
     <p>
       I'm a full-time software developer, a prior U.S. Marine, and as is tradition of all people
-      that doing with computers, my family's tech support.
+      that deal with computers, my family's tech support. Most of my career has been enterprise web
+      development, but I have also done some work on plugins for QlikSense and Power Apps.
     </p>
     <p>
       This site is a little ugly right now, but I'm working on it. I'm currently moving it over to
@@ -22,26 +25,42 @@
       maintain.
     </p>
 
-    <p><a href="https://github.com/bananabrann" target="_blank">@bananabrann</a></p>
-    <p>Software Developer</p>
-    <br />
+    <Directory />
 
-    <small>Website and systems by me. MIT license, 2023.</small>
-    <small>Art assets by various artists. All rights reserved.</small>
-    <small>v{version}</small>
+    <div>
+      <!-- prettier-ignore -->
+      <small>
+        Website and systems by me.
+        <a
+          href="https://github.com/bananabrann/brannan.cloud/blob/main/LICENSE"
+          target="_blank">MIT license, 2023.<OpenInNew />
+        </a>
+      </small>
+    </div>
+
+    <div>
+      <small>Art assets by various artists. All rights reserved.</small>
+    </div>
+    <div>
+      <small>v{version}</small>
+    </div>
   </section>
 
   <section>
     <article>
-      <h3>Power Apps failed as an enterprise app, but upper management still buys the hype</h3>
+      <h3>Gov IT managers versus Microsoft sales team --a disaster in responsibility</h3>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque delectus quos illum! Quo odio
-        quisquam earum perspiciatis, provident autem qui molestias fuga, maxime fugiat aliquam
-        voluptas nisi officiis voluptatibus fugit?
+        Microsoft is a business trying to move product, and the gov decision makers get so swindled
+        with the meaningless bells and whistles and never consult with the actual developers on the
+        ground making things There's so many layers between the actual software engineers typing
+        code and decision makers that I can't even blame Microsoft for the hustle.
       </p>
     </article>
     <article>
-      <h3>Code quality: a concern for businesses, bottom lines, and empathetic programmers</h3>
+      <h3>
+        From the Stack Overflow blog: "Code quality: a concern for businesses, bottom lines, and
+        empathetic programmers"
+      </h3>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus perferendis iste
         error a excepturi, necessitatibus, consequatur, corporis incidunt veniam perspiciatis
@@ -75,6 +94,12 @@
     & > section:nth-child(2) {
       flex: 1;
       // background-color: aqua;
+    }
+
+    // Media query for mobile
+    @media (max-width: 705px) {
+      flex-direction: column;
+      gap: 0.8rem;
     }
   }
 

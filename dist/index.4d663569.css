@@ -1,0 +1,90 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    filter: progid:DXImageTransform. Microsoft. gradient(startColorstr= "#43183c", endColorstr= "#8bb3fb", GradientType= 1);
+    background: linear-gradient(#43183c 0%, #5b8bdf 50%, #8bb3fb 100%);
+    overflow: hidden;
+}
+
+p,
+small {
+    color: #fff;
+    font-family: Dolly Pro, Times New Roman, Times, serif;
+}
+
+p {
+    font-size: 1.225em;
+}
+
+content {
+    width: 50vw;
+    min-width: 625px;
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+    margin: 5vh auto 0;
+    display: flex;
+}
+
+#sign-off {
+    height: 100px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0.5em;
+    display: flex;
+}
+
+#sign-off > * {
+    margin: 2px 0;
+}
+
+@media (max-width: 670px) {
+    content {
+        min-width: auto;
+        width: 80vw;
+        padding: 1em;
+    }
+}
+
+#stars {
+    width: 100vw;
+    animation: 30s ease-in-out infinite rotate;
+    position: absolute;
+    top: 0;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(4deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+#clouds {
+    height: 25vh;
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.cloud-row {
+    height: 100%;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+}
+
+.cloud-row > * {
+    position: relative;
+}
+
+/*# sourceMappingURL=index.4d663569.css.map */

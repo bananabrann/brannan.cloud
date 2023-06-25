@@ -7,7 +7,7 @@
   <ul>
     {#each data.summaries as { slug, title, tags, summary }}
       <li>
-        <a href="/blog/{slug}">{title}</a>
+        <a href="/posts/{slug}">{title}</a>
         <div>
           {#each tags as tag}
             <span><code>{tag.name}</code></span>

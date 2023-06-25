@@ -8,9 +8,5 @@
 </div>
 
 <style lang="scss">
-  pre {
-    background-color: #d11313;
-    padding: 1rem;
-    border-radius: 0.5rem;
-  }
+
 </style>

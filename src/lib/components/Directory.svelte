@@ -5,7 +5,10 @@
 <div>
   <ul>
     <li>
-      <a href="blog">Opinions and writing</a>
+      <a href="/">Homepage</a>
+    </li>
+    <li>
+      <a href="/blog">Opinions and writing</a>
     </li>
     <li>
       <a href="https://files.brannan.cloud" target="_blank"

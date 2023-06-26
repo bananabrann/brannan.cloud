@@ -1,6 +1,6 @@
 import { error } from "@sveltejs/kit";
 import { isABlogPost, type BlogPost } from "$lib/interfaces/BlogPost.interface";
-import { posts } from "./data";
+import { posts } from "../../postsData";
 
 export function load() {
   const summaries: Array<BlogPost> = posts;

@@ -13,7 +13,4 @@
 <slot />
 
 <style lang="scss">
-  p {
-    // @include basic-font();
-  }
 </style>

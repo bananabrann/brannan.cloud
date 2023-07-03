@@ -4,6 +4,7 @@
   import OpenInNew from "svelte-material-icons/OpenInNew.svelte";
   import { version } from "$app/environment";
   import Directory from "$lib/components/Directory.svelte";
+  import Cloud from "$lib/components/Cloud.svelte";
 
   export let socialMediaIconHeight: string = "2rem";
 </script>
@@ -48,15 +49,6 @@
 
   <section>
     <article>
-      <h3>Gov IT managers versus Microsoft sales team --a disaster in responsibility</h3>
-      <p>
-        Microsoft is a business trying to move product, and the gov decision makers get so swindled
-        with the meaningless bells and whistles and never consult with the actual developers on the
-        ground making things There's so many layers between the actual software engineers typing
-        code and decision makers that I can't even blame Microsoft for the hustle.
-      </p>
-    </article>
-    <article>
       <h3>
         From the Stack Overflow blog: "Code quality: a concern for businesses, bottom lines, and
         empathetic programmers"
@@ -80,6 +72,12 @@
     </div>
   </section>
 </main>
+
+<div id="cloud-board">
+  <Cloud cloud={{ position: "background" }} />
+  <Cloud cloud={{ position: "middle" }} />
+  <Cloud cloud={{ position: "foreground" }} />
+</div>
 
 <style lang="scss">
   main {
@@ -107,5 +105,18 @@
     display: flex;
     gap: 0.65rem;
     justify-content: center;
+  }
+
+  #cloud-board {
+    position: fixed;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-width: 100vw;
+    height: 20vh;
+    @media (max-width: 705px) {
+      position: relative;
+    }
   }
 </style>

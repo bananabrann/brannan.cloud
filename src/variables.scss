@@ -43,3 +43,15 @@ $light: #d8d8d8;
   -o-transition: $property $duration $timing-function;
   transition: $property $duration $timing-function;
 }
+
+// Properties for background clouds.
+@mixin background-clouds() {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  * {
+    width: 100%;
+  }
+}

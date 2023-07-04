@@ -114,8 +114,5 @@
     left: 0;
     min-width: 100vw;
     min-height: 50vh;
-    @media (max-width: 705px) {
-      position: relative;
-    }
   }
 </style>

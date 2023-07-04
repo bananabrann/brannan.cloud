@@ -47,11 +47,8 @@ $light: #d8d8d8;
 // Properties for background clouds.
 @mixin background-clouds() {
   position: absolute;
-  bottom: 0;
-  width: 100%;
+  width: 200%;
+  height: 100%;
   padding: 0;
   margin: 0;
-  * {
-    width: 100%;
-  }
 }

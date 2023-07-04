@@ -1,4 +1,11 @@
-<svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6900 1080"
+<svg
+  id="Camada_1"
+  data-name="Camada 1"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 6900 1080"
+  width="100%"
+  height="100%"
+  preserveAspectRatio="xMinYMax"
   ><defs
     ><style>
     </style></defs

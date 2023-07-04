@@ -112,9 +112,8 @@
     z-index: -1;
     bottom: 0;
     left: 0;
-    width: 100%;
     min-width: 100vw;
-    height: 20vh;
+    min-height: 50vh;
     @media (max-width: 705px) {
       position: relative;
     }

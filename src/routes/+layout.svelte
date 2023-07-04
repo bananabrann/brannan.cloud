@@ -10,7 +10,12 @@
   <link rel="stylesheet" href="https://use.typekit.net/xtr6jqc.css" />
 </head>
 
-<slot />
+<div>
+  <slot />
+</div>
 
 <style lang="scss">
+  div {
+    padding: 1rem;
+  }
 </style>

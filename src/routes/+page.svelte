@@ -5,26 +5,21 @@
   import { version } from "$app/environment";
   import Directory from "$lib/components/Directory.svelte";
   import Cloud from "$lib/components/Cloud.svelte";
+  import Stars from "$lib/components/Stars.svelte";
 
   export let socialMediaIconHeight: string = "2rem";
 </script>
 
 <main>
   <section>
+    <h1><span style={"color: #FBE700"}>brannan</span><span style={"color: lightblue"}>cloud</span></h1>
     <p>
       <span>Hello!</span> This is brannan.cloud, the root domain for all my stuff, hosting everything
       from the website you see here to the TV application in my grandma's living room.
     </p>
     <p>
       I'm a full-time software developer, a prior U.S. Marine, and as is tradition of all people
-      that deal with computers, my family's tech support. Most of my career has been enterprise web
-      development, but I have also done some work on plugins for QlikSense and Power Apps.
-    </p>
-    <p>
-      This site is a little ugly right now, but I'm working on it. I'm currently moving it over to
-      SvelteKit to match the rest of my projects and to hopefully make it a little easier to
-      maintain.
-    </p>
+      that deal with computers, my family's tech support.</p>
 
     <Directory />
 
@@ -73,6 +68,10 @@
   </section>
 </main>
 
+<div id="star-board">
+  <Stars />
+</div>
+
 <div id="cloud-board">
   <Cloud cloud={{ position: "background" }} />
   <Cloud cloud={{ position: "middle" }} />
@@ -114,5 +113,14 @@
     left: 0;
     min-width: 100vw;
     min-height: 50vh;
+  }
+
+  #star-board {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    min-width: 100vw;
+    min-height: 100vh;
   }
 </style>

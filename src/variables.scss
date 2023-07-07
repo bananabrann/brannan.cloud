@@ -1,0 +1,54 @@
+$brand-primary: #4ec524;
+$brand-secondary: #fbe700;
+$background-sky: #c6dbdb;
+$light: #d8d8d8;
+
+// mixin for basic font family
+@mixin basic-font($weight: 400) {
+  font-family: "basic-sans", sans-serif;
+  font-weight: $weight;
+  font-style: normal;
+}
+
+// Basic sky background.
+// Quickly create a gradient background at https://cssgradient.io/
+@mixin sky-gradient() {
+  background: rgb(186, 225, 242);
+  background: -moz-linear-gradient(
+    0deg,
+    rgba(186, 225, 242, 1) 0%,
+    rgba(125, 73, 125, 1) 54%,
+    rgba(17, 12, 45, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(186, 225, 242, 1) 0%,
+    rgba(125, 73, 125, 1) 54%,
+    rgba(17, 12, 45, 1) 100%
+  );
+  background: linear-gradient(
+    0deg,
+    rgba(186, 225, 242, 1) 0%,
+    rgba(125, 73, 125, 1) 54%,
+    rgba(17, 12, 45, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#bae1f2",endColorstr="#110c2d",GradientType=1);
+}
+
+// Applies a gentle transition to the given property.
+@mixin gentle-transition($property: all, $duration: 0.15s, $timing-function: ease-in-out) {
+  -webkit-transition: $property $duration $timing-function;
+  -moz-transition: $property $duration $timing-function;
+  -ms-transition: $property $duration $timing-function;
+  -o-transition: $property $duration $timing-function;
+  transition: $property $duration $timing-function;
+}
+
+// Properties for background clouds.
+@mixin background-clouds() {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}

@@ -12,14 +12,14 @@
 
 <main>
   <section>
-    <h1><span style={"color: #FBE700"}>brannan</span><span style={"color: lightblue"}>cloud</span></h1>
     <p>
       <span>Hello!</span> This is brannan.cloud, the root domain for all my stuff, hosting everything
       from the website you see here to the TV application in my grandma's living room.
     </p>
     <p>
       I'm a full-time software developer, a prior U.S. Marine, and as is tradition of all people
-      that deal with computers, my family's tech support.</p>
+      that deal with computers, my family's tech support.
+    </p>
 
     <Directory />
 
@@ -40,8 +40,18 @@
     <div>
       <small>v{version}</small>
     </div>
+
+    <div id="social-media">
+      <a href="https://stackexchange.com/users/15325982/bananabrann?tab=accounts" target="_self">
+        <StackExchange height={socialMediaIconHeight} width={socialMediaIconHeight} />
+      </a>
+      <a href="https://github.com/bananabrann" target="_self">
+        <GitHub height={socialMediaIconHeight} width={socialMediaIconHeight} />
+      </a>
+    </div>
   </section>
 
+  <!-- 
   <section>
     <article>
       <h3>
@@ -57,15 +67,8 @@
 
     <hr />
 
-    <div id="social-media">
-      <a href="https://stackexchange.com/users/15325982/bananabrann?tab=accounts" target="_self">
-        <StackExchange height={socialMediaIconHeight} width={socialMediaIconHeight} />
-      </a>
-      <a href="https://github.com/bananabrann" target="_self">
-        <GitHub height={socialMediaIconHeight} width={socialMediaIconHeight} />
-      </a>
-    </div>
-  </section>
+    
+  </section> -->
 </main>
 
 <div id="star-board">

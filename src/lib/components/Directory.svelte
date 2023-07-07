@@ -7,9 +7,11 @@
     <li>
       <a href="/">Homepage</a>
     </li>
+    <!--
     <li>
       <a href="/posts">Opinions and writing</a>
-    </li>
+    </li> 
+    -->
     <li>
       <a href="https://files.brannan.cloud" target="_blank"
         >Files <small>(private)</small><OpenInNew />

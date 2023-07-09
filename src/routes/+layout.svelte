@@ -13,9 +13,3 @@
 <div>
   <slot />
 </div>
-
-<style lang="scss">
-  div {
-    padding: 1rem;
-  }
-</style>

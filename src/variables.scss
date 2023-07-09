@@ -1,11 +1,11 @@
 $brand-primary: #4ec524;
 $brand-secondary: #fbe700;
 $background-sky: #c6dbdb;
-$light: #d8d8d8;
+$light: #fdfdfd;
 
 // mixin for basic font family
 @mixin basic-font($weight: 400) {
-  font-family: "basic-sans", sans-serif;
+  font-family: "Basic Sans", sans-serif;
   font-weight: $weight;
   font-style: normal;
 }
@@ -13,26 +13,13 @@ $light: #d8d8d8;
 // Basic sky background.
 // Quickly create a gradient background at https://cssgradient.io/
 @mixin sky-gradient() {
-  background: rgb(186, 225, 242);
-  background: -moz-linear-gradient(
-    0deg,
-    rgba(186, 225, 242, 1) 0%,
-    rgba(125, 73, 125, 1) 54%,
-    rgba(17, 12, 45, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    0deg,
-    rgba(186, 225, 242, 1) 0%,
-    rgba(125, 73, 125, 1) 54%,
-    rgba(17, 12, 45, 1) 100%
-  );
+  background: rgb(67, 24, 60);
   background: linear-gradient(
-    0deg,
-    rgba(186, 225, 242, 1) 0%,
-    rgba(125, 73, 125, 1) 54%,
-    rgba(17, 12, 45, 1) 100%
+    180deg,
+    rgba(67, 24, 60, 1) 0%,
+    rgba(91, 139, 223, 1) 50%,
+    rgba(139, 179, 251, 1) 100%
   );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#bae1f2",endColorstr="#110c2d",GradientType=1);
 }
 
 // Applies a gentle transition to the given property.
@@ -46,9 +33,7 @@ $light: #d8d8d8;
 
 // Properties for background clouds.
 @mixin background-clouds() {
+  display: block;
   position: absolute;
-  width: 200%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
+  bottom: 0;
 }

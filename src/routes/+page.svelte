@@ -4,8 +4,10 @@
   import OpenInNew from "svelte-material-icons/OpenInNew.svelte";
   import { version } from "$app/environment";
   import Directory from "$lib/components/Directory.svelte";
-  import Cloud from "$lib/components/Cloud.svelte";
   import Stars from "$lib/components/Stars.svelte";
+  import Clouds1 from "$lib/assets/svg/clouds1.svg.svelte";
+  import Clouds2 from "$lib/assets/svg/clouds2.svg.svelte";
+  import Clouds3 from "$lib/assets/svg/clouds3.svg.svelte";
 
   export let socialMediaIconHeight: string = "2rem";
 </script>
@@ -76,12 +78,19 @@
 </div>
 
 <div id="cloud-board">
-  <Cloud cloud={{ position: "background" }} />
-  <Cloud cloud={{ position: "middle" }} />
-  <Cloud cloud={{ position: "foreground" }} />
+  <Clouds3 />
+  <Clouds2 />
+  <Clouds1 />
 </div>
 
 <style lang="scss">
+  #cloud-board {
+    position: relative;
+    min-width: 100vw;
+    z-index: -1;
+    min-height: max(20vh, 20vw);
+  }
+
   main {
     max-width: 850px;
     margin: 0 auto;
@@ -107,15 +116,6 @@
     display: flex;
     gap: 0.65rem;
     justify-content: center;
-  }
-
-  #cloud-board {
-    position: fixed;
-    z-index: -1;
-    bottom: 0;
-    left: 0;
-    min-width: 100vw;
-    min-height: 50vh;
   }
 
   #star-board {

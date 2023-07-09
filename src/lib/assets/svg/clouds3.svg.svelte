@@ -3,9 +3,9 @@
   data-name="Camada 1"
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 6900 1080"
-  width="100%"
-  height="100%"
-  preserveAspectRatio="xMinYMax"
+  width=""
+  height=""
+  preserveAspectRatio="xMidYMax meet"
   ><defs
     ><style>
     </style></defs
@@ -55,12 +55,10 @@
 >
 
 <style lang="scss">
-  /* Styles separated from <svg> due to scope issues. */
-
-  @use "../../../variables.scss" as var;
+  @use "../../../variables.scss";
 
   svg {
-    @include var.background-clouds();
+    @include background-clouds();
   }
   .cls-1 {
     fill: #b5c3e5;

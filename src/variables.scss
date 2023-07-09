@@ -1,11 +1,11 @@
 $brand-primary: #4ec524;
 $brand-secondary: #fbe700;
 $background-sky: #c6dbdb;
-$light: #d8d8d8;
+$light: #fdfdfd;
 
 // mixin for basic font family
 @mixin basic-font($weight: 400) {
-  font-family: "basic-sans", sans-serif;
+  font-family: "Basic Sans", sans-serif;
   font-weight: $weight;
   font-style: normal;
 }

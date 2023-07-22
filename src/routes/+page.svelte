@@ -1,6 +1,6 @@
 <script lang="ts">
-  import StackExchange from "svelte-material-icons/StackExchange.svelte";
   import GitHub from "svelte-material-icons/Github.svelte";
+  import Discord from "svelte-material-icons/Discord.svelte";
   import OpenInNew from "svelte-material-icons/OpenInNew.svelte";
   import { version } from "$app/environment";
   import Directory from "$lib/components/Directory.svelte";
@@ -17,8 +17,8 @@
   <img src={BananaManOnHisSide} alt="" style="width: 220px;" />
 
   <p>
-    <span>Hello!</span> This is brannan.cloud, the root domain for all my stuff, hosting everything from
-    the website you see here to the TV application in my grandma's living room.
+    <span>Hello!</span> This is brannan.cloud. I host everything from the website you see here to the
+    TV application in my grandma's living room.
   </p>
   <p>
     I'm a full-time software developer, a prior U.S. Marine, and as is tradition of all people that
@@ -30,8 +30,8 @@
   </div>
 
   <div id="social-media">
-    <a href="https://stackexchange.com/users/15325982/bananabrann?tab=accounts" target="_self">
-      <StackExchange height={socialMediaIconHeight} width={socialMediaIconHeight} />
+    <a href="https://discordapp.com/users/321317378862350346" target="_blank">
+      <Discord height={socialMediaIconHeight} width={socialMediaIconHeight} />
     </a>
     <a href="https://github.com/bananabrann" target="_self">
       <GitHub height={socialMediaIconHeight} width={socialMediaIconHeight} />
@@ -74,7 +74,7 @@
   }
 
   main {
-    max-width: 350px;
+    max-width: 550px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;

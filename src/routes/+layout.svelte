@@ -19,20 +19,43 @@
 
 <div id="cloud-board">
   <div class="cloud-row">
-    <Clouds1 />
-    <Clouds1 />
+    <span class="cloud cloud-slow">
+      <Clouds3 />
+    </span>
+    <span class="cloud cloud-slow">
+      <Clouds3 />
+    </span>
   </div>
+
   <div class="cloud-row">
-    <Clouds2 />
-    <Clouds2 />
+    <span class="cloud cloud-medium">
+      <Clouds2 />
+    </span>
+    <span class="cloud cloud-medium">
+      <Clouds2 />
+    </span>
   </div>
+
   <div class="cloud-row">
-    <Clouds3 />
-    <Clouds3 />
+    <span class="cloud cloud-fast">
+      <Clouds1 />
+    </span>
+    <span class="cloud cloud-fast">
+      <Clouds1 />
+    </span>
   </div>
 </div>
 
 <style lang="scss">
+  @keyframes moveToLeft {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
   #cloud-board {
     position: fixed;
     bottom: 0;
@@ -41,5 +64,23 @@
 
   .cloud-row {
     display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 200%;
+  }
+  .cloud {
+    width: 100%;
+  }
+
+  .cloud-fast {
+    animation: moveToLeft 30s linear infinite;
+  }
+
+  .cloud-medium {
+    animation: moveToLeft 90s linear infinite;
+  }
+
+  .cloud-slow {
+    animation: moveToLeft 240s linear infinite;
   }
 </style>

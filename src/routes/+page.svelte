@@ -55,7 +55,7 @@
 </main>
 
 <div id="star-board">
-  <Stars />
+  <!-- <Stars /> -->
 </div>
 
 <div id="cloud-board">
@@ -87,13 +87,13 @@
     gap: 0.65rem;
   }
 
-  #star-board {
-    position: fixed;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    min-width: 100vw;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
+  // #star-board {
+  //   position: fixed;
+  //   z-index: -1;
+  //   top: 0;
+  //   left: 0;
+  //   min-width: 100vw;
+  //   min-height: 100vh;
+  //   overflow-x: hidden;
+  // }
 </style>

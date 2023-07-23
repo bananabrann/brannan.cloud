@@ -36,9 +36,6 @@
 <style lang="scss">
   @use "../../../variables.scss";
 
-  // svg {
-  //   @include background-clouds();
-  // }
   .cls-1 {
     fill: #f6f6fb;
   }

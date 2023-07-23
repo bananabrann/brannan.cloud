@@ -13,9 +13,9 @@
   <link rel="stylesheet" href="https://use.typekit.net/xtr6jqc.css" />
 </head>
 
-<div>
+<main>
   <!-- <slot /> -->
-</div>
+</main>
 
 <div id="cloud-board">
   <div class="cloud-row">
@@ -56,6 +56,10 @@
     }
   }
 
+  main {
+    margin: auto 1rem;
+  }
+
   #cloud-board {
     position: fixed;
     bottom: 0;
@@ -73,11 +77,11 @@
   }
 
   .cloud-fast {
-    animation: moveToLeft 30s linear infinite;
+    animation: moveToLeft 60s cubic-bezier(0.31, 0.41, 0.6, 0.44) infinite;
   }
 
   .cloud-medium {
-    animation: moveToLeft 90s linear infinite;
+    animation: moveToLeft 110s linear infinite;
   }
 
   .cloud-slow {

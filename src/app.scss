@@ -4,6 +4,10 @@ pre * {
   font-size: 1em;
 }
 
+p {
+  margin: 0.333rem 4px;
+}
+
 body {
   @include sky-gradient();
   background-attachment: fixed;

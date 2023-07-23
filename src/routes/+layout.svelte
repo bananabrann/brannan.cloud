@@ -3,6 +3,7 @@
   import Clouds1 from "$lib/assets/svg/clouds1.svg.svelte";
   import Clouds2 from "$lib/assets/svg/clouds2.svg.svelte";
   import Clouds3 from "$lib/assets/svg/clouds3.svg.svelte";
+  import Stars from "$lib/assets/svg/stars.svg.svelte";
 </script>
 
 <head>
@@ -14,7 +15,7 @@
 </head>
 
 <main>
-  <!-- <slot /> -->
+  <slot />
 </main>
 
 <div id="cloud-board">
@@ -46,7 +47,15 @@
   </div>
 </div>
 
+<div id="star-board">
+  <Stars />
+</div>
+
 <style lang="scss">
+  main {
+    margin: auto 1rem;
+  }
+
   @keyframes moveToLeft {
     from {
       transform: translateX(0);
@@ -54,10 +63,6 @@
     to {
       transform: translateX(-100%);
     }
-  }
-
-  main {
-    margin: auto 1rem;
   }
 
   #cloud-board {
@@ -86,5 +91,11 @@
 
   .cloud-slow {
     animation: moveToLeft 240s linear infinite;
+  }
+
+  #star-board {
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
 </style>

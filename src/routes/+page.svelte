@@ -4,10 +4,6 @@
   import OpenInNew from "svelte-material-icons/OpenInNew.svelte";
   import { version } from "$app/environment";
   import Directory from "$lib/components/Directory.svelte";
-  import Stars from "$lib/components/Stars.svelte";
-  import Clouds1 from "$lib/assets/svg/clouds1.svg.svelte";
-  import Clouds2 from "$lib/assets/svg/clouds2.svg.svelte";
-  import Clouds3 from "$lib/assets/svg/clouds3.svg.svelte";
   import BananaManOnHisSide from "$lib/assets/png/bananaman.png";
 
   export let socialMediaIconHeight: string = "2rem";
@@ -54,25 +50,7 @@
   </div>
 </main>
 
-<div id="star-board">
-  <Stars />
-</div>
-
-<div id="cloud-board">
-  <Clouds3 />
-  <Clouds2 />
-  <Clouds1 />
-</div>
-
 <style lang="scss">
-  #cloud-board {
-    position: relative;
-    min-width: 100vw;
-    z-index: -1;
-    min-height: max(20vh, 20vw);
-    overflow-x: hidden;
-  }
-
   main {
     max-width: 550px;
     margin: 0 auto;
@@ -85,15 +63,5 @@
   #social-media {
     display: flex;
     gap: 0.65rem;
-  }
-
-  #star-board {
-    position: fixed;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    min-width: 100vw;
-    min-height: 100vh;
-    overflow-x: hidden;
   }
 </style>

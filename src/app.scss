@@ -4,8 +4,13 @@ pre * {
   font-size: 1em;
 }
 
+p {
+  margin: 0.333rem 4px;
+}
+
 body {
   @include sky-gradient();
+  background-attachment: fixed;
   @include basic-font();
   font-family: "basic-sans", sans-serif;
   font-weight: 400;

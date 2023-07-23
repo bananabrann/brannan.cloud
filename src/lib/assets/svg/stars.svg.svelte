@@ -1,3 +1,20 @@
+<script lang="ts">
+  import { onMount } from "svelte";
+
+  onMount(() => {
+    const stars: NodeList = document.querySelectorAll("#stars path, #stars circle");
+
+    let count = 0;
+    stars.forEach((star) => {
+      // @ts-ignore
+      star.classList.add(`group-${count}`);
+      count++;
+      if (count > 4) count = 0;
+      console.log(star);
+    });
+  });
+</script>
+
 <svg
   xmlns="http://www.w3.org/2000/svg"
   preserveAspectRatio="xMinYMax meet"
@@ -5,7 +22,7 @@
   height="100%"
   viewBox="0 0 1873 880.24"
 >
-  <g id="stars" transform="translate(-25.12 -52.99)" opacity="0.56">
+  <g id="stars" transform="translate(-25.12 -52.99)" opacity="0.75">
     <path
       id="Path_15"
       data-name="Path 15"
@@ -19,6 +36,7 @@
       d="M2497.43,869.44l3.479,6.361,6.352,3.478-6.352,3.469-3.479,6.361-3.479-6.361-6.352-3.469,6.352-3.478Z"
       transform="translate(-1806.083 -244.973)"
       fill="#e6eefc"
+      class="group-2"
     />
     <path
       id="Path_17"
@@ -26,6 +44,7 @@
       d="M2812.38,356.44l3.479,6.352,6.352,3.478-6.352,3.478-3.479,6.352-3.478-6.352-6.352-3.478,6.352-3.478Z"
       transform="translate(-2023.546 -29.215)"
       fill="#e6eefc"
+      class="group-3"
     />
     <path
       id="Path_18"
@@ -33,6 +52,7 @@
       d="M2455.894,321.24l1.735,3.171,3.18,1.744-3.18,1.735-1.735,3.18-1.744-3.18-3.18-1.735,3.18-1.744Z"
       transform="translate(-1764.959 -25.827)"
       fill="#e6eefc"
+      class="group-4"
     />
     <path
       id="Path_19"
@@ -47,6 +67,7 @@
       d="M3741.345,380.05l1.735,3.18,3.18,1.735-3.18,1.744-1.735,3.171-1.735-3.171-3.18-1.744,3.18-1.735Z"
       transform="translate(-2700.209 -31.489)"
       fill="#e6eefc"
+      class="group-2"
     />
     <circle
       id="Ellipse_1"
@@ -56,6 +77,7 @@
       r="2.765"
       transform="translate(850.575 480.305)"
       fill="#e6eefc"
+      class="group-3"
     />
     <circle
       id="Ellipse_2"
@@ -65,6 +87,7 @@
       r="7.616"
       transform="translate(1211.599 610.021)"
       fill="#e6eefc"
+      class="group-4"
     />
     <circle
       id="Ellipse_3"
@@ -856,3 +879,42 @@
     />
   </g>
 </svg>
+
+<style lang="scss">
+  $starting-opacity: 0.25;
+
+  @mixin twinkle-animation($delay) {
+    animation: twinkle 3.5s ease-in-out infinite;
+    animation-delay: $delay;
+    opacity: $starting-opacity;
+  }
+
+  @keyframes twinkle {
+    0% {
+      opacity: $starting-opacity;
+    }
+    50% {
+      opacity: random(1);
+    }
+    100% {
+      opacity: $starting-opacity;
+    }
+  }
+
+  path {
+    @include twinkle-animation(0s);
+  }
+
+  .group-1 {
+    @include twinkle-animation(1s);
+  }
+  .group-2 {
+    @include twinkle-animation(2s);
+  }
+  .group-3 {
+    @include twinkle-animation(3s);
+  }
+  .group-4 {
+    @include twinkle-animation(4s);
+  }
+</style>

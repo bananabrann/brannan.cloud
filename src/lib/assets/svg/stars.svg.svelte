@@ -22,7 +22,7 @@
   height="100%"
   viewBox="0 0 1873 880.24"
 >
-  <g id="stars" transform="translate(-25.12 -52.99)" opacity="0.66">
+  <g id="stars" transform="translate(-25.12 -52.99)" opacity="0.75">
     <path
       id="Path_15"
       data-name="Path 15"

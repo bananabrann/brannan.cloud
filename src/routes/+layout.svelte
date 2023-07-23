@@ -52,6 +52,7 @@
 </div>
 
 <style lang="scss">
+  @use "../variables.scss";
   main {
     margin: auto 1rem;
   }
@@ -69,33 +70,36 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-  }
+    z-index: -1;
 
-  .cloud-row {
-    display: flex;
-    position: fixed;
-    bottom: 0;
-    width: 200%;
-  }
-  .cloud {
-    width: 100%;
-  }
+    .cloud-row {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      width: 200%;
+    }
+    .cloud {
+      width: 100%;
+    }
 
-  .cloud-fast {
-    animation: moveToLeft 60s cubic-bezier(0.31, 0.41, 0.6, 0.44) infinite;
-  }
+    .cloud-fast {
+      animation: moveToLeft 60s cubic-bezier(0.31, 0.41, 0.6, 0.44) infinite;
+      z-index: 1;
+    }
 
-  .cloud-medium {
-    animation: moveToLeft 110s linear infinite;
-  }
+    .cloud-medium {
+      animation: moveToLeft 125s linear infinite;
+    }
 
-  .cloud-slow {
-    animation: moveToLeft 240s linear infinite;
+    .cloud-slow {
+      animation: moveToLeft 300s linear infinite;
+    }
   }
 
   #star-board {
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
+    z-index: -2;
   }
 </style>

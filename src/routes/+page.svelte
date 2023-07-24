@@ -10,58 +10,67 @@
 </script>
 
 <main>
-  <img src={BananaManOnHisSide} alt="" style="width: 220px;" />
-
-  <p>
-    <span>Hello!</span> This is brannan.cloud. I host everything from the website you see here to the
-    TV application in my grandma's living room.
-  </p>
-  <p>
-    I'm a full-time software developer, a prior U.S. Marine, and as is tradition of all people that
-    deal with computers, my family's tech support.
-  </p>
-
-  <div style="margin: 0 auto 0 0">
+  <section style="margin: 0 auto auto 0;">
     <Directory />
-  </div>
+  </section>
 
-  <div id="social-media">
-    <a href="https://discordapp.com/users/321317378862350346" target="_blank">
-      <Discord height={socialMediaIconHeight} width={socialMediaIconHeight} />
-    </a>
-    <a href="https://github.com/bananabrann" target="_self">
-      <GitHub height={socialMediaIconHeight} width={socialMediaIconHeight} />
-    </a>
-  </div>
+  <section>
+    <div id="social-media">
+      <a href="https://discordapp.com/users/321317378862350346" target="_blank">
+        <Discord height={socialMediaIconHeight} width={socialMediaIconHeight} />
+      </a>
+      <a href="https://github.com/bananabrann" target="_self">
+        <GitHub height={socialMediaIconHeight} width={socialMediaIconHeight} />
+      </a>
+    </div>
 
-  <div>
-    <!-- prettier-ignore -->
-    <small>
-        Website and systems by me.
-        <a
-          href="https://github.com/bananabrann/brannan.cloud/blob/main/LICENSE"
-          target="_blank">MIT license, 2023.<OpenInNew />
-        </a>
+    <div id="legal">
+      <!-- prettier-ignore -->
+      <small>
+          <code>*.brannan.cloud</code> websites and systems by me.
+          <a
+            href="https://github.com/bananabrann/brannan.cloud/blob/main/LICENSE"
+            target="_blank">MIT license, 2023.<OpenInNew />
+          </a>
       </small>
-  </div>
-
-  <div>
-    <small>Art assets by various artists. All rights reserved.</small>
-  </div>
+      <small> Art assets by various artists. All rights reserved. </small>
+    </div>
+  </section>
 </main>
 
 <style lang="scss">
   main {
-    max-width: 550px;
+    max-width: 375px;
     margin: 0 auto;
+    padding-top: 20vh;
     display: flex;
-    flex-direction: column;
+    flex-flow: column nowrap;
+
     justify-content: flex-start;
     align-items: center;
+    gap: 1rem;
+  }
+
+  section {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #legal {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.1rem;
+    align-items: center;
+
+    code {
+      font-size: 0.75rem;
+    }
   }
 
   #social-media {
     display: flex;
-    gap: 0.65rem;
+    gap: 0.55rem;
   }
 </style>

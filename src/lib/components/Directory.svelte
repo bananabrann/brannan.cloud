@@ -3,14 +3,16 @@
 </script>
 
 <div>
-  <ul>
-    <li>
-      <a href="/">Homepage</a>
-    </li>
-    <li>
-      <a href="https://files.brannan.cloud" target="_blank"
-        >Files <small>(private)</small><OpenInNew />
-      </a>
-    </li>
-  </ul>
+  <a href="/">Homepage</a>
+
+  <a href="https://files.brannan.cloud" target="_blank"
+    >Files <small>(private)</small><OpenInNew />
+  </a>
 </div>
+
+<style lang="scss">
+  div {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+</style>

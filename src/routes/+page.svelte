@@ -63,10 +63,6 @@
     flex-flow: column nowrap;
     gap: 0.1rem;
     align-items: center;
-
-    code {
-      font-size: 0.75rem;
-    }
   }
 
   #social-media {

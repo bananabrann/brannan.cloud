@@ -4,17 +4,20 @@
   import OpenInNew from "svelte-material-icons/OpenInNew.svelte";
   import { version } from "$app/environment";
   import Directory from "$lib/components/Directory.svelte";
-  import BananaManOnHisSide from "$lib/assets/png/bananaman.png";
 
   export let socialMediaIconHeight: string = "2rem";
 </script>
 
 <main>
-  <section style="margin: 0 auto auto 0;">
-    <Directory />
+  <section>
+    Software engineer, tuba player, prior U.S. Marine, y una persona aprendiendo español.
   </section>
 
   <section>
+    <div style="margin: 3px auto 5px 0;">
+      <Directory />
+    </div>
+
     <div id="social-media">
       <a href="https://discordapp.com/users/321317378862350346" target="_blank">
         <Discord height={socialMediaIconHeight} width={socialMediaIconHeight} />
@@ -40,7 +43,7 @@
 
 <style lang="scss">
   main {
-    max-width: 375px;
+    max-width: 415px;
     margin: 0 auto;
     padding-top: 20vh;
     display: flex;
@@ -63,10 +66,6 @@
     flex-flow: column nowrap;
     gap: 0.1rem;
     align-items: center;
-
-    code {
-      font-size: 0.75rem;
-    }
   }
 
   #social-media {

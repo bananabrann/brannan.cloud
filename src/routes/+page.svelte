@@ -76,7 +76,7 @@
 
 <style lang="scss">
   main {
-    max-width: 415px;
+    max-width: 375px;
     margin: 0 auto;
     padding-top: 20vh;
     display: flex;

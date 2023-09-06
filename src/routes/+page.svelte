@@ -5,6 +5,7 @@
   import { version } from "$app/environment";
   import Directory from "$lib/components/Directory.svelte";
   import { browser } from "$app/environment";
+  import BlogSnippet from "$lib/components/BlogSnippet.svelte";
 
   export let socialMediaIconHeight: string = "2rem";
 
@@ -13,13 +14,21 @@
     es: "Yo soy ingeniero de software, tubista, y un exmarino de los Estados Unidos."
   };
 
+  let currentLang: "es" | "en" = "en";
   let bio: string;
 
   if (browser) {
-    bio = bioLanguages[localStorage.getItem("brannan.cloud-bioLang") || "es"];
-  } else {
-    bio = bioLanguages["en"];
+    const localStorageLanguage: string | null = localStorage.getItem("brannan.cloud-bioLang");
+
+    if (localStorageLanguage) {
+      currentLang = localStorageLanguage as "es" | "en";
+    }
+
+    // localStorage.getItem("brannan.cloud-bioLang") || "en"
+    bio = bioLanguages[currentLang];
   }
+
+  bio = bioLanguages[currentLang];
 
   function changeLang(lang: "es" | "en") {
     if (lang === "es") {
@@ -49,6 +58,22 @@
   <section>
     <div style="margin: 3px auto 5px 0;">
       <Directory />
+    </div>
+
+    <p>
+      {`* * *`}
+    </p>
+
+    <div id="blog">
+      <BlogSnippet
+        title="My First Two Customers In Freelance Web Dev Sucked, but I’m Ready to Change "
+        description="This is a test blog post."
+        slug="welcome-to-my-website"
+        date={new Date()}
+        tags={currentLang === "en"
+          ? [{ name: "career" }, { name: "opinion" }]
+          : [{ name: "carrera" }, { name: "opinión" }]}
+      />
     </div>
 
     <div id="social-media">
@@ -119,5 +144,6 @@
   #social-media {
     display: flex;
     gap: 0.55rem;
+    margin-top: 1rem;
   }
 </style>

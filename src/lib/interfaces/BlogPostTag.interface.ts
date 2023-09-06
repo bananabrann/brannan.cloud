@@ -1,10 +1,10 @@
 // BlogPostTag represents a tag for a blog post.
-export interface BlogPostTag {
-  name: "tutorial" | "news" | "opinion";
+export interface BlogTag {
+  name: "tutorial" | "news" | "opinion" | "career" | "carrera" | "noticia" | "opinión";
 }
 
 // Type guard for BlogPostTag, returning true if the object is a BlogPostTag.
-export function isABlogPostTag(object: any): object is BlogPostTag {
+export function isABlogTag(object: any): object is BlogTag {
   // prettier-ignore
   return (
     object.name === "tutorial" ||

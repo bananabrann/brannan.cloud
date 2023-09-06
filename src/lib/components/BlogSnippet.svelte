@@ -1,22 +1,19 @@
 <script lang="ts">
-  import type { BlogTag } from "$lib/interfaces/BlogPostTag.interface";
+  import type { BlogMetaData } from "$lib/interfaces/BlogMetaData.interface";
+  import type { BlogTag } from "$lib/interfaces/BlogTag.interface";
   import moment from "moment";
 
-  export let title: string;
-  export let description: string;
-  export let slug: string;
-  export let date: Date;
-  export let tags: Array<BlogTag> = [];
+  export let metaData: BlogMetaData;
 </script>
 
 <div class="blog-snippet">
-  <a href={`blogs/${slug}`}>
-    <small class="blog-snippet-date">{moment(date).format("MMMM Do, YYYY")}</small>
-    <h2>{title}</h2>
+  <a href={`blogs/${metaData.slug}`}>
+    <small class="blog-snippet-date">{metaData.date}</small>
+    <h2>{metaData.title}</h2>
 
-    {#if tags.length > 0}
+    {#if metaData.tags.length > 0}
       <ul class="blog-snippet-tag-list">
-        {#each tags as tag}
+        {#each metaData.tags as tag}
           <li class="tag"><code>{tag.name}</code></li>
         {/each}
       </ul>

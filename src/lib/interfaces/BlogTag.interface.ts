@@ -9,6 +9,10 @@ export function isABlogTag(object: any): object is BlogTag {
   return (
     object.name === "tutorial" ||
     object.name === "news" ||
-    object.name === "opinion"
+    object.name === "opinion" ||
+    object.name === "career" ||
+    object.name === "carrera" ||
+    object.name === "noticia" ||
+    object.name === "opinión"
   );
 }

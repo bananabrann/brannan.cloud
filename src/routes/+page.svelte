@@ -4,13 +4,46 @@
   import OpenInNew from "svelte-material-icons/OpenInNew.svelte";
   import { version } from "$app/environment";
   import Directory from "$lib/components/Directory.svelte";
+  import { browser } from "$app/environment";
 
   export let socialMediaIconHeight: string = "2rem";
+
+  const bioLanguages = {
+    en: "Software engineer, tuba player, and prior U.S. Marine.",
+    es: "Yo soy ingeniero de software, tubista, y un exmarino de los Estados Unidos."
+  };
+
+  let bio: string;
+
+  if (browser) {
+    bio = bioLanguages[localStorage.getItem("brannan.cloud-bioLang") || "es"];
+  } else {
+    bio = bioLanguages["en"];
+  }
+
+  function changeLang(lang: "es" | "en") {
+    if (lang === "es") {
+      localStorage.setItem("brannan.cloud-bioLang", "es");
+    } else {
+      localStorage.setItem("brannan.cloud-bioLang", "en");
+    }
+    bio = bioLanguages[lang];
+  }
 </script>
 
 <main>
   <section>
-    Software engineer, tuba player, prior U.S. Marine, y una persona aprendiendo español.
+    <div>
+      <p id="lang-selection-container">
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <span on:click={() => changeLang("en")}>[en]</span>
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <span on:click={() => changeLang("es")}>[es]</span>
+      </p>
+      <p>
+        {bio}
+      </p>
+    </div>
   </section>
 
   <section>
@@ -43,7 +76,7 @@
 
 <style lang="scss">
   main {
-    max-width: 415px;
+    max-width: 375px;
     margin: 0 auto;
     padding-top: 20vh;
     display: flex;
@@ -59,6 +92,21 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+  }
+
+  #lang-selection-container {
+    gap: 0.5rem;
+
+    span {
+      @include gentle-transition();
+      cursor: pointer;
+
+      &:hover {
+        @include gentle-transition();
+        text-decoration: underline;
+        color: $brand-secondary;
+      }
+    }
   }
 
   #legal {

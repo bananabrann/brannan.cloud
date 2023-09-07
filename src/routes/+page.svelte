@@ -185,6 +185,7 @@
 
   #social-media {
     display: flex;
+    justify-content: center;
     gap: 0.55rem;
     margin-top: 1rem;
   }

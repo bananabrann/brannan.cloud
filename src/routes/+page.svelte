@@ -2,10 +2,10 @@
   import GitHub from "svelte-material-icons/Github.svelte";
   import Discord from "svelte-material-icons/Discord.svelte";
   import OpenInNew from "svelte-material-icons/OpenInNew.svelte";
-  import ArrowRight from "svelte-material-icons/ArrowRight.svelte";
-  import ArrowLeft from "svelte-material-icons/ArrowLeft.svelte";
-  import ListBoxOutline from "svelte-material-icons/ViewList.svelte";
-  import Refresh from "svelte-material-icons/Refresh.svelte";
+  // import ArrowRight from "svelte-material-icons/ArrowRight.svelte";
+  // import ArrowLeft from "svelte-material-icons/ArrowLeft.svelte";
+  // import ListBoxOutline from "svelte-material-icons/ViewList.svelte";
+  // import Refresh from "svelte-material-icons/Refresh.svelte";
   import { version } from "$app/environment";
   import Directory from "$lib/components/Directory.svelte";
   import { browser } from "$app/environment";
@@ -24,11 +24,13 @@
       ? "Yo soy ingeniero de software, tubista, y un exmarino de los Estados Unidos."
       : "Software engineer, tuba player, and prior U.S. Marine."; // English is default
 
+  /*
   $: formatDate = (dateString) => {
     return moment(dateString)
       .locale(currentLang === "es" ? "es" : "en-gb")
       .format("MMMM Do, YYYY");
   };
+  */
 
   // If user has selected a language before, use that language
   if (browser) {
@@ -151,15 +153,18 @@
     align-items: center;
   }
 
+  /*
+
   #blog-controls {
     display: flex;
     justify-content: space-between;
     padding: 0 0.6rem;
-
+    
     div {
       cursor: pointer;
     }
   }
+  */
 
   #lang-selection-container {
     gap: 0.5rem;

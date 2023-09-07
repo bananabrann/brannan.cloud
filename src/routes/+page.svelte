@@ -133,7 +133,7 @@
   main {
     max-width: 375px;
     margin: 0 auto;
-    padding-top: 20vh;
+    padding-top: 10vh;
     display: flex;
     flex-flow: column nowrap;
 

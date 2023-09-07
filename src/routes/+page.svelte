@@ -119,8 +119,9 @@
             href="https://github.com/bananabrann/brannan.cloud/blob/main/LICENSE"
             target="_blank">MIT license, 2023.<OpenInNew />
           </a>
-      </small>
+        </small>
         <small> Art assets by various artists. All rights reserved. </small>
+        <small> v{version} </small>
       </div>
     </div>
   </section>

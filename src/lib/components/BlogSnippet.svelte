@@ -1,6 +1,5 @@
 <script lang="ts">
   import type { BlogMetaData } from "$lib/interfaces/BlogMetaData.interface";
-  import type { BlogTag } from "$lib/interfaces/BlogTag.interface";
   import OpenInNew from "svelte-material-icons/OpenInNew.svelte";
   import moment from "moment";
 
@@ -8,7 +7,10 @@
 </script>
 
 <div class="blog-snippet">
-  <a href={`blog/${metaData.slug}`}>
+  <a
+    href={metaData.externalLink ?? `blog/${metaData.slug}`}
+    target={metaData.externalLink ? "_blank" : "_self"}
+  >
     <small class="blog-snippet-date">{moment(metaData.date).format("MMMM Do, YYYY")}</small>
     <h2>
       {#if metaData.isExternal}

@@ -8,6 +8,7 @@ export interface BlogMetaData {
   tags: Array<BlogTag>;
   title: string;
   isExternal?: boolean | undefined;
+  externalLink?: string | undefined;
 }
 
 // Type guard for BlogMetaData, returning true if the object is a BlogMetaData.

@@ -2,14 +2,15 @@
   import GitHub from "svelte-material-icons/Github.svelte";
   import Discord from "svelte-material-icons/Discord.svelte";
   import OpenInNew from "svelte-material-icons/OpenInNew.svelte";
-  import ArrowRight from "svelte-material-icons/ArrowRight.svelte"
-  import ArrowLeft from "svelte-material-icons/ArrowLeft.svelte"
-  import ListBoxOutline from "svelte-material-icons/ViewList.svelte"
-  import Refresh from "svelte-material-icons/Refresh.svelte"
+  import ArrowRight from "svelte-material-icons/ArrowRight.svelte";
+  import ArrowLeft from "svelte-material-icons/ArrowLeft.svelte";
+  import ListBoxOutline from "svelte-material-icons/ViewList.svelte";
+  import Refresh from "svelte-material-icons/Refresh.svelte";
   import { version } from "$app/environment";
   import Directory from "$lib/components/Directory.svelte";
   import { browser } from "$app/environment";
   import BlogSnippet from "$lib/components/BlogSnippet.svelte";
+  import blogs from "$lib/blogMetaData";
   import moment from "moment";
   import "moment/locale/es";
   import "moment/locale/en-gb";
@@ -76,19 +77,17 @@
     <p>
       {`* * *`}
     </p>
-    <!-- // moment("09/01/2023").locale("es").format("MMMM Do, YYYY") -->
 
     <div id="blog">
-      <BlogSnippet
-        title="My First Two Customers In Freelance Web Dev Sucked, but I’m Ready to Change "
-        description="This is a test blog post."
-        slug="welcome-to-my-website"
-        date={formatDate("09/01/2023")}
-        tags={currentLang === "en"
-          ? [{ name: "career" }, { name: "opinion" }]
-          : [{ name: "carrera" }, { name: "opinión" }]}
-      />
+      {#each blogs as blog}
+        <BlogSnippet
+          metaData={{
+            ...blog
+          }}
+        />
+      {/each}
 
+      <!-- 
       <div id="blog-controls">
         <div />
         <div>
@@ -101,26 +100,28 @@
         </div>
       </div>
     </div>
+     -->
 
-    <div id="social-media">
-      <a href="https://discordapp.com/users/321317378862350346" target="_blank">
-        <Discord height={socialMediaIconHeight} width={socialMediaIconHeight} />
-      </a>
-      <a href="https://github.com/bananabrann" target="_self">
-        <GitHub height={socialMediaIconHeight} width={socialMediaIconHeight} />
-      </a>
-    </div>
+      <div id="social-media">
+        <a href="https://discordapp.com/users/321317378862350346" target="_blank">
+          <Discord height={socialMediaIconHeight} width={socialMediaIconHeight} />
+        </a>
+        <a href="https://github.com/bananabrann" target="_self">
+          <GitHub height={socialMediaIconHeight} width={socialMediaIconHeight} />
+        </a>
+      </div>
 
-    <div id="legal">
-      <!-- prettier-ignore -->
-      <small>
+      <div id="legal">
+        <!-- prettier-ignore -->
+        <small>
           <code>*.brannan.cloud</code> websites and systems by me.
           <a
             href="https://github.com/bananabrann/brannan.cloud/blob/main/LICENSE"
             target="_blank">MIT license, 2023.<OpenInNew />
           </a>
       </small>
-      <small> Art assets by various artists. All rights reserved. </small>
+        <small> Art assets by various artists. All rights reserved. </small>
+      </div>
     </div>
   </section>
 </main>
@@ -136,6 +137,10 @@
     justify-content: flex-start;
     align-items: center;
     gap: 1rem;
+  }
+
+  #blog {
+    width: 106%;
   }
 
   section {

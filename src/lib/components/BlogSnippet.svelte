@@ -1,15 +1,21 @@
 <script lang="ts">
   import type { BlogMetaData } from "$lib/interfaces/BlogMetaData.interface";
   import type { BlogTag } from "$lib/interfaces/BlogTag.interface";
+  import OpenInNew from "svelte-material-icons/OpenInNew.svelte";
   import moment from "moment";
 
   export let metaData: BlogMetaData;
 </script>
 
 <div class="blog-snippet">
-  <a href={`blogs/${metaData.slug}`}>
-    <small class="blog-snippet-date">{metaData.date}</small>
-    <h2>{metaData.title}</h2>
+  <a href={`blog/${metaData.slug}`}>
+    <small class="blog-snippet-date">{moment(metaData.date).format("MMMM Do, YYYY")}</small>
+    <h2>
+      {#if metaData.isExternal}
+        <OpenInNew />
+      {/if}
+      {metaData.title}
+    </h2>
 
     {#if metaData.tags.length > 0}
       <ul class="blog-snippet-tag-list">
@@ -25,6 +31,7 @@
   .blog-snippet {
     @include gentle-transition();
 
+    width: 100%;
     border-radius: 1rem;
     padding: 0.75rem;
 

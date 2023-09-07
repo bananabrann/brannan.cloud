@@ -7,6 +7,7 @@ export interface BlogMetaData {
   date: Moment;
   tags: Array<BlogTag>;
   title: string;
+  isExternal?: boolean | undefined;
 }
 
 // Type guard for BlogMetaData, returning true if the object is a BlogMetaData.

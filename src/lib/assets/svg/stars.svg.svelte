@@ -10,7 +10,6 @@
       star.classList.add(`group-${count}`);
       count++;
       if (count > 4) count = 0;
-      console.log(star);
     });
   });
 </script>

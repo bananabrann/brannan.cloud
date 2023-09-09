@@ -2,18 +2,17 @@
   import GitHub from "svelte-material-icons/Github.svelte";
   import Discord from "svelte-material-icons/Discord.svelte";
   import OpenInNew from "svelte-material-icons/OpenInNew.svelte";
-  // import ArrowRight from "svelte-material-icons/ArrowRight.svelte";
-  // import ArrowLeft from "svelte-material-icons/ArrowLeft.svelte";
-  // import ListBoxOutline from "svelte-material-icons/ViewList.svelte";
-  // import Refresh from "svelte-material-icons/Refresh.svelte";
+  import ArrowRight from "svelte-material-icons/ArrowRight.svelte";
+  import ArrowLeft from "svelte-material-icons/ArrowLeft.svelte";
+  import Refresh from "svelte-material-icons/Refresh.svelte";
   import { version } from "$app/environment";
   import Directory from "$lib/components/Directory.svelte";
   import { browser } from "$app/environment";
-  import BlogSnippet from "$lib/components/BlogSnippet.svelte";
-  import blogs from "$lib/blogMetaData";
+  import articles from "$lib/articles";
   import moment from "moment";
   import "moment/locale/es";
   import "moment/locale/en-gb";
+  import Article from "$lib/components/Article.svelte";
 
   export let socialMediaIconHeight: string = "2rem";
 
@@ -23,14 +22,6 @@
     currentLang === "es"
       ? "Yo soy ingeniero de software, tubista, y un exmarino de los Estados Unidos."
       : "Software engineer, tuba player, and prior U.S. Marine."; // English is default
-
-  /*
-  $: formatDate = (dateString) => {
-    return moment(dateString)
-      .locale(currentLang === "es" ? "es" : "en-gb")
-      .format("MMMM Do, YYYY");
-  };
-  */
 
   // If user has selected a language before, use that language
   if (browser) {
@@ -57,114 +48,92 @@
 </script>
 
 <main>
-  <section>
-    <div>
-      <p id="lang-selection-container">
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <span on:click={() => changeLang("en")}>[en]</span>
-        <!-- svelte-ignore a11y-click-events-have-key-events -->
-        <span on:click={() => changeLang("es")}>[es]</span>
-      </p>
-      <p>
-        {bio}
-      </p>
-    </div>
+  <section id="bio">
+    <p id="lang-selection-container">
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <span on:click={() => changeLang("en")}>[en]</span>
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <span on:click={() => changeLang("es")}>[es]</span>
+    </p>
+    <p>
+      {bio}
+    </p>
+  </section>
+
+  <section id="directory">
+    <Directory />
   </section>
 
   <section>
-    <div style="margin: 3px auto 5px 0;">
-      <Directory />
-    </div>
+    <h3 style="text-align: center">Reading List</h3>
 
-    <p>
-      {`* * *`}
-    </p>
-
-    <div id="blog">
-      {#each blogs as blog}
-        <BlogSnippet
-          metaData={{
-            ...blog
+    <div id="blog-content">
+      {#each articles as article}
+        <Article
+          data={{
+            ...article
           }}
         />
       {/each}
-
-      <!-- 
-      <div id="blog-controls">
-        <div />
-        <div>
-          <ArrowLeft />
-          <Refresh />
-          <ArrowRight />
-        </div>
-        <div>
-          <ListBoxOutline />
-        </div>
-      </div>
     </div>
-     -->
 
-      <div id="social-media">
-        <a href="https://discordapp.com/users/321317378862350346" target="_blank">
-          <Discord height={socialMediaIconHeight} width={socialMediaIconHeight} />
-        </a>
-        <a href="https://github.com/bananabrann" target="_self">
-          <GitHub height={socialMediaIconHeight} width={socialMediaIconHeight} />
-        </a>
+    <!-- 
+      <div id="blog-controls">
+        <ArrowLeft />
+        <Refresh />
+        <ArrowRight />
       </div>
+    -->
+  </section>
 
-      <div id="legal">
-        <!-- prettier-ignore -->
-        <small>
-          <code>*.brannan.cloud</code> websites and systems by me.
+  <section>
+    <div id="social-media">
+      <a href="https://discordapp.com/users/321317378862350346" target="_blank">
+        <Discord height={socialMediaIconHeight} width={socialMediaIconHeight} />
+      </a>
+      <a href="https://github.com/bananabrann" target="_self">
+        <GitHub height={socialMediaIconHeight} width={socialMediaIconHeight} />
+      </a>
+    </div>
+
+    <div id="legal">
+      <!-- prettier-ignore -->
+      <small>
+        <code>*.brannan.cloud</code> websites and systems by me.
           <a
             href="https://github.com/bananabrann/brannan.cloud/blob/main/LICENSE"
             target="_blank">MIT license, 2023.<OpenInNew />
           </a>
         </small>
-        <small> Art assets by various artists. All rights reserved. </small>
-        <small> v{version} </small>
-      </div>
+      <small> Art assets by various artists. All rights reserved. </small>
+      <small> v{version} </small>
     </div>
   </section>
 </main>
 
 <style lang="scss">
+  $upper-width: 400px;
+
   main {
-    max-width: 375px;
     margin: 0 auto;
-    padding-top: 10vh;
+    padding-top: 2vh;
     display: flex;
     flex-flow: column nowrap;
-
     justify-content: flex-start;
     align-items: center;
     gap: 1rem;
   }
 
-  #blog {
-    width: 106%;
-  }
-
-  section {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-  }
-
-  /*
-
   #blog-controls {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 0.45rem;
     padding: 0 0.6rem;
-    
+
     div {
       cursor: pointer;
     }
   }
-  */
 
   #lang-selection-container {
     gap: 0.5rem;
@@ -179,6 +148,35 @@
         color: $brand-secondary;
       }
     }
+  }
+
+  #blog-content {
+    width: 80vw;
+    max-width: 960px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+
+    @media (max-width: $small-screen-breakpoint) {
+      width: 100%;
+      flex-wrap: wrap;
+    }
+  }
+
+  #bio {
+    width: 100%;
+    max-width: $upper-width;
+    * {
+      margin: 0;
+      max-width: 100%;
+    }
+  }
+
+  #directory {
+    width: 100%;
+    max-width: $upper-width;
+    display: flex;
   }
 
   #legal {

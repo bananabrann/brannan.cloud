@@ -1,45 +1,40 @@
 <script lang="ts">
-  import type { BlogMetaData } from "$lib/interfaces/BlogMetaData.interface";
+  import type { Article } from "$lib/interfaces/Article.interface";
   import OpenInNew from "svelte-material-icons/OpenInNew.svelte";
   import moment from "moment";
 
-  export let metaData: BlogMetaData;
+  export let data: Article;
 </script>
 
-<div class="blog-snippet">
-  <a
-    href={metaData.externalLink ?? `blog/${metaData.slug}`}
-    target={metaData.externalLink ? "_blank" : "_self"}
-  >
-    <small class="blog-snippet-date">{moment(metaData.date).format("MMMM Do, YYYY")}</small>
+<article>
+  <a href={data.link} target="_blank">
+    <small class="article-date">{data.readTime}, {moment(data.date).format("MMMM Do, YYYY")}</small>
     <h2>
-      {#if metaData.isExternal}
-        <OpenInNew />
-      {/if}
-      {metaData.title}
+      {data.title}
+      <OpenInNew />
     </h2>
 
-    {#if metaData.tags.length > 0}
-      <ul class="blog-snippet-tag-list">
-        {#each metaData.tags as tag}
-          <li class="tag"><code>{tag.name}</code></li>
+    {#if data.tags.length > 0}
+      <ul class="article-tag-list">
+        {#each data.tags as tag}
+          <li class="tag"><code>{tag}</code></li>
         {/each}
       </ul>
     {/if}
   </a>
-</div>
+</article>
 
 <style lang="scss">
-  .blog-snippet {
+  article {
     @include gentle-transition();
+    padding: 1rem;
+    border-radius: 0.5rem;
+    flex-basis: 350px;
 
-    width: 100%;
-    border-radius: 1rem;
-    padding: 0.75rem;
-
-    .blog-snippet-date {
-      display: block;
-      text-align: left;
+    @media (max-width: $small-screen-breakpoint) {
+      width: 100%;
+      max-width: 90vw;
+      flex-grow: 1;
     }
 
     &:hover {
@@ -56,6 +51,11 @@
       margin-top: 0.25rem;
       margin-bottom: 0.5rem;
       text-decoration: solid underline $light;
+    }
+
+    .article-date {
+      display: block;
+      text-align: left;
     }
 
     ul {

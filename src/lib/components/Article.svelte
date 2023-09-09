@@ -29,7 +29,7 @@
     @include gentle-transition();
     padding: 1rem;
     border-radius: 0.5rem;
-    flex-basis: 350px;
+    width: 100%;
 
     @media (max-width: $small-screen-breakpoint) {
       width: 100%;

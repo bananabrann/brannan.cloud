@@ -13,10 +13,17 @@
   import "moment/locale/es";
   import "moment/locale/en-gb";
   import Article from "$lib/components/Article.svelte";
+  import type { Article as IArticle } from "$lib/interfaces/Article.interface";
 
   export let socialMediaIconHeight: string = "2rem";
 
+  const ARTICLES_PER_PAGE = 2;
+
   let currentLang: "es" | "en" = "en";
+  let currentArticleIndex: number = 0;
+  let viewedArticles = articles.slice(currentArticleIndex, ARTICLES_PER_PAGE);
+
+  $: lastArticleIndex = currentArticleIndex + (ARTICLES_PER_PAGE - 1);
 
   $: bio =
     currentLang === "es"
@@ -42,8 +49,38 @@
       // English is default
       currentLang = "en";
       moment.locale("en-gb");
+
       localStorage.setItem("brannan.cloud-bioLang", currentLang);
     }
+  }
+
+  function articlesGoForward() {
+    console.log(">>> articlesGoForward");
+    console.log(`current starting index: ${currentArticleIndex}`);
+
+    let newArticles: Array<IArticle>;
+
+    // If the next chunk of articles starts out of bounds...
+    if (!articles[currentArticleIndex + ARTICLES_PER_PAGE]) {
+      // No need to worry about remainder, as .slice() won't return weird things. E.g.
+      // let articlesLeft = articles.length % ARTICLES_PER_PAGE
+      // We don't have to handle the excess articles here in JavaScript.
+      currentArticleIndex = 0;
+      newArticles = articles.slice(0, ARTICLES_PER_PAGE);
+    } else {
+      currentArticleIndex += ARTICLES_PER_PAGE;
+      newArticles = articles.slice(currentArticleIndex, currentArticleIndex + ARTICLES_PER_PAGE);
+    }
+
+    viewedArticles = newArticles;
+  }
+
+  function articlesGoBackward() {
+    console.log("articlesGoBackward");
+  }
+
+  function articlesRefresh() {
+    console.log("articlesRefresh");
   }
 </script>
 
@@ -68,7 +105,7 @@
     <h3 style="text-align: center">Reading List</h3>
 
     <div id="blog-content">
-      {#each articles as article}
+      {#each viewedArticles as article}
         <Article
           data={{
             ...article
@@ -77,13 +114,17 @@
       {/each}
     </div>
 
-    <!-- 
-      <div id="blog-controls">
+    <div id="blog-controls">
+      <button on:click={articlesGoBackward}>
         <ArrowLeft />
+      </button>
+      <button on:click={articlesRefresh}>
         <Refresh />
+      </button>
+      <button on:click={articlesGoForward}>
         <ArrowRight />
-      </div>
-    -->
+      </button>
+    </div>
   </section>
 
   <section>
@@ -128,10 +169,18 @@
     display: flex;
     justify-content: center;
     gap: 0.45rem;
-    padding: 0 0.6rem;
 
-    div {
+    button {
+      background-color: transparent;
+      border: none;
+      padding: 0.25rem;
       cursor: pointer;
+      border-radius: 0.25rem;
+      color: $light;
+
+      &:hover {
+        background-color: rgba(112, 128, 144, 0.333);
+      }
     }
   }
 

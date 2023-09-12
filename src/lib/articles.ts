@@ -10,12 +10,20 @@ const data: Array<Article> = [
     readTime: "10 min"
   },
   {
-    slug: "is-quality-worth-the-cost",
+    slug: "common-ways-to-make-a-software-development-team-faster",
     title: "What Are Some Common Ways To Make A Software Development Team Faster?",
     date: "2023-07-13",
     tags: ["productivity", "quora"],
     link: "https://qr.ae/pyxSYy",
     readTime: "1 min"
+  },
+  {
+    slug: "no-ask",
+    title: "Don't Ask to Ask, Just Ask",
+    date: "2023-09-12",
+    tags: ["productivity"],
+    link: "https://dontasktoask.com/",
+    readTime: "2 min"
   }
 ];
 

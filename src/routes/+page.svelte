@@ -211,7 +211,7 @@
     justify-content: center;
 
     @media (max-width: $small-screen-breakpoint) {
-      width: 100%;
+      width: 95vw;
       flex-wrap: wrap;
     }
   }

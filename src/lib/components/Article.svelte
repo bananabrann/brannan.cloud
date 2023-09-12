@@ -2,11 +2,17 @@
   import type { Article } from "$lib/interfaces/Article.interface";
   import OpenInNew from "svelte-material-icons/OpenInNew.svelte";
   import moment from "moment";
+  import { fly } from "svelte/transition";
+  import { fade } from "svelte/transition";
 
   export let data: Article;
+  export let fadeOpposite: boolean = false;
 </script>
 
-<article>
+<article
+  in:fly={{ x: fadeOpposite ? -100 : 100, duration: 500, delay: 150 }}
+  out:fade={{ duration: 150 }}
+>
   <a href={data.link} target="_blank">
     <small class="article-date">{data.readTime}, {moment(data.date).format("MMMM Do, YYYY")}</small>
     <h2>

@@ -14,6 +14,7 @@
   import "moment/locale/en-gb";
   import Article from "$lib/components/Article.svelte";
   import type { Article as IArticle } from "$lib/interfaces/Article.interface";
+  import { fade } from "svelte/transition";
 
   export let socialMediaIconHeight: string = "2rem";
 
@@ -22,6 +23,7 @@
   let currentLang: "es" | "en" = "en";
   let currentArticleIndex: number = 0;
   let viewedArticles = articles.slice(currentArticleIndex, ARTICLES_PER_PAGE);
+  let isLastArrowClickedForward: boolean = false;
 
   $: bio =
     currentLang === "es"
@@ -58,6 +60,7 @@
 
   function articlesGoForward() {
     let newArticles: Array<IArticle>;
+    isLastArrowClickedForward = true;
 
     // If the next chunk of articles starts out of bounds...
     if (!articles[currentArticleIndex + ARTICLES_PER_PAGE]) {
@@ -76,6 +79,7 @@
 
   function articlesGoBackward() {
     let newArticles: Array<IArticle>;
+    isLastArrowClickedForward = false;
 
     if (!articles[currentArticleIndex - ARTICLES_PER_PAGE]) {
       currentArticleIndex = 0;
@@ -110,8 +114,9 @@
     <h3 style="text-align: center">Reading List</h3>
 
     <div id="blog-content">
-      {#each viewedArticles as article}
+      {#each viewedArticles as article (article.slug)}
         <Article
+          fadeOpposite={!isLastArrowClickedForward}
           data={{
             ...article
           }}
@@ -209,6 +214,8 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
+
+    overflow-x: hidden;
 
     @media (max-width: $small-screen-breakpoint) {
       width: 95vw;

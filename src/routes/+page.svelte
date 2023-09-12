@@ -236,6 +236,10 @@
     flex-flow: column nowrap;
     gap: 0.1rem;
     align-items: center;
+
+    > * {
+      text-align: center;
+    }
   }
 
   #social-media {

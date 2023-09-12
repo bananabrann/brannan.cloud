@@ -14,7 +14,6 @@
   import "moment/locale/en-gb";
   import Article from "$lib/components/Article.svelte";
   import type { Article as IArticle } from "$lib/interfaces/Article.interface";
-  import { fade } from "svelte/transition";
 
   export let socialMediaIconHeight: string = "2rem";
 

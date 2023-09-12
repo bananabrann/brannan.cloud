@@ -55,9 +55,6 @@
   }
 
   function articlesGoForward() {
-    console.log(">>> articlesGoForward");
-    console.log(`current starting index: ${currentArticleIndex}`);
-
     let newArticles: Array<IArticle>;
 
     // If the next chunk of articles starts out of bounds...
@@ -76,7 +73,17 @@
   }
 
   function articlesGoBackward() {
-    console.log("articlesGoBackward");
+    let newArticles: Array<IArticle>;
+
+    if (!articles[currentArticleIndex - ARTICLES_PER_PAGE]) {
+      currentArticleIndex = 0;
+      newArticles = articles.slice(0, ARTICLES_PER_PAGE);
+    } else {
+      currentArticleIndex -= ARTICLES_PER_PAGE;
+      newArticles = articles.slice(currentArticleIndex, ARTICLES_PER_PAGE);
+    }
+
+    viewedArticles = newArticles;
   }
 
   function articlesRefresh() {

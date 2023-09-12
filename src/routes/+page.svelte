@@ -110,7 +110,17 @@
   </section>
 
   <section>
-    <h3 style="text-align: center">Reading List</h3>
+    <h3 style="text-align: center; margin-bottom: 0;">Reading List</h3>
+
+    <div id="blog-controls">
+      <button on:click={articlesGoBackward}>
+        <ArrowLeft />
+      </button>
+      <p>{articlePages}</p>
+      <button on:click={articlesGoForward}>
+        <ArrowRight />
+      </button>
+    </div>
 
     <div id="blog-content">
       {#each viewedArticles as article (article.slug)}
@@ -121,16 +131,6 @@
           }}
         />
       {/each}
-    </div>
-
-    <div id="blog-controls">
-      <button on:click={articlesGoBackward}>
-        <ArrowLeft />
-      </button>
-      <p>{articlePages}</p>
-      <button on:click={articlesGoForward}>
-        <ArrowRight />
-      </button>
     </div>
   </section>
 

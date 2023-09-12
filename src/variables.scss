@@ -3,6 +3,8 @@ $brand-secondary: #fbe700;
 $background-sky: #c6dbdb;
 $light: #fdfdfd;
 
+$small-screen-breakpoint: 680px;
+
 // mixin for basic font family
 @mixin basic-font($weight: 400) {
   font-family: "Basic Sans", sans-serif;

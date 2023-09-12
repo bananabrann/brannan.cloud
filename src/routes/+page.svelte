@@ -23,12 +23,14 @@
   let currentArticleIndex: number = 0;
   let viewedArticles = articles.slice(currentArticleIndex, ARTICLES_PER_PAGE);
 
-  $: lastArticleIndex = currentArticleIndex + (ARTICLES_PER_PAGE - 1);
-
   $: bio =
     currentLang === "es"
       ? "Yo soy ingeniero de software, tubista, y un exmarino de los Estados Unidos."
       : "Software engineer, tuba player, and prior U.S. Marine."; // English is default
+
+  $: currentPageNumber = Math.floor(currentArticleIndex / ARTICLES_PER_PAGE) + 1;
+  $: totalPageNumber = Math.ceil(articles.length / ARTICLES_PER_PAGE);
+  $: articlePages = `${currentPageNumber}/${totalPageNumber}`;
 
   // If user has selected a language before, use that language
   if (browser) {
@@ -85,10 +87,6 @@
 
     viewedArticles = newArticles;
   }
-
-  function articlesRefresh() {
-    console.log("articlesRefresh");
-  }
 </script>
 
 <main>
@@ -125,9 +123,7 @@
       <button on:click={articlesGoBackward}>
         <ArrowLeft />
       </button>
-      <button on:click={articlesRefresh}>
-        <Refresh />
-      </button>
+      <p>{articlePages}</p>
       <button on:click={articlesGoForward}>
         <ArrowRight />
       </button>

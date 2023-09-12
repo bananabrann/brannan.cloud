@@ -53,6 +53,8 @@
 
 <style lang="scss">
   @use "../variables.scss";
+  @use "sass:math";
+
   main {
     margin: auto 1rem;
   }
@@ -99,7 +101,15 @@
   #star-board {
     position: fixed;
     top: 0;
-    width: 100%;
     z-index: -2;
+    width: 100vw;
+
+    @media (orientation: landscape) {
+      width: 120vw;
+    }
+
+    @media (orientation: portrait) {
+      width: 150vw;
+    }
   }
 </style>

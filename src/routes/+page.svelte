@@ -17,7 +17,7 @@
 
   export let socialMediaIconHeight: string = "2rem";
 
-  const ARTICLES_PER_PAGE = 2;
+  const ARTICLES_PER_PAGE = 3;
 
   let currentLang: "es" | "en" = "en";
   let currentArticleIndex: number = 0;

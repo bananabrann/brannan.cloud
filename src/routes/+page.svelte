@@ -14,6 +14,7 @@
   import "moment/locale/en-gb";
   import Article from "$lib/components/Article.svelte";
   import type { Article as IArticle } from "$lib/interfaces/Article.interface";
+  import { onMount } from "svelte";
 
   export let socialMediaIconHeight: string = "2rem";
 
@@ -33,14 +34,19 @@
   $: totalPageNumber = Math.ceil(articles.length / ARTICLES_PER_PAGE);
   $: articlePages = `${currentPageNumber}/${totalPageNumber}`;
 
-  // If user has selected a language before, use that language
-  if (browser) {
-    const localStorageLanguage: string | null = localStorage.getItem("brannan.cloud-bioLang");
+  onMount(() => {
+    // If user has selected a language before, use that language.
+    if (browser) {
+      const localStorageLanguage: string | null = localStorage.getItem("brannan.cloud-bioLang");
 
-    if (localStorageLanguage) {
-      currentLang = localStorageLanguage as "es" | "en";
+      if (localStorageLanguage) {
+        currentLang = localStorageLanguage as "es" | "en";
+      }
     }
-  }
+
+    // Automatically move forward through articles every four seconds.
+    setInterval(articlesGoForward, 4000);
+  });
 
   // Changes the language setting of the site
   function changeLang(lang: "es" | "en") {

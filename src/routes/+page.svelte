@@ -4,7 +4,6 @@
   import OpenInNew from "svelte-material-icons/OpenInNew.svelte";
   import ArrowRight from "svelte-material-icons/ArrowRight.svelte";
   import ArrowLeft from "svelte-material-icons/ArrowLeft.svelte";
-  import Refresh from "svelte-material-icons/Refresh.svelte";
   import { version } from "$app/environment";
   import Directory from "$lib/components/Directory.svelte";
   import { browser } from "$app/environment";
@@ -19,11 +18,13 @@
   export let socialMediaIconHeight: string = "2rem";
 
   const ARTICLES_PER_PAGE = 3;
+  const ARTICLES_AUTO_SCROLL_RATE_MILLISECONDS = 3500;
 
   let currentLang: "es" | "en" = "en";
   let currentArticleIndex: number = 0;
   let viewedArticles = articles.slice(currentArticleIndex, ARTICLES_PER_PAGE);
   let isLastArrowClickedForward: boolean = false;
+  let autoScrollIntervalId: NodeJS.Timer | null;
 
   $: bio =
     currentLang === "es"
@@ -45,8 +46,43 @@
     }
 
     // Automatically move forward through articles every four seconds.
-    setInterval(articlesGoForward, 4000);
+    autoScrollIntervalId = setInterval(articlesGoForward, ARTICLES_AUTO_SCROLL_RATE_MILLISECONDS);
   });
+
+  // Handles toggling or manual assignment of auto scrolling articles.
+  // This function contains two functions for the sole purpose avoiding writing the same
+  // thing multiple times. This is not a complicated function, and imo shouldn't be broken
+  // out into two functions. This is much more readable, some folks on the internet really
+  // over-engineer things.
+  function handleAutoScrollToggle(options?: { override: boolean }) {
+    console.log(">>> handleAutoScrollToggle >>>");
+
+    function setTrue() {
+      autoScrollIntervalId = setInterval(articlesGoForward, ARTICLES_AUTO_SCROLL_RATE_MILLISECONDS);
+    }
+
+    function setFalse() {
+      if (autoScrollIntervalId) clearInterval(autoScrollIntervalId);
+      autoScrollIntervalId = null;
+    }
+
+    if (options) {
+      // Options provided, auto scroll will be set statically from options.override.
+      if (options.override) {
+        setTrue();
+      } else {
+        setFalse();
+      }
+    } else {
+      // Options not provided, auto scroll will be toggled.
+      if (autoScrollIntervalId) {
+        setFalse();
+      } else {
+        setTrue();
+        articlesGoForward(); // Go forward so there's a response immediately.
+      }
+    }
+  }
 
   // Changes the language setting of the site
   function changeLang(lang: "es" | "en") {
@@ -116,16 +152,44 @@
   </section>
 
   <section>
-    <h3 style="text-align: center; margin-bottom: 0;">Reading List</h3>
+    <div id="blog">
+      <div>
+        <input
+          type="checkbox"
+          id="article-automation-toggle"
+          checked={autoScrollIntervalId !== null}
+          on:click={() => {
+            handleAutoScrollToggle();
+          }}
+        />
+        <label for="article-automation-toggle">Auto Scroll</label>
+      </div>
 
-    <div id="blog-controls">
-      <button on:click={articlesGoBackward}>
-        <ArrowLeft />
-      </button>
-      <p>{articlePages}</p>
-      <button on:click={articlesGoForward}>
-        <ArrowRight />
-      </button>
+      <div id="blog-center">
+        <h3 style="text-align: center; margin-bottom: 0;">Reading List</h3>
+
+        <div id="blog-controls">
+          <button
+            on:click={() => {
+              articlesGoBackward();
+              handleAutoScrollToggle({ override: false });
+            }}
+          >
+            <ArrowLeft />
+          </button>
+          <p>{articlePages}</p>
+          <button
+            on:click={() => {
+              articlesGoForward();
+              handleAutoScrollToggle({ override: false });
+            }}
+          >
+            <ArrowRight />
+          </button>
+        </div>
+      </div>
+
+      <div />
     </div>
 
     <div id="blog-content">
@@ -209,6 +273,19 @@
         text-decoration: underline;
         color: $brand-secondary;
       }
+    }
+  }
+
+  #blog {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+
+    > div {
+      flex-grow: 1;
+      width: 100%;
     }
   }
 

@@ -24,6 +24,22 @@ const data: Array<Article> = [
     tags: ["productivity"],
     link: "https://dontasktoask.com/",
     readTime: "2 min"
+  },
+  {
+    slug: "css-section-separator-generator",
+    title: "An Awesome CSS Section Separator Generator",
+    date: "2022-08-29",
+    tags: ["css", "tools"],
+    link: "https://wweb.dev/resources/css-separator-generator",
+    readTime: "n/a"
+  },
+  {
+    slug: "cronjob-generator",
+    title: "Cronjob Generator",
+    date: "2021-10-10",
+    tags: ["tools"],
+    link: "https://crontab.cronhub.io/",
+    readTime: "n/a"
   }
 ];
 

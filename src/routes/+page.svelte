@@ -18,7 +18,7 @@
   export let socialMediaIconHeight: string = "2rem";
 
   const ARTICLES_PER_PAGE = 3;
-  const ARTICLES_AUTO_SCROLL_RATE_MILLISECONDS = 3500;
+  const ARTICLES_AUTO_SCROLL_RATE_MILLISECONDS = 4000;
 
   let currentLang: "es" | "en" = "en";
   let currentArticleIndex: number = 0;
@@ -55,8 +55,6 @@
   // out into two functions. This is much more readable, some folks on the internet really
   // over-engineer things.
   function handleAutoScrollToggle(options?: { override: boolean }) {
-    console.log(">>> handleAutoScrollToggle >>>");
-
     function setTrue() {
       autoScrollIntervalId = setInterval(articlesGoForward, ARTICLES_AUTO_SCROLL_RATE_MILLISECONDS);
     }

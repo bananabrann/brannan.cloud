@@ -2,13 +2,14 @@
   import GitHub from "svelte-material-icons/Github.svelte";
   import Discord from "svelte-material-icons/Discord.svelte";
   import OpenInNew from "svelte-material-icons/OpenInNew.svelte";
-  import Mastodon from "svelte-material-icons/Mastodon.svelte";
-  import BananamanLaying from "$lib/assets/png/bananaman-on-side.png";
+
+  import Wrench from "svelte-material-icons/Wrench.svelte";
+
   import { version } from "$app/environment";
   import { browser } from "$app/environment";
   import { onMount } from "svelte";
 
-  const socialMediaIconHeight = "1.25rem";
+  const socialMediaIconHeight = "100%";
   let currentLang = "en";
 
   $: bio =
@@ -40,56 +41,27 @@
 </script>
 
 <main>
-  <!-- <Bananaman /> -->
-  <img src={BananamanLaying} alt="" style="height: 210px;" />
-  <section>
-    <p id="lang-selection-container">
-      <!-- svelte-ignore a11y-click-events-have-key-events -->
-      <span on:click={() => changeLang("en")}>[en]</span>
-      <!-- svelte-ignore a11y-click-events-have-key-events -->
-      <span on:click={() => changeLang("es")}>[es]</span>
-    </p>
-    <p>
-      {bio}
-    </p>
-  </section>
-
-  <section id="directory">
-    <!-- <Directory /> -->
-    <a href="/">Homepage</a>
-
-    <a href="https://files.brannan.cloud" target="_blank"
-      >Files <small>(private)</small><OpenInNew />
-    </a>
-
-    <a href="https://tv.brannan.cloud" target="_blank">Grandma's TV<OpenInNew /></a>
-
-    <br />
-
-    <a href="https://discordapp.com/users/321317378862350346" target="_blank">
-      <Discord height={socialMediaIconHeight} width={socialMediaIconHeight} />Discord
+  <section id="social">
+    <a href="https://discordapp.com/users/321317378862350346" target="_self">
+      <Discord height={socialMediaIconHeight} width={socialMediaIconHeight} />
     </a>
     <a href="https://github.com/bananabrann" target="_self">
-      <GitHub height={socialMediaIconHeight} width={socialMediaIconHeight} />GitHub
+      <GitHub height={socialMediaIconHeight} width={socialMediaIconHeight} />
     </a>
-    <a href="" target="_self">
-      <Mastodon height={socialMediaIconHeight} width={socialMediaIconHeight} />Mastodon
+    <a href="/tools">
+      <Wrench height={socialMediaIconHeight} width={socialMediaIconHeight} />
     </a>
   </section>
 
-  <section>
-    <div id="legal">
-      <!-- prettier-ignore -->
-      <small>
-        <code>*.brannan.cloud</code> websites and systems by me.
-          <a
-            href="https://github.com/bananabrann/brannan.cloud/blob/main/LICENSE"
-            target="_blank">MIT license, 2023.<OpenInNew />
-          </a>
-        </small>
-      <small> Art assets by various artists. All rights reserved. </small>
-      <small> v{version} </small>
-    </div>
+  <section id="legal">
+    <p>
+      Web by @bananabrann,
+      <a href="https://github.com/bananabrann/brannan.cloud/blob/main/LICENSE" target="_blank"
+        >MIT license, 2023.<OpenInNew />
+      </a>
+    </p>
+    <p>Art assets by various artists, all rights reserved.</p>
+    <small> v{version} </small>
   </section>
 </main>
 
@@ -97,8 +69,7 @@
   $upper-width: 475px;
 
   main {
-    // margin: 0 auto;
-    padding-top: 2vh;
+    padding-top: 20vh;
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
@@ -111,23 +82,22 @@
     max-width: $upper-width;
   }
 
-  #directory {
+  #social {
     display: flex;
-    flex-flow: column nowrap;
-  }
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 2.5rem;
 
-  #lang-selection-container {
-    text-align: right;
-    gap: 0.5rem;
+    @media (orientation: portrait) {
+      gap: 15px;
+    }
 
-    span {
-      @include gentle-transition();
-      cursor: pointer;
+    a {
+      height: 100%;
+      width: 8.5vw;
 
-      &:hover {
-        @include gentle-transition();
-        text-decoration: underline;
-        color: $brand-secondary;
+      @media (orientation: portrait) {
+        width: 24vw;
       }
     }
   }
@@ -137,6 +107,11 @@
     flex-flow: column nowrap;
     gap: 0.1rem;
     align-items: center;
+
+    p {
+      margin: 0;
+      padding: 0 2px;
+    }
 
     > * {
       text-align: center;

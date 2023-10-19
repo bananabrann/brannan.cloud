@@ -2,59 +2,79 @@
   import GitHub from "svelte-material-icons/Github.svelte";
   import Discord from "svelte-material-icons/Discord.svelte";
   import OpenInNew from "svelte-material-icons/OpenInNew.svelte";
+  import Mastodon from "svelte-material-icons/Mastodon.svelte";
   import { version } from "$app/environment";
-  import Directory from "$lib/components/Directory.svelte";
   import { browser } from "$app/environment";
-
   import { onMount } from "svelte";
 
-  const socialMediaIconHeight = "2rem";
+  const socialMediaIconHeight = "1.25rem";
   let currentLang = "en";
 
   $: bio =
     currentLang === "es"
-      ? "Yo soy ingeniero de software, tubista, y un exmarino de los Estados Unidos."
-      : "Software engineer, tuba player, and prior U.S. Marine."; // English is default
+      ? "Yo soy ingeniero de software, tubista, y un exmarino de los Estados Unidos. A mí también estoy aprendiendo español, y siempre quiero usarlo cuando puedo."
+      : "I'm a software engineer, tuba player, and a prior U.S. Marine.";
 
   onMount(() => {
     // If user has selected a language before, use that language.
     if (browser) {
       const localStorageLanguage = localStorage.getItem("brannan.cloud-bioLang");
 
-      if (localStorageLanguage) {
-        currentLang = localStorageLanguage;
-      }
+      if (localStorageLanguage) currentLang = localStorageLanguage;
     }
   });
 
-  // Changes the language setting of the site
+  // Changes the language setting of the site, saving to localStorage.
+  // If some weird stuff happens, or it's the user's first time visiting the site, the
+  // site will default to English.
   function changeLang(lang) {
     if (lang === "es") {
       currentLang = "es";
-      localStorage.setItem("brannan.cloud-bioLang", currentLang);
     } else {
-      // English is default
       currentLang = "en";
-      localStorage.setItem("brannan.cloud-bioLang", currentLang);
     }
+
+    localStorage.setItem("brannan.cloud-bioLang", currentLang);
   }
 </script>
 
 <main>
+  <section>
+    <p id="lang-selection-container">
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <span on:click={() => changeLang("en")}>[en]</span>
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <span on:click={() => changeLang("es")}>[es]</span>
+    </p>
+    <p>
+      {bio}
+    </p>
+  </section>
+
   <section id="directory">
-    <Directory />
+    <!-- <Directory /> -->
+    <a href="/">Homepage</a>
+
+    <a href="https://files.brannan.cloud" target="_blank"
+      >Files <small>(private)</small><OpenInNew />
+    </a>
+
+    <a href="https://tv.brannan.cloud" target="_blank">Grandma's TV<OpenInNew /></a>
+
+    <br />
+
+    <a href="https://discordapp.com/users/321317378862350346" target="_blank">
+      <Discord height={socialMediaIconHeight} width={socialMediaIconHeight} />Discord
+    </a>
+    <a href="https://github.com/bananabrann" target="_self">
+      <GitHub height={socialMediaIconHeight} width={socialMediaIconHeight} />GitHub
+    </a>
+    <a href="" target="_self">
+      <Mastodon height={socialMediaIconHeight} width={socialMediaIconHeight} />Mastodon
+    </a>
   </section>
 
   <section>
-    <div id="social-media">
-      <a href="https://discordapp.com/users/321317378862350346" target="_blank">
-        <Discord height={socialMediaIconHeight} width={socialMediaIconHeight} />
-      </a>
-      <a href="https://github.com/bananabrann" target="_self">
-        <GitHub height={socialMediaIconHeight} width={socialMediaIconHeight} />
-      </a>
-    </div>
-
     <div id="legal">
       <!-- prettier-ignore -->
       <small>
@@ -71,10 +91,10 @@
 </main>
 
 <style lang="scss">
-  $upper-width: 400px;
+  $upper-width: 475px;
 
   main {
-    margin: 0 auto;
+    // margin: 0 auto;
     padding-top: 2vh;
     display: flex;
     flex-flow: column nowrap;
@@ -83,26 +103,18 @@
     gap: 1rem;
   }
 
-  #blog-controls {
+  section {
+    width: 100%;
+    max-width: $upper-width;
+  }
+
+  #directory {
     display: flex;
-    justify-content: center;
-    gap: 0.45rem;
-
-    button {
-      background-color: transparent;
-      border: none;
-      padding: 0.25rem;
-      cursor: pointer;
-      border-radius: 0.25rem;
-      color: $light;
-
-      &:hover {
-        background-color: rgba(112, 128, 144, 0.333);
-      }
-    }
+    flex-flow: column nowrap;
   }
 
   #lang-selection-container {
+    text-align: right;
     gap: 0.5rem;
 
     span {
@@ -117,50 +129,6 @@
     }
   }
 
-  #blog {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: flex-end;
-    width: 100%;
-
-    > div {
-      flex-grow: 1;
-      width: 100%;
-    }
-  }
-
-  #blog-content {
-    width: 80vw;
-    max-width: 960px;
-
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-
-    overflow-x: hidden;
-
-    @media (max-width: $small-screen-breakpoint) {
-      width: 95vw;
-      flex-wrap: wrap;
-    }
-  }
-
-  #bio {
-    width: 100%;
-    max-width: $upper-width;
-    * {
-      margin: 0;
-      max-width: 100%;
-    }
-  }
-
-  #directory {
-    width: 100%;
-    max-width: $upper-width;
-    display: flex;
-  }
-
   #legal {
     display: flex;
     flex-flow: column nowrap;
@@ -170,12 +138,5 @@
     > * {
       text-align: center;
     }
-  }
-
-  #social-media {
-    display: flex;
-    justify-content: center;
-    gap: 0.55rem;
-    margin-top: 1rem;
   }
 </style>

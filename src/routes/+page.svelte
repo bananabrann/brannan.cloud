@@ -1,205 +1,48 @@
-<script lang="ts">
+<script>
   import GitHub from "svelte-material-icons/Github.svelte";
   import Discord from "svelte-material-icons/Discord.svelte";
   import OpenInNew from "svelte-material-icons/OpenInNew.svelte";
-  import ArrowRight from "svelte-material-icons/ArrowRight.svelte";
-  import ArrowLeft from "svelte-material-icons/ArrowLeft.svelte";
   import { version } from "$app/environment";
   import Directory from "$lib/components/Directory.svelte";
   import { browser } from "$app/environment";
-  import articles from "$lib/articles";
-  import moment from "moment";
-  import "moment/locale/es";
-  import "moment/locale/en-gb";
-  import Article from "$lib/components/Article.svelte";
-  import type { Article as IArticle } from "$lib/interfaces/Article.interface";
+
   import { onMount } from "svelte";
 
-  export let socialMediaIconHeight: string = "2rem";
-
-  const ARTICLES_PER_PAGE = 3;
-  const ARTICLES_AUTO_SCROLL_RATE_MILLISECONDS = 4000;
-
-  let currentLang: "es" | "en" = "en";
-  let currentArticleIndex: number = 0;
-  let viewedArticles = articles.slice(currentArticleIndex, ARTICLES_PER_PAGE);
-  let isLastArrowClickedForward: boolean = false;
-  let autoScrollIntervalId: NodeJS.Timer | null;
+  const socialMediaIconHeight = "2rem";
+  let currentLang = "en";
 
   $: bio =
     currentLang === "es"
       ? "Yo soy ingeniero de software, tubista, y un exmarino de los Estados Unidos."
       : "Software engineer, tuba player, and prior U.S. Marine."; // English is default
 
-  $: currentPageNumber = Math.floor(currentArticleIndex / ARTICLES_PER_PAGE) + 1;
-  $: totalPageNumber = Math.ceil(articles.length / ARTICLES_PER_PAGE);
-  $: articlePages = `${currentPageNumber}/${totalPageNumber}`;
-
   onMount(() => {
     // If user has selected a language before, use that language.
     if (browser) {
-      const localStorageLanguage: string | null = localStorage.getItem("brannan.cloud-bioLang");
+      const localStorageLanguage = localStorage.getItem("brannan.cloud-bioLang");
 
       if (localStorageLanguage) {
-        currentLang = localStorageLanguage as "es" | "en";
+        currentLang = localStorageLanguage;
       }
     }
-
-    // Automatically move forward through articles every four seconds.
-    autoScrollIntervalId = setInterval(articlesGoForward, ARTICLES_AUTO_SCROLL_RATE_MILLISECONDS);
   });
 
-  // Handles toggling or manual assignment of auto scrolling articles.
-  // This function contains two functions for the sole purpose avoiding writing the same
-  // thing multiple times. This is not a complicated function, and imo shouldn't be broken
-  // out into two functions. This is much more readable, some folks on the internet really
-  // over-engineer things.
-  function handleAutoScrollToggle(options?: { override: boolean }) {
-    function setTrue() {
-      autoScrollIntervalId = setInterval(articlesGoForward, ARTICLES_AUTO_SCROLL_RATE_MILLISECONDS);
-    }
-
-    function setFalse() {
-      if (autoScrollIntervalId) clearInterval(autoScrollIntervalId);
-      autoScrollIntervalId = null;
-    }
-
-    if (options) {
-      // Options provided, auto scroll will be set statically from options.override.
-      if (options.override) {
-        setTrue();
-      } else {
-        setFalse();
-      }
-    } else {
-      // Options not provided, auto scroll will be toggled.
-      if (autoScrollIntervalId) {
-        setFalse();
-      } else {
-        setTrue();
-        articlesGoForward(); // Go forward so there's a response immediately.
-      }
-    }
-  }
-
   // Changes the language setting of the site
-  function changeLang(lang: "es" | "en") {
+  function changeLang(lang) {
     if (lang === "es") {
       currentLang = "es";
-      moment.locale("es");
       localStorage.setItem("brannan.cloud-bioLang", currentLang);
     } else {
       // English is default
       currentLang = "en";
-      moment.locale("en-gb");
-
       localStorage.setItem("brannan.cloud-bioLang", currentLang);
     }
-  }
-
-  function articlesGoForward() {
-    let newArticles: Array<IArticle>;
-    isLastArrowClickedForward = true;
-
-    // If the next chunk of articles starts out of bounds...
-    if (!articles[currentArticleIndex + ARTICLES_PER_PAGE]) {
-      // No need to worry about remainder, as .slice() won't return weird things. E.g.
-      // let articlesLeft = articles.length % ARTICLES_PER_PAGE
-      // We don't have to handle the excess articles here in JavaScript.
-      currentArticleIndex = 0;
-      newArticles = articles.slice(0, ARTICLES_PER_PAGE);
-    } else {
-      currentArticleIndex += ARTICLES_PER_PAGE;
-      newArticles = articles.slice(currentArticleIndex, currentArticleIndex + ARTICLES_PER_PAGE);
-    }
-
-    viewedArticles = newArticles;
-  }
-
-  function articlesGoBackward() {
-    let newArticles: Array<IArticle>;
-    isLastArrowClickedForward = false;
-
-    if (!articles[currentArticleIndex - ARTICLES_PER_PAGE]) {
-      currentArticleIndex = 0;
-      newArticles = articles.slice(0, ARTICLES_PER_PAGE);
-    } else {
-      currentArticleIndex -= ARTICLES_PER_PAGE;
-      newArticles = articles.slice(currentArticleIndex, ARTICLES_PER_PAGE);
-    }
-
-    viewedArticles = newArticles;
   }
 </script>
 
 <main>
-  <section id="bio">
-    <p id="lang-selection-container">
-      <!-- svelte-ignore a11y-click-events-have-key-events -->
-      <span on:click={() => changeLang("en")}>[en]</span>
-      <!-- svelte-ignore a11y-click-events-have-key-events -->
-      <span on:click={() => changeLang("es")}>[es]</span>
-    </p>
-    <p>
-      {bio}
-    </p>
-  </section>
-
   <section id="directory">
     <Directory />
-  </section>
-
-  <section>
-    <div id="blog">
-      <div>
-        <input
-          type="checkbox"
-          id="article-automation-toggle"
-          checked={autoScrollIntervalId !== null}
-          on:click={() => {
-            handleAutoScrollToggle();
-          }}
-        />
-        <label for="article-automation-toggle">Auto Scroll</label>
-      </div>
-
-      <div id="blog-center">
-        <h3 style="text-align: center; margin-bottom: 0;">Reading List</h3>
-
-        <div id="blog-controls">
-          <button
-            on:click={() => {
-              articlesGoBackward();
-              handleAutoScrollToggle({ override: false });
-            }}
-          >
-            <ArrowLeft />
-          </button>
-          <p>{articlePages}</p>
-          <button
-            on:click={() => {
-              articlesGoForward();
-              handleAutoScrollToggle({ override: false });
-            }}
-          >
-            <ArrowRight />
-          </button>
-        </div>
-      </div>
-
-      <div />
-    </div>
-
-    <div id="blog-content">
-      {#each viewedArticles as article (article.slug)}
-        <Article
-          fadeOpposite={!isLastArrowClickedForward}
-          data={{
-            ...article
-          }}
-        />
-      {/each}
-    </div>
   </section>
 
   <section>

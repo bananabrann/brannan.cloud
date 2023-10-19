@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import OpenInNew from "svelte-material-icons/OpenInNew.svelte";
 </script>
 

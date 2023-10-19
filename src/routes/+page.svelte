@@ -1,139 +1,48 @@
-<script lang="ts">
+<script>
   import GitHub from "svelte-material-icons/Github.svelte";
   import Discord from "svelte-material-icons/Discord.svelte";
   import OpenInNew from "svelte-material-icons/OpenInNew.svelte";
-  import ArrowRight from "svelte-material-icons/ArrowRight.svelte";
-  import ArrowLeft from "svelte-material-icons/ArrowLeft.svelte";
+  import Mastodon from "svelte-material-icons/Mastodon.svelte";
+  import BananamanLaying from "$lib/assets/png/bananaman-on-side.png";
   import { version } from "$app/environment";
-  import Directory from "$lib/components/Directory.svelte";
   import { browser } from "$app/environment";
-  import articles from "$lib/articles";
-  import moment from "moment";
-  import "moment/locale/es";
-  import "moment/locale/en-gb";
-  import Article from "$lib/components/Article.svelte";
-  import type { Article as IArticle } from "$lib/interfaces/Article.interface";
   import { onMount } from "svelte";
 
-  export let socialMediaIconHeight: string = "2rem";
-
-  const ARTICLES_PER_PAGE = 3;
-  const ARTICLES_AUTO_SCROLL_RATE_MILLISECONDS = 4000;
-
-  let currentLang: "es" | "en" = "en";
-  let currentArticleIndex: number = 0;
-  let viewedArticles = articles.slice(currentArticleIndex, ARTICLES_PER_PAGE);
-  let isLastArrowClickedForward: boolean = false;
-  let autoScrollIntervalId: NodeJS.Timer | null;
+  const socialMediaIconHeight = "1.25rem";
+  let currentLang = "en";
 
   $: bio =
     currentLang === "es"
-      ? "Yo soy ingeniero de software, tubista, y un exmarino de los Estados Unidos."
-      : "Software engineer, tuba player, and prior U.S. Marine."; // English is default
-
-  $: currentPageNumber = Math.floor(currentArticleIndex / ARTICLES_PER_PAGE) + 1;
-  $: totalPageNumber = Math.ceil(articles.length / ARTICLES_PER_PAGE);
-  $: articlePages = `${currentPageNumber}/${totalPageNumber}`;
+      ? "Yo soy ingeniero de software, tubista, y un exmarino de los Estados Unidos. A mí también estoy aprendiendo español, y siempre quiero usarlo cuando puedo."
+      : "I'm a software engineer, tuba player, and a prior U.S. Marine.";
 
   onMount(() => {
     // If user has selected a language before, use that language.
     if (browser) {
-      const localStorageLanguage: string | null = localStorage.getItem("brannan.cloud-bioLang");
+      const localStorageLanguage = localStorage.getItem("brannan.cloud-bioLang");
 
-      if (localStorageLanguage) {
-        currentLang = localStorageLanguage as "es" | "en";
-      }
+      if (localStorageLanguage) currentLang = localStorageLanguage;
     }
-
-    // Automatically move forward through articles every four seconds.
-    autoScrollIntervalId = setInterval(articlesGoForward, ARTICLES_AUTO_SCROLL_RATE_MILLISECONDS);
   });
 
-  // Handles toggling or manual assignment of auto scrolling articles.
-  // This function contains two functions for the sole purpose avoiding writing the same
-  // thing multiple times. This is not a complicated function, and imo shouldn't be broken
-  // out into two functions. This is much more readable, some folks on the internet really
-  // over-engineer things.
-  function handleAutoScrollToggle(options?: { override: boolean }) {
-    function setTrue() {
-      autoScrollIntervalId = setInterval(articlesGoForward, ARTICLES_AUTO_SCROLL_RATE_MILLISECONDS);
-    }
-
-    function setFalse() {
-      if (autoScrollIntervalId) clearInterval(autoScrollIntervalId);
-      autoScrollIntervalId = null;
-    }
-
-    if (options) {
-      // Options provided, auto scroll will be set statically from options.override.
-      if (options.override) {
-        setTrue();
-      } else {
-        setFalse();
-      }
-    } else {
-      // Options not provided, auto scroll will be toggled.
-      if (autoScrollIntervalId) {
-        setFalse();
-      } else {
-        setTrue();
-        articlesGoForward(); // Go forward so there's a response immediately.
-      }
-    }
-  }
-
-  // Changes the language setting of the site
-  function changeLang(lang: "es" | "en") {
+  // Changes the language setting of the site, saving to localStorage.
+  // If some weird stuff happens, or it's the user's first time visiting the site, the
+  // site will default to English.
+  function changeLang(lang) {
     if (lang === "es") {
       currentLang = "es";
-      moment.locale("es");
-      localStorage.setItem("brannan.cloud-bioLang", currentLang);
     } else {
-      // English is default
       currentLang = "en";
-      moment.locale("en-gb");
-
-      localStorage.setItem("brannan.cloud-bioLang", currentLang);
-    }
-  }
-
-  function articlesGoForward() {
-    let newArticles: Array<IArticle>;
-    isLastArrowClickedForward = true;
-
-    // If the next chunk of articles starts out of bounds...
-    if (!articles[currentArticleIndex + ARTICLES_PER_PAGE]) {
-      // No need to worry about remainder, as .slice() won't return weird things. E.g.
-      // let articlesLeft = articles.length % ARTICLES_PER_PAGE
-      // We don't have to handle the excess articles here in JavaScript.
-      currentArticleIndex = 0;
-      newArticles = articles.slice(0, ARTICLES_PER_PAGE);
-    } else {
-      currentArticleIndex += ARTICLES_PER_PAGE;
-      newArticles = articles.slice(currentArticleIndex, currentArticleIndex + ARTICLES_PER_PAGE);
     }
 
-    viewedArticles = newArticles;
-  }
-
-  function articlesGoBackward() {
-    let newArticles: Array<IArticle>;
-    isLastArrowClickedForward = false;
-
-    if (!articles[currentArticleIndex - ARTICLES_PER_PAGE]) {
-      currentArticleIndex = 0;
-      newArticles = articles.slice(0, ARTICLES_PER_PAGE);
-    } else {
-      currentArticleIndex -= ARTICLES_PER_PAGE;
-      newArticles = articles.slice(currentArticleIndex, ARTICLES_PER_PAGE);
-    }
-
-    viewedArticles = newArticles;
+    localStorage.setItem("brannan.cloud-bioLang", currentLang);
   }
 </script>
 
 <main>
-  <section id="bio">
+  <!-- <Bananaman /> -->
+  <img src={BananamanLaying} alt="" style="height: 210px;" />
+  <section>
     <p id="lang-selection-container">
       <!-- svelte-ignore a11y-click-events-have-key-events -->
       <span on:click={() => changeLang("en")}>[en]</span>
@@ -146,72 +55,29 @@
   </section>
 
   <section id="directory">
-    <Directory />
+    <!-- <Directory /> -->
+    <a href="/">Homepage</a>
+
+    <a href="https://files.brannan.cloud" target="_blank"
+      >Files <small>(private)</small><OpenInNew />
+    </a>
+
+    <a href="https://tv.brannan.cloud" target="_blank">Grandma's TV<OpenInNew /></a>
+
+    <br />
+
+    <a href="https://discordapp.com/users/321317378862350346" target="_blank">
+      <Discord height={socialMediaIconHeight} width={socialMediaIconHeight} />Discord
+    </a>
+    <a href="https://github.com/bananabrann" target="_self">
+      <GitHub height={socialMediaIconHeight} width={socialMediaIconHeight} />GitHub
+    </a>
+    <a href="" target="_self">
+      <Mastodon height={socialMediaIconHeight} width={socialMediaIconHeight} />Mastodon
+    </a>
   </section>
 
   <section>
-    <div id="blog">
-      <div>
-        <input
-          type="checkbox"
-          id="article-automation-toggle"
-          checked={autoScrollIntervalId !== null}
-          on:click={() => {
-            handleAutoScrollToggle();
-          }}
-        />
-        <label for="article-automation-toggle">Auto Scroll</label>
-      </div>
-
-      <div id="blog-center">
-        <h3 style="text-align: center; margin-bottom: 0;">Reading List</h3>
-
-        <div id="blog-controls">
-          <button
-            on:click={() => {
-              articlesGoBackward();
-              handleAutoScrollToggle({ override: false });
-            }}
-          >
-            <ArrowLeft />
-          </button>
-          <p>{articlePages}</p>
-          <button
-            on:click={() => {
-              articlesGoForward();
-              handleAutoScrollToggle({ override: false });
-            }}
-          >
-            <ArrowRight />
-          </button>
-        </div>
-      </div>
-
-      <div />
-    </div>
-
-    <div id="blog-content">
-      {#each viewedArticles as article (article.slug)}
-        <Article
-          fadeOpposite={!isLastArrowClickedForward}
-          data={{
-            ...article
-          }}
-        />
-      {/each}
-    </div>
-  </section>
-
-  <section>
-    <div id="social-media">
-      <a href="https://discordapp.com/users/321317378862350346" target="_blank">
-        <Discord height={socialMediaIconHeight} width={socialMediaIconHeight} />
-      </a>
-      <a href="https://github.com/bananabrann" target="_self">
-        <GitHub height={socialMediaIconHeight} width={socialMediaIconHeight} />
-      </a>
-    </div>
-
     <div id="legal">
       <!-- prettier-ignore -->
       <small>
@@ -228,10 +94,10 @@
 </main>
 
 <style lang="scss">
-  $upper-width: 400px;
+  $upper-width: 475px;
 
   main {
-    margin: 0 auto;
+    // margin: 0 auto;
     padding-top: 2vh;
     display: flex;
     flex-flow: column nowrap;
@@ -240,26 +106,18 @@
     gap: 1rem;
   }
 
-  #blog-controls {
+  section {
+    width: 100%;
+    max-width: $upper-width;
+  }
+
+  #directory {
     display: flex;
-    justify-content: center;
-    gap: 0.45rem;
-
-    button {
-      background-color: transparent;
-      border: none;
-      padding: 0.25rem;
-      cursor: pointer;
-      border-radius: 0.25rem;
-      color: $light;
-
-      &:hover {
-        background-color: rgba(112, 128, 144, 0.333);
-      }
-    }
+    flex-flow: column nowrap;
   }
 
   #lang-selection-container {
+    text-align: right;
     gap: 0.5rem;
 
     span {
@@ -274,50 +132,6 @@
     }
   }
 
-  #blog {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: flex-end;
-    width: 100%;
-
-    > div {
-      flex-grow: 1;
-      width: 100%;
-    }
-  }
-
-  #blog-content {
-    width: 80vw;
-    max-width: 960px;
-
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-
-    overflow-x: hidden;
-
-    @media (max-width: $small-screen-breakpoint) {
-      width: 95vw;
-      flex-wrap: wrap;
-    }
-  }
-
-  #bio {
-    width: 100%;
-    max-width: $upper-width;
-    * {
-      margin: 0;
-      max-width: 100%;
-    }
-  }
-
-  #directory {
-    width: 100%;
-    max-width: $upper-width;
-    display: flex;
-  }
-
   #legal {
     display: flex;
     flex-flow: column nowrap;
@@ -327,12 +141,5 @@
     > * {
       text-align: center;
     }
-  }
-
-  #social-media {
-    display: flex;
-    justify-content: center;
-    gap: 0.55rem;
-    margin-top: 1rem;
   }
 </style>

@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import "../app.scss";
   import Clouds1 from "$lib/assets/svg/clouds1.svg.svelte";
   import Clouds2 from "$lib/assets/svg/clouds2.svg.svelte";

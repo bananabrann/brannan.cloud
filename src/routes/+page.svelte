@@ -3,6 +3,7 @@
   import Discord from "svelte-material-icons/Discord.svelte";
   import OpenInNew from "svelte-material-icons/OpenInNew.svelte";
   import Mastodon from "svelte-material-icons/Mastodon.svelte";
+  import BananamanLaying from "$lib/assets/png/bananaman-on-side.png";
   import { version } from "$app/environment";
   import { browser } from "$app/environment";
   import { onMount } from "svelte";
@@ -39,6 +40,8 @@
 </script>
 
 <main>
+  <!-- <Bananaman /> -->
+  <img src={BananamanLaying} alt="" style="height: 210px;">
   <section>
     <p id="lang-selection-container">
       <!-- svelte-ignore a11y-click-events-have-key-events -->

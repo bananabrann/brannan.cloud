@@ -41,7 +41,7 @@
 
 <main>
   <!-- <Bananaman /> -->
-  <img src={BananamanLaying} alt="" style="height: 210px;">
+  <img src={BananamanLaying} alt="" style="height: 210px;" />
   <section>
     <p id="lang-selection-container">
       <!-- svelte-ignore a11y-click-events-have-key-events -->

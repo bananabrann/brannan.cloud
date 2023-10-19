@@ -1,7 +1,4 @@
 {
   "prettier.prettierPath": "./node_modules/prettier",
-  "cSpell.words": [
-    "Bananaman",
-    "brannan"
-  ]
+  "cSpell.words": ["Bananaman", "brannan"]
 }

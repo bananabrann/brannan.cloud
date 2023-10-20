@@ -14,9 +14,9 @@
   <link rel="stylesheet" href="https://use.typekit.net/xtr6jqc.css" />
 </head>
 
-<main>
+<content>
   <slot />
-</main>
+</content>
 
 <div id="cloud-board">
   <div class="cloud-row">
@@ -55,7 +55,7 @@
   @use "../variables.scss";
   @use "sass:math";
 
-  main {
+  content {
     margin: auto 1rem;
   }
 
@@ -78,7 +78,8 @@
       display: flex;
       position: fixed;
       bottom: 0;
-      width: 200%;
+      width: 400%;
+      height: 80vh;
     }
     .cloud {
       width: 100%;

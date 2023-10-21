@@ -79,7 +79,9 @@
       position: fixed;
       bottom: 0;
       width: 400%;
-      height: 80vh;
+      @media screen and (orientation: portrait) {
+        width: 680%;
+      }
     }
     .cloud {
       width: 100%;

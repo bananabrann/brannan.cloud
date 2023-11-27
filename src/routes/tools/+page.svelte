@@ -76,14 +76,24 @@
     display: flex;
     flex-direction: column;
     align-items: space-around;
+    border-radius: 12px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
     background-image: linear-gradient(
       to bottom,
       rgba($gradient-pink, 0.25),
       rgba($gradient-grey, 0.25)
     );
-    border-radius: 12px;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+
+    // If the browser supports it, give it a fancy blur. If no support available,
+    // default to the background-image linear-gradient.
+    @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+      backdrop-filter: blur(8px);
+    }
+
+    // Give a little bit of margin when screen width is small.
+    @media (max-width: 830px) {
+      margin: 0 14px;
+    }
   }
 
   article {
@@ -95,6 +105,10 @@
     > * {
       flex-basis: 0;
       flex-grow: 1;
+    }
+
+    h3 {
+      word-break: break-word;
     }
   }
 </style>

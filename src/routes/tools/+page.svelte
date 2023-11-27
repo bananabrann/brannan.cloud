@@ -1,3 +1,7 @@
+<script>
+  import TagOutline from "svelte-material-icons/TagOutline.svelte";
+</script>
+
 <section>
   <article>
     <a href="/">
@@ -27,10 +31,28 @@
   </article>
 
   <article>
+    <a href="https://careers.state.gov"><h3>vsfs.state.gov<TagOutline width={"25px"} /></h3></a>
+    <p>
+      The Virtual Student Federal Services is a site that allows interns to browse and apply to
+      remote internships. <br /> In 2022, vsfs.state.gov was absorbed by careers.state.gov.
+    </p>
+  </article>
+
+  <article>
     <h3>debbie</h3>
     <p>
       Debbie the Decibel Robot, a simple robot that detects sounds around it, then calculates and
       displays the decibels.
+    </p>
+  </article>
+
+  <article>
+    <a href="https://github.com/geoffrich/svelte-adapter-azure-swa">
+      <h3>geoffrich/svelte-adapter-azure-swa</h3></a
+    >
+    <p>
+      SvelteKit adapter for Azure Static Web Apps. I've only contributed a few lines, but I love the
+      work they're doing on this repo.
     </p>
   </article>
 </section>

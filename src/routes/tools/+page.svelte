@@ -25,6 +25,14 @@
       watch. Also has a chatbot tailored to telling her what shows are on what streaming service.
     </p>
   </article>
+
+  <article>
+    <h3>debbie</h3>
+    <p>
+      Debbie the Decibel Robot, a simple robot that detects sounds around it, then calculates and
+      displays the decibels.
+    </p>
+  </article>
 </section>
 
 <style lang="scss">

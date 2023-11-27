@@ -41,8 +41,8 @@
   <article>
     <h3>tims</h3>
     <p>
-      Backend system for <a href="https://www.state.gov/tias/">state.gov/tias</a>, a place where treaties
-      and agreements of the United States are publicly available.
+      Backend system for <a href="https://www.state.gov/tias/">state.gov/tias</a>, a place where
+      treaties and agreements of the United States are publicly available.
     </p>
   </article>
 
@@ -66,14 +66,24 @@
 </section>
 
 <style lang="scss">
+  $gradient-pink: rgb(148, 54, 87);
+  $gradient-grey: rgb(90, 90, 90);
+
   section {
-    // margin: auto 4rem;
     margin: 0 auto;
     max-width: 850px;
-    padding: 8px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: space-around;
+    background-image: linear-gradient(
+      to bottom,
+      rgba($gradient-pink, 0.25),
+      rgba($gradient-grey, 0.25)
+    );
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
   }
 
   article {

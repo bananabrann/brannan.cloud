@@ -33,8 +33,16 @@
   <article>
     <a href="https://careers.state.gov"><h3>vsfs.state.gov<TagOutline width={"25px"} /></h3></a>
     <p>
-      The Virtual Student Federal Services is a site that allows interns to browse and apply to
-      remote internships. <br /> In 2022, vsfs.state.gov was absorbed by careers.state.gov.
+      Remote internship application site. College students browse and apply to internships posted by
+      project mentors.<br /> In 2022, vsfs.state.gov was absorbed by careers.state.gov.
+    </p>
+  </article>
+
+  <article>
+    <h3>tims</h3>
+    <p>
+      Backend system for <a href="https://www.state.gov/tias/">state.gov/tias</a>, a place where treaties
+      and agreements of the United States are publicly available.
     </p>
   </article>
 

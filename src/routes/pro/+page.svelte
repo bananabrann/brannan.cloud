@@ -4,6 +4,7 @@
   import FileAccount from "svelte-material-icons/FileAccount.svelte";
   import GitHub from "svelte-material-icons/Github.svelte";
   import Discord from "svelte-material-icons/Discord.svelte";
+  import LinkedIn from "svelte-material-icons/Linkedin.svelte";
 </script>
 
 <main>
@@ -24,6 +25,9 @@
 
   <h1>Socials</h1>
 
+  <a class="button" href="https://linkedin.com/in/pbrann" target="_blank">
+    <LinkedIn /> LinkedIn
+  </a>
   <a class="button" href="https://github.com/bananabrann" target="_blank">
     <GitHub /> GitHub
   </a>

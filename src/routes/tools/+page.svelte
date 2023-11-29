@@ -3,14 +3,14 @@
 </script>
 
 <section>
-  <article>
+  <article class="alt1">
     <a href="/">
       <h3>brannan.cloud</h3>
     </a>
     <p>Root website.</p>
   </article>
 
-  <article>
+  <article class="alt2">
     <a href="https://files.brannan.cloud">
       <h3>files.brannan.cloud</h3>
     </a>
@@ -20,7 +20,7 @@
     </p>
   </article>
 
-  <article>
+  <article class="alt1">
     <a href="https://tv.brannan.cloud" target="_self">
       <h3>tv.brannan.cloud</h3>
     </a>
@@ -30,7 +30,7 @@
     </p>
   </article>
 
-  <article>
+  <article class="alt2">
     <a href="https://careers.state.gov"><h3>vsfs.state.gov<TagOutline width={"25px"} /></h3></a>
     <p>
       Remote internship application site. College students browse and apply to internships posted by
@@ -38,7 +38,7 @@
     </p>
   </article>
 
-  <article>
+  <article class="alt1">
     <h3>tims</h3>
     <p>
       Backend system for <a href="https://www.state.gov/tias/">state.gov/tias</a>, a place where
@@ -46,7 +46,7 @@
     </p>
   </article>
 
-  <article>
+  <article class="alt2">
     <h3>debbie</h3>
     <p>
       Debbie the Decibel Robot, a simple robot that detects sounds around it, then calculates and
@@ -54,7 +54,7 @@
     </p>
   </article>
 
-  <article>
+  <article class="alt1">
     <a href="https://github.com/geoffrich/svelte-adapter-azure-swa">
       <h3>geoffrich/svelte-adapter-azure-swa</h3></a
     >
@@ -110,5 +110,15 @@
     h3 {
       word-break: break-word;
     }
+  }
+
+  .alt1 {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 10px;
+  }
+
+  .alt2 {
+    padding: 0 10px;
   }
 </style>

@@ -13,22 +13,22 @@
   <a class="button" href="/works">
     <ListBox /> See Projects
   </a>
-  <a class="button" href="https://files.brannan.cloud/docs/itil4.pdf" target="_blank">
+  <a class="button" href="https://files.brannan.cloud/docs/itil4.pdf" target="_self">
     <SealVariant /> ITIL Certificate
   </a>
-  <a class="button" href="https://files.brannan.cloud/docs/az-204.png" target="_blank">
+  <a class="button" href="https://files.brannan.cloud/docs/az-204.png" target="_self">
     <SealVariant /> AZ-204 Certificate
   </a>
-  <a class="button" href="https://files.brannan.cloud/docs/resume.pdf" target="_blank">
+  <a class="button" href="https://files.brannan.cloud/docs/resume.pdf" target="_self">
     <FileAccount /> Resume
   </a>
 
   <h1>Socials</h1>
 
-  <a class="button" href="https://linkedin.com/in/pbrann" target="_blank">
+  <a class="button" href="https://linkedin.com/in/pbrann" target="_self">
     <LinkedIn /> LinkedIn
   </a>
-  <a class="button" href="https://github.com/bananabrann" target="_blank">
+  <a class="button" href="https://github.com/bananabrann" target="_self">
     <GitHub /> GitHub
   </a>
   <a class="button" href="https://discordapp.com/users/321317378862350346" target="_self">

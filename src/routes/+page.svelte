@@ -48,7 +48,7 @@
     <a href="https://github.com/bananabrann" target="_self">
       <GitHub height={socialMediaIconHeight} width={socialMediaIconHeight} />
     </a>
-    <a href="/tools">
+    <a href="/works">
       <Wrench height={socialMediaIconHeight} width={socialMediaIconHeight} />
     </a>
   </section>

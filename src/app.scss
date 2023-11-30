@@ -32,6 +32,10 @@ small {
   font-size: 0.75em;
 }
 
+h1 {
+  margin-bottom: 10px;
+}
+
 a {
   @include gentle-transition();
   text-decoration: underline;

@@ -36,21 +36,24 @@
   </a>
 </main>
 
-<style>
+<style lang="scss">
+  $button-max-width: 16rem;
+
   main {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    /* height: 100vh; */
+    padding: 0 1rem;
   }
 
   a.button {
-    width: 16rem;
+    width: 100%;
+    max-width: 16rem;
 
     &:hover {
-      width: 17rem;
+      max-width: calc($button-max-width + 1rem);
     }
   }
 </style>

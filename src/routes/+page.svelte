@@ -1,9 +1,9 @@
 <script>
+  import Chat from "svelte-material-icons/Chat.svelte";
   import GitHub from "svelte-material-icons/Github.svelte";
   import Discord from "svelte-material-icons/Discord.svelte";
   import OpenInNew from "svelte-material-icons/OpenInNew.svelte";
-
-  import Wrench from "svelte-material-icons/Wrench.svelte";
+  import WorksIcon from "svelte-material-icons/ListBox.svelte";
 
   import { version } from "$app/environment";
   import { browser } from "$app/environment";
@@ -42,14 +42,17 @@
 
 <main>
   <section id="social">
+    <a href="http://20.64.87.75" target="_self">
+      <Chat height={socialMediaIconHeight} width={socialMediaIconHeight} />
+    </a>
+    <a href="/works">
+      <WorksIcon height={socialMediaIconHeight} width={socialMediaIconHeight} />
+    </a>
     <a href="https://discordapp.com/users/321317378862350346" target="_self">
       <Discord height={socialMediaIconHeight} width={socialMediaIconHeight} />
     </a>
     <a href="https://github.com/bananabrann" target="_self">
       <GitHub height={socialMediaIconHeight} width={socialMediaIconHeight} />
-    </a>
-    <a href="/works">
-      <Wrench height={socialMediaIconHeight} width={socialMediaIconHeight} />
     </a>
   </section>
 

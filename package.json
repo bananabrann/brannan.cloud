@@ -1,6 +1,6 @@
 {
   "name": "brannan.cloud",
-  "version": "2.0.16",
+  "version": "2.0.17",
   "private": true,
   "scripts": {
     "dev": "vite dev",
@@ -10,12 +10,12 @@
     "format": "prettier --plugin-search-dir . --write ."
   },
   "devDependencies": {
+    "@sveltejs/adapter-vercel": "^3.1.0",
     "@sveltejs/kit": "^1.5.0",
     "prettier": "^2.8.0",
     "prettier-plugin-svelte": "^2.8.1",
     "sass": "^1.62.0",
     "svelte": "^3.54.0",
-    "svelte-adapter-azure-swa": "^0.16.0",
     "svelte-check": "^3.0.1",
     "svelte-preprocess": "^5.0.4",
     "vite": "^4.3.0",

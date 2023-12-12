@@ -21,8 +21,8 @@
    */
   export let data = {
     streamed: {
-      isTvOnline: Promise.resolve("loading"),
-      isChatOnline: Promise.resolve("loading")
+      isTvOnline: "loading",
+      isChatOnline: "loading",
     }
   };
 

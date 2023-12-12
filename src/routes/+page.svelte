@@ -89,6 +89,15 @@
             <TVIcon />
             <span style="padding-left: 2px;">Grandma's TV</span>
           </a>
+          <div>
+            {#await data.streamed.isTvOnline}
+              <WebStatusBadge status="loading" />
+            {:then isTvOnline}
+              <WebStatusBadge status={isTvOnline ? "up" : "down"} />
+            {:catch error}
+              <WebStatusBadge status="error" />
+            {/await}
+          </div>
 
           <a href="http://20.64.87.75/" class="button" style="margin-bottom: 0.5em;">
             <Chat />

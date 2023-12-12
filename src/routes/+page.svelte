@@ -1,4 +1,7 @@
 <script>
+  import { version } from "$app/environment";
+  import { browser } from "$app/environment";
+  import { onMount } from "svelte";
   import Chat from "svelte-material-icons/Chat.svelte";
   import FilesIcon from "svelte-material-icons/CloudUpload.svelte";
   import GitHub from "svelte-material-icons/Github.svelte";
@@ -6,10 +9,9 @@
   import TVIcon from "svelte-material-icons/TelevisionClassic.svelte";
   import OpenInNew from "svelte-material-icons/OpenInNew.svelte";
   import ListBox from "svelte-material-icons/ListBox.svelte";
+  import WebStatusBadge from "../lib/components/WebStatusBadge/WebStatusBadge.svelte";
 
-  import { version } from "$app/environment";
-  import { browser } from "$app/environment";
-  import { onMount } from "svelte";
+  export let data;
 
   const socialMediaIconHeight = "40px";
   let currentLang = "en";
@@ -92,6 +94,15 @@
             <Chat />
             <span style="padding-left: 2px;">LibreChat</span>
           </a>
+          <div>
+            {#await data.streamed.isChatOnline}
+              <WebStatusBadge status="loading" />
+            {:then isChatOnline}
+              <WebStatusBadge status={isChatOnline ? "up" : "down"} />
+            {:catch error}
+              <WebStatusBadge status="error" />
+            {/await}
+          </div>
         </div>
       </div>
       <div>

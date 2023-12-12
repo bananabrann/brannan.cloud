@@ -12,10 +12,8 @@ body {
   @include sky-gradient();
   background-attachment: fixed;
   @include basic-font();
-  font-family: "basic-sans", sans-serif;
-  font-weight: 400;
   font-style: normal;
-  min-height: 100vh;
+  // min-height: 100vh;
   color: $light;
   margin: 0;
 }
@@ -34,6 +32,9 @@ small {
 
 h1 {
   margin-bottom: 10px;
+  font-size: 1.75em;
+  font-weight: 400;
+  font-family: "Bookmania", serif;
 }
 
 a {
@@ -91,4 +92,11 @@ a {
 button,
 .button {
   @include button();
+
+  &.disabled {
+    background-color: #bfbfbf;
+    color: #a6a6a6;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
 }

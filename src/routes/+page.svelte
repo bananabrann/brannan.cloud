@@ -1,15 +1,17 @@
 <script>
   import Chat from "svelte-material-icons/Chat.svelte";
+  import FilesIcon from "svelte-material-icons/CloudUpload.svelte";
   import GitHub from "svelte-material-icons/Github.svelte";
   import Discord from "svelte-material-icons/Discord.svelte";
+  import TVIcon from "svelte-material-icons/TelevisionClassic.svelte";
   import OpenInNew from "svelte-material-icons/OpenInNew.svelte";
-  import WorksIcon from "svelte-material-icons/ListBox.svelte";
+  import ListBox from "svelte-material-icons/ListBox.svelte";
 
   import { version } from "$app/environment";
   import { browser } from "$app/environment";
   import { onMount } from "svelte";
 
-  const socialMediaIconHeight = "100%";
+  const socialMediaIconHeight = "40px";
   let currentLang = "en";
 
   $: bio =
@@ -41,22 +43,92 @@
 </script>
 
 <main>
-  <section id="social">
-    <a href="http://20.64.87.75" target="_self">
-      <Chat height={socialMediaIconHeight} width={socialMediaIconHeight} />
-    </a>
-    <a href="/works">
-      <WorksIcon height={socialMediaIconHeight} width={socialMediaIconHeight} />
-    </a>
-    <a href="https://discordapp.com/users/321317378862350346" target="_self">
-      <Discord height={socialMediaIconHeight} width={socialMediaIconHeight} />
-    </a>
-    <a href="https://github.com/bananabrann" target="_self">
-      <GitHub height={socialMediaIconHeight} width={socialMediaIconHeight} />
-    </a>
-  </section>
+  <article>
+    <!-- 
+      <section style="flex: 3">
+        <h1>Hello!</h1>
+        <p style="text-indent: 40px;">
+          My name is Lee. I'm a software engineer, tuba player, and prior U.S. Marine. I was born and
+          raised in the rural shrublands of West Texas. After high school, I enlisted in the U.S.
+          Marine Corps. I traveled the world playing tuba, performing for foreign dignitaries and
+          presidential audiences at home and abroad. The Marines gave me the launching pad for my life
+          --I would do it again in a heartbeat. However, staying for a career wasn't for me.
+        </p>
+        
+        <p>
+          <span style="text-indent: 40px;" />After leaving the Marines, I attended a coding bootcamp
+          in Washington, DC. I made a bunch of websites, built a simple listening robot named Decibel
+          Debbie, and passed all my exams. From there, I was hired and begun my journey as a software
+          developer.
+        </p>
+        <p>
+          Most of my career has been web development with JavaScript, but I've dabbled in other tech,
+        especially in my early career. For the past several years, I've been on teams building and
+        maintaining core component libraries with Power Fx and creating and maintaining NodeJS
+        websites.
+      </p>
+      
+      <p>I still play tuba, and really love gardening and aquascaping.</p>
+    </section>
+    -->
 
-  <section id="legal">
+    <!-- <section class="vertical-separator" /> -->
+
+    <section style="flex: 2">
+      <div>
+        <h1>Apps & Services</h1>
+        <div class="link-button-container">
+          <a href="https://files.brannan.cloud" class="button" style="margin-bottom: 0.5em;">
+            <FilesIcon />
+            <span style="padding-left: 2px;">Files <small>(private)</small></span>
+          </a>
+
+          <a href="https://tv.brannan.cloud" class="button" style="margin-bottom: 0.5em;">
+            <TVIcon />
+            <span style="padding-left: 2px;">Grandma's TV</span>
+          </a>
+
+          <a href="http://20.64.87.75/" class="button" style="margin-bottom: 0.5em;">
+            <Chat />
+            <span style="padding-left: 2px;">LibreChat</span>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h1>Links</h1>
+
+        <a class="button" href="/works" style="margin-bottom: 0.5em;">
+          <ListBox /> See Projects
+        </a>
+        <!-- svelte-ignore a11y-missing-attribute -->
+        <a class="button disabled" style="margin-bottom: 0.5em;">
+          <span>Skills</span>
+        </a>
+        <!-- svelte-ignore a11y-missing-attribute -->
+        <a class="button disabled" style="margin-bottom: 0.5em;">
+          <span>Documents</span>
+        </a>
+        <a
+          class="button"
+          href="https://github.com/bananabrann"
+          target="_self"
+          style="margin-bottom: 0.5em;"
+        >
+          <GitHub /> GitHub
+        </a>
+        <a
+          class="button"
+          href="https://discordapp.com/users/321317378862350346"
+          target="_self"
+          style="margin-bottom: 0.5em;"
+        >
+          <Discord /> Discord
+        </a>
+      </div>
+    </section>
+  </article>
+
+  <footer>
     <p>
       Web by @bananabrann,
       <a href="https://github.com/bananabrann/brannan.cloud/blob/main/LICENSE" target="_blank"
@@ -65,14 +137,17 @@
     </p>
     <p>Art assets by various artists, all rights reserved.</p>
     <small> v{version} </small>
-  </section>
+  </footer>
 </main>
 
 <style lang="scss">
-  $upper-width: 475px;
+  $upper-width: 350px;
+
+  h1 {
+    text-align: center;
+  }
 
   main {
-    padding-top: 20vh;
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
@@ -80,32 +155,21 @@
     gap: 1rem;
   }
 
-  section {
-    width: 100%;
-    max-width: $upper-width;
-  }
-
-  #social {
+  article {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    gap: 2.5rem;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+    max-width: $upper-width;
 
-    @media (orientation: portrait) {
-      gap: 15px;
-    }
-
-    a {
-      height: 100%;
-      width: 8.5vw;
-
-      @media (orientation: portrait) {
-        width: 24vw;
-      }
+    section {
+      margin: 1rem;
     }
   }
 
-  #legal {
+  footer {
     display: flex;
     flex-flow: column nowrap;
     gap: 0.1rem;

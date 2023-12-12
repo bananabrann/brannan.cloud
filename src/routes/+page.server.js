@@ -1,12 +1,12 @@
 export function load({ params }) {
   return {
-    streamed:{
+    streamed: {
       isChatOnline: new Promise((fulfill) => {
         fulfill(isWebsiteOnline("http://20.64.87.75/"));
       }),
       isTvOnline: new Promise((fulfill) => {
         fulfill(isWebsiteOnline("https://tv.brannan.cloud"));
-      }),
+      })
     },
     isTvOnline: false
   };
@@ -20,4 +20,3 @@ async function isWebsiteOnline(url) {
     return false;
   }
 }
-

@@ -11,7 +11,9 @@
   {:else if status === "down"}
     <div class="badge badge-down"><Alert />&nbsp;Down</div>
   {:else if status === "loading"}
-    <span class="badge badge-loading"><span class="spin"><Loading /></span>&nbsp;Checking service...</span>
+    <span class="badge badge-loading"
+      ><span class="spin"><Loading /></span>&nbsp;Checking service...</span
+    >
   {:else}
     <span class="badge badge-error">Failed to determine</span>
   {/if}
@@ -28,16 +30,8 @@
   }
 
   .badge {
-    display: inline-flex;
-    align-items: center;
-    height: 1.25rem;
-    padding: 0.25em 0.5em;
-    border-radius: 0.25em;
-    font-size: 0.75em;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #fff;
+    margin-top: 2px;
+    margin-left: 2px;
   }
 
   .spin {

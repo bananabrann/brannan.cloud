@@ -85,11 +85,11 @@
             <span style="padding-left: 2px;">Files <small>(private)</small></span>
           </a>
 
-          <a href="https://tv.brannan.cloud" class="button" style="margin-bottom: 0.5em;">
+          <a href="https://tv.brannan.cloud" class="button">
             <TVIcon />
             <span style="padding-left: 2px;">Grandma's TV</span>
           </a>
-          <div>
+          <div style="margin-bottom: 0.5em;">
             {#await data.streamed.isTvOnline}
               <WebStatusBadge status="loading" />
             {:then isTvOnline}
@@ -99,11 +99,11 @@
             {/await}
           </div>
 
-          <a href="http://20.64.87.75/" class="button" style="margin-bottom: 0.5em;">
+          <a href="http://20.64.87.75/" class="button">
             <Chat />
             <span style="padding-left: 2px;">LibreChat</span>
           </a>
-          <div>
+          <div style="margin-bottom: 0.5em;">
             {#await data.streamed.isChatOnline}
               <WebStatusBadge status="loading" />
             {:then isChatOnline}

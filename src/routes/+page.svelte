@@ -11,7 +11,20 @@
   import ListBox from "svelte-material-icons/ListBox.svelte";
   import WebStatusBadge from "../lib/components/WebStatusBadge/WebStatusBadge.svelte";
 
-  export let data;
+  /**
+   * I do this because Azure Static Web Apps current does not support streaming responses.
+   * This means that the entire HTML response is buffered and sent all at once, rather
+   * than being streamed as it's generated. As of not, there is no way to disable this
+   * for Azure Static Web Apps --it is a platform limitation.
+   *
+   * To get around this, I provide default values instead of just `export let data;`.
+   */
+  export let data = {
+    streamed: {
+      isTvOnline: Promise.resolve("loading"),
+      isChatOnline: Promise.resolve("loading")
+    }
+  };
 
   const socialMediaIconHeight = "40px";
   let currentLang = "en";

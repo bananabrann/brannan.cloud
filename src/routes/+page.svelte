@@ -1,4 +1,7 @@
 <script>
+  import { version } from "$app/environment";
+  import { browser } from "$app/environment";
+  import { onMount } from "svelte";
   import Chat from "svelte-material-icons/Chat.svelte";
   import FilesIcon from "svelte-material-icons/CloudUpload.svelte";
   import GitHub from "svelte-material-icons/Github.svelte";
@@ -6,10 +9,17 @@
   import TVIcon from "svelte-material-icons/TelevisionClassic.svelte";
   import OpenInNew from "svelte-material-icons/OpenInNew.svelte";
   import ListBox from "svelte-material-icons/ListBox.svelte";
+  import WebStatusBadge from "../lib/components/WebStatusBadge/WebStatusBadge.svelte";
 
-  import { version } from "$app/environment";
-  import { browser } from "$app/environment";
-  import { onMount } from "svelte";
+  /**
+   * I do this because Azure Static Web Apps current does not support streaming responses.
+   * This means that the entire HTML response is buffered and sent all at once, rather
+   * than being streamed as it's generated. As of not, there is no way to disable this
+   * for Azure Static Web Apps --it is a platform limitation.
+   *
+   * To get around this, I provide default values instead of just `export let data;`.
+   */
+  export let data;
 
   const socialMediaIconHeight = "40px";
   let currentLang = "en";
@@ -83,15 +93,33 @@
             <span style="padding-left: 2px;">Files <small>(private)</small></span>
           </a>
 
-          <a href="https://tv.brannan.cloud" class="button" style="margin-bottom: 0.5em;">
+          <a href="https://tv.brannan.cloud" class="button">
             <TVIcon />
             <span style="padding-left: 2px;">Grandma's TV</span>
           </a>
+          <div style="margin-bottom: 0.5em;">
+            {#await data.streamed.isTvOnline}
+              <WebStatusBadge status="loading" />
+            {:then isTvOnline}
+              <WebStatusBadge status={isTvOnline ? "up" : "down"} />
+            {:catch error}
+              <WebStatusBadge status="error" />
+            {/await}
+          </div>
 
-          <a href="http://20.64.87.75/" class="button" style="margin-bottom: 0.5em;">
+          <a href="http://20.64.87.75/" class="button">
             <Chat />
             <span style="padding-left: 2px;">LibreChat</span>
           </a>
+          <div style="margin-bottom: 0.5em;">
+            {#await data.streamed.isChatOnline}
+              <WebStatusBadge status="loading" />
+            {:then isChatOnline}
+              <WebStatusBadge status={isChatOnline ? "up" : "down"} />
+            {:catch error}
+              <WebStatusBadge status="error" />
+            {/await}
+          </div>
         </div>
       </div>
       <div>

@@ -19,12 +19,7 @@
    *
    * To get around this, I provide default values instead of just `export let data;`.
    */
-  export let data = {
-    streamed: {
-      isTvOnline: "loading",
-      isChatOnline: "loading",
-    }
-  };
+  export let data;
 
   const socialMediaIconHeight = "40px";
   let currentLang = "en";

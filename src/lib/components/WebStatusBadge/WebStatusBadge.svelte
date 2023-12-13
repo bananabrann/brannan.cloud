@@ -2,7 +2,9 @@
   import CheckBold from "svelte-material-icons/CheckBold.svelte";
   import Loading from "svelte-material-icons/Loading.svelte";
   import Alert from "svelte-material-icons/Alert.svelte";
+  import ServerRemove from "svelte-material-icons/ServerRemove.svelte";
   export let status;
+  export let message = "";
 </script>
 
 <div>
@@ -15,7 +17,9 @@
       ><span class="spin"><Loading /></span>&nbsp;Checking service...</span
     >
   {:else}
-    <span class="badge badge-error">Failed to determine</span>
+    <span class="badge badge-error"
+      ><ServerRemove />&nbsp;{message.length > 0 ? message : "Internal error"}</span
+    >
   {/if}
 </div>
 
@@ -43,7 +47,7 @@
   }
 
   .badge-down {
-    background-color: #f44336;
+    background-color: #9e9e9e;
   }
 
   .badge-loading {
@@ -51,6 +55,6 @@
   }
 
   .badge-error {
-    background-color: #9e9e9e;
+    background-color: #9e9e9e; // #f44336;
   }
 </style>

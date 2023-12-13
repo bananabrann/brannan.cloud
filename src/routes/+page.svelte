@@ -21,13 +21,14 @@
    */
   export let data;
 
-  const socialMediaIconHeight = "40px";
   let currentLang = "en";
 
+  /*
   $: bio =
     currentLang === "es"
       ? "Yo soy ingeniero de software, tubista, y un exmarino de los Estados Unidos. A mí también estoy aprendiendo español, y siempre quiero usarlo cuando puedo."
       : "I'm a software engineer, tuba player, and a prior U.S. Marine.";
+  */
 
   onMount(() => {
     // If user has selected a language before, use that language.
@@ -41,6 +42,7 @@
   // Changes the language setting of the site, saving to localStorage.
   // If some weird stuff happens, or it's the user's first time visiting the site, the
   // site will default to English.
+  /*
   function changeLang(lang) {
     if (lang === "es") {
       currentLang = "es";
@@ -50,6 +52,7 @@
 
     localStorage.setItem("brannan.cloud-bioLang", currentLang);
   }
+  */
 </script>
 
 <main>
@@ -117,7 +120,7 @@
             {:then isChatOnline}
               <WebStatusBadge status={isChatOnline ? "up" : "down"} />
             {:catch error}
-              <WebStatusBadge status="error" />
+              <WebStatusBadge status="error" message={error.message} />
             {/await}
           </div>
         </div>

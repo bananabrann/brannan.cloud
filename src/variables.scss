@@ -7,7 +7,7 @@ $small-screen-breakpoint: 680px;
 
 // mixin for basic font family
 @mixin basic-font($weight: 400) {
-  font-family: "Basic Sans", sans-serif;
+  font-family: system-ui, sans-serif;
   font-weight: $weight;
   font-style: normal;
   font-size: 1.12em;

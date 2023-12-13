@@ -158,12 +158,12 @@
 
   <footer>
     <p>
-      Web by @bananabrann,
+      Web by me,
       <a href="https://github.com/bananabrann/brannan.cloud/blob/main/LICENSE" target="_blank"
         >MIT license, 2023.<OpenInNew />
       </a>
     </p>
-    <p>Art assets by various artists, all rights reserved.</p>
+    <p>Art by various artists, all rights reserved.</p>
     <small> v{version} </small>
   </footer>
 </main>

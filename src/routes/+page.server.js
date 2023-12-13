@@ -14,9 +14,19 @@ export function load({ params }) {
 
 async function isWebsiteOnline(url) {
   try {
-    const response = await fetch(url);
-    return response.ok;
+    const response = await Promise.race([
+      fetch(url),
+      new Promise((_, reject) => setTimeout(() => reject(new Error("Request timeout")), 5000))
+    ]);
+
+    if (response.status >= 200 && response.status < 300) {
+      return true;
+    } else {
+      return false;
+    }
   } catch (error) {
+    // The most likely reason for an error is a connection timeout, in which case we want
+    // to return false.
     return false;
   }
 }

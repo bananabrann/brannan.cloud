@@ -21,7 +21,6 @@
    */
   export let data;
 
-  const socialMediaIconHeight = "40px";
   let currentLang = "en";
 
   $: bio =
@@ -117,7 +116,7 @@
             {:then isChatOnline}
               <WebStatusBadge status={isChatOnline ? "up" : "down"} />
             {:catch error}
-              <WebStatusBadge status="error" />
+              <WebStatusBadge status="error" message={error.message} />
             {/await}
           </div>
         </div>

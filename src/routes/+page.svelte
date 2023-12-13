@@ -89,7 +89,7 @@
 
     <section style="flex: 2">
       <div>
-        <h1>Apps & Services</h1>
+        <h1>Apps</h1>
         <div class="link-button-container">
           <a href="https://files.brannan.cloud" class="button" style="margin-bottom: 0.5em;">
             <FilesIcon />

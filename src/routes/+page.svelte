@@ -94,7 +94,10 @@
             {#await data.streamed.isChatOnline}
               <WebStatusBadge status="loading" />
             {:then isChatOnline}
-              <WebStatusBadge status={isChatOnline ? "up" : "down"} />
+              <span style="display: flex; gap: 0.25rem;">
+                <WebStatusBadge status={isChatOnline ? "up" : "down"} />
+                <small>Auto shutdown daily @ 11pm CT</small>
+              </span>
             {:catch error}
               <WebStatusBadge status="error" message={error.message} />
             {/await}

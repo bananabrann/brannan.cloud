@@ -4,6 +4,7 @@
   import Clouds2 from "$lib/assets/svg/clouds2.svg.svelte";
   import Clouds3 from "$lib/assets/svg/clouds3.svg.svelte";
   import Stars from "$lib/assets/svg/stars.svg.svelte";
+  import { Analytics } from "@vercel/analytics";
 </script>
 
 <head>
@@ -50,6 +51,8 @@
 <div id="star-board">
   <Stars />
 </div>
+
+<Analytics />
 
 <style lang="scss">
   @use "../variables.scss";

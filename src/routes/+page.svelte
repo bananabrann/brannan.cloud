@@ -140,9 +140,9 @@
 
   <footer>
     <p>
-      Web by me,
+      Website by me,
       <a href="https://github.com/bananabrann/brannan.cloud/blob/main/LICENSE" target="_blank"
-        >MIT license, 2023.<OpenInNew />
+        >MIT license, 2024.<OpenInNew />
       </a>
     </p>
     <p>Art by various artists, all rights reserved.</p>

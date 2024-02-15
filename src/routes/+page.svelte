@@ -96,7 +96,9 @@
             {:then isChatOnline}
               <span style="display: flex; gap: 0.25rem;">
                 <WebStatusBadge status={isChatOnline ? "up" : "down"} />
-                <small>Auto shutdown daily @ 11pm CT</small>
+                {#if !isChatOnline}
+                  <small id="shutdown-message">Auto shutdown daily @ 11pm CT</small>
+                {/if}
               </span>
             {:catch error}
               <WebStatusBadge status="error" message={error.message} />
@@ -193,5 +195,12 @@
     > * {
       text-align: center;
     }
+  }
+
+  #shutdown-message {
+    background-color: rgba(darken($light, 80%), 0.2);
+    padding: 3px 0.8rem;
+    border-radius: 6.5px;
+    margin-top: 2px;
   }
 </style>

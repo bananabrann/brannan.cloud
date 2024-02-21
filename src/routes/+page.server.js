@@ -2,17 +2,17 @@ export function load({ params }) {
   return {
     streamed: {
       isChatOnline: new Promise((fulfill) => {
-        fulfill(isWebsiteOnline("http://20.64.87.75/"));
+        fulfill(_isWebsiteOnline("http://20.64.87.75/"));
       }),
       isTvOnline: new Promise((fulfill) => {
-        fulfill(isWebsiteOnline("https://tv.brannan.cloud"));
+        fulfill(_isWebsiteOnline("https://tv.brannan.cloud"));
       })
     },
     isTvOnline: false
   };
 }
 
-export async function isWebsiteOnline(url) {
+export async function _isWebsiteOnline(url) {
   try {
     const response = await Promise.race([
       fetch(url),

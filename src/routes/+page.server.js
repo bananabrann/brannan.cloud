@@ -12,7 +12,7 @@ export function load({ params }) {
   };
 }
 
-async function isWebsiteOnline(url) {
+export async function isWebsiteOnline(url) {
   try {
     const response = await Promise.race([
       fetch(url),

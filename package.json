@@ -1,13 +1,15 @@
 {
   "name": "brannan.cloud",
-  "version": "2.0.27",
+  "version": "2.0.28",
   "private": true,
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
-    "format": "prettier --plugin-search-dir . --write ."
+    "format": "prettier --plugin-search-dir . --write .",
+    "test": "vitest run",
+    "test:watch": "vitest --watch"
   },
   "devDependencies": {
     "@sveltejs/adapter-vercel": "^3.1.0",

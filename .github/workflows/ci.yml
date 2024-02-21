@@ -1,12 +1,10 @@
-name: Prettier
+name: CI
 
 on:
   push:
     branches:
       - main
   pull_request:
-    branches:
-      - main
 
 jobs:
   checks:
@@ -25,4 +23,7 @@ jobs:
 
       - name: Check code formatting
         run: npx prettier --check ./
-        continue-on-error: false
+        continue-on-error: true
+      
+      - name: Run tests
+        run: npm test

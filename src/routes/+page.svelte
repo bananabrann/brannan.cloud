@@ -33,36 +33,6 @@
 
 <main>
   <article>
-    <!-- 
-      <section style="flex: 3">
-        <h1>Hello!</h1>
-        <p style="text-indent: 40px;">
-          My name is Lee. I'm a software engineer, tuba player, and prior U.S. Marine. I was born and
-          raised in the rural shrublands of West Texas. After high school, I enlisted in the U.S.
-          Marine Corps. I traveled the world playing tuba, performing for foreign dignitaries and
-          presidential audiences at home and abroad. The Marines gave me the launching pad for my life
-          --I would do it again in a heartbeat. However, staying for a career wasn't for me.
-        </p>
-        
-        <p>
-          <span style="text-indent: 40px;" />After leaving the Marines, I attended a coding bootcamp
-          in Washington, DC. I made a bunch of websites, built a simple listening robot named Decibel
-          Debbie, and passed all my exams. From there, I was hired and begun my journey as a software
-          developer.
-        </p>
-        <p>
-          Most of my career has been web development with JavaScript, but I've dabbled in other tech,
-        especially in my early career. For the past several years, I've been on teams building and
-        maintaining core component libraries with Power Fx and creating and maintaining NodeJS
-        websites.
-      </p>
-      
-      <p>I still play tuba, and really love gardening and aquascaping.</p>
-    </section>
-    -->
-
-    <!-- <section class="vertical-separator" /> -->
-
     <section style="flex: 2">
       <div>
         <h1>Apps</h1>

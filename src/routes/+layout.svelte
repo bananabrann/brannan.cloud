@@ -1,5 +1,6 @@
 <script>
   import "../app.scss";
+  import WebStatusBadge from "../lib/components/WebStatusBadge/WebStatusBadge.svelte";
   import Clouds1 from "$lib/assets/svg/clouds1.svg.svelte";
   import Clouds2 from "$lib/assets/svg/clouds2.svg.svelte";
   import Clouds3 from "$lib/assets/svg/clouds3.svg.svelte";
@@ -37,19 +38,39 @@
     </span>
   </div>
 
-  <div class="cloud-row">
-    <span class="cloud cloud-fast">
-      <Clouds1 />
-    </span>
-    <span class="cloud cloud-fast">
-      <Clouds1 />
-    </span>
+    <div class="cloud-row">
+      <span class="cloud cloud-fast">
+        <Clouds1 />
+      </span>
+      <span class="cloud cloud-fast">
+        <Clouds1 />
+      </span>
+    </div>
   </div>
-</div>
+</main>
 
-<div id="star-board">
-  <Stars />
-</div>
+<footer class="bg-slate-800 flex flex-wrap p-4">
+  <div class="w-full sm:w-1/2 p-2">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/works">Projects & Works</a></li>
+      <li><a href="https://tv.brannan.cloud">tv.brannan.cloud</a></li>
+      <li><a href="http://chat.brannan.cloud">chat.brannan.cloud</a></li>
+    </ul>
+  </div>
+
+  <div class="w-full sm:w-1/2 p-2 text-center">
+    <p class="">
+      Website by me,
+      <a href="https://github.com/bananabrann/brannan.cloud/blob/main/LICENSE" target="_blank"
+        >MIT license, 2024.
+      </a><br />
+      Art and web assets by various artists, all rights reserved.
+    </p>
+
+    <small> Version {version} </small>
+  </div>
+</footer>
 
 <style lang="scss">
   @use "../variables.scss";

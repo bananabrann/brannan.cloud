@@ -14,7 +14,7 @@
   /**
    * I do this because Azure Static Web Apps current does not support streaming responses.
    * This means that the entire HTML response is buffered and sent all at once, rather
-   * than being streamed as it's generated. As of not, there is no way to disable this
+   * than being streamed as it's generated. As of now, there is no way to disable this
    * for Azure Static Web Apps --it is a platform limitation.
    *
    * To get around this, I provide default values instead of just `export let data;`.

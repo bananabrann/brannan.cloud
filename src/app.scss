@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 // pre is used for code blocks. All styles should be essentially wiped,
 // otherwise the code blocks will retain their HTML styles.
 pre * {
@@ -9,11 +13,9 @@ p {
 }
 
 body {
-  @include sky-gradient();
-  background-attachment: fixed;
+  background-color: rgb(30 41 59);
   @include basic-font();
   font-style: normal;
-  // min-height: 100vh;
   color: $light;
   margin: 0;
 }
@@ -99,16 +101,4 @@ button,
     cursor: not-allowed;
     box-shadow: none;
   }
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  height: 1.25rem;
-  padding: 0.25em 0.5em;
-  border-radius: 0.25em;
-  font-size: 0.75em;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
 }

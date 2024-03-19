@@ -1,5 +1,4 @@
 <script>
-  import { version } from "$app/environment";
   import { browser } from "$app/environment";
   import { onMount } from "svelte";
   import Chat from "svelte-material-icons/Chat.svelte";
@@ -7,14 +6,13 @@
   import GitHub from "svelte-material-icons/Github.svelte";
   import Discord from "svelte-material-icons/Discord.svelte";
   import TVIcon from "svelte-material-icons/TelevisionClassic.svelte";
-  import OpenInNew from "svelte-material-icons/OpenInNew.svelte";
   import ListBox from "svelte-material-icons/ListBox.svelte";
   import WebStatusBadge from "../lib/components/WebStatusBadge/WebStatusBadge.svelte";
 
   /**
    * I do this because Azure Static Web Apps current does not support streaming responses.
    * This means that the entire HTML response is buffered and sent all at once, rather
-   * than being streamed as it's generated. As of not, there is no way to disable this
+   * than being streamed as it's generated. As of now, there is no way to disable this
    * for Azure Static Web Apps --it is a platform limitation.
    *
    * To get around this, I provide default values instead of just `export let data;`.
@@ -33,36 +31,6 @@
 
 <main>
   <article>
-    <!-- 
-      <section style="flex: 3">
-        <h1>Hello!</h1>
-        <p style="text-indent: 40px;">
-          My name is Lee. I'm a software engineer, tuba player, and prior U.S. Marine. I was born and
-          raised in the rural shrublands of West Texas. After high school, I enlisted in the U.S.
-          Marine Corps. I traveled the world playing tuba, performing for foreign dignitaries and
-          presidential audiences at home and abroad. The Marines gave me the launching pad for my life
-          --I would do it again in a heartbeat. However, staying for a career wasn't for me.
-        </p>
-        
-        <p>
-          <span style="text-indent: 40px;" />After leaving the Marines, I attended a coding bootcamp
-          in Washington, DC. I made a bunch of websites, built a simple listening robot named Decibel
-          Debbie, and passed all my exams. From there, I was hired and begun my journey as a software
-          developer.
-        </p>
-        <p>
-          Most of my career has been web development with JavaScript, but I've dabbled in other tech,
-        especially in my early career. For the past several years, I've been on teams building and
-        maintaining core component libraries with Power Fx and creating and maintaining NodeJS
-        websites.
-      </p>
-      
-      <p>I still play tuba, and really love gardening and aquascaping.</p>
-    </section>
-    -->
-
-    <!-- <section class="vertical-separator" /> -->
-
     <section style="flex: 2">
       <div>
         <h1>Apps</h1>
@@ -139,17 +107,6 @@
       </div>
     </section>
   </article>
-
-  <footer>
-    <p>
-      Website by me,
-      <a href="https://github.com/bananabrann/brannan.cloud/blob/main/LICENSE" target="_blank"
-        >MIT license, 2024.<OpenInNew />
-      </a>
-    </p>
-    <p>Art by various artists, all rights reserved.</p>
-    <small> v{version} </small>
-  </footer>
 </main>
 
 <style lang="scss">

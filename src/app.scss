@@ -13,11 +13,9 @@ p {
 }
 
 body {
-  @include sky-gradient();
-  background-attachment: fixed;
+  background-color: rgb(30 41 59);
   @include basic-font();
   font-style: normal;
-  // min-height: 100vh;
   color: $light;
   margin: 0;
 }

@@ -5,6 +5,7 @@
   import Clouds2 from "$lib/assets/svg/clouds2.svg.svelte";
   import Clouds3 from "$lib/assets/svg/clouds3.svg.svelte";
   import Stars from "$lib/assets/svg/stars.svg.svelte";
+  import { version } from "$app/environment";
 </script>
 
 <head>
@@ -15,28 +16,31 @@
   <link rel="stylesheet" href="https://use.typekit.net/xtr6jqc.css" />
 </head>
 
-<content>
+<main>
   <slot />
-</content>
 
-<div id="cloud-board">
-  <div class="cloud-row">
-    <span class="cloud cloud-slow">
-      <Clouds3 />
-    </span>
-    <span class="cloud cloud-slow">
-      <Clouds3 />
-    </span>
-  </div>
+    <div id="star-board">
+      <Stars />
+    </div>
 
-  <div class="cloud-row">
-    <span class="cloud cloud-medium">
-      <Clouds2 />
-    </span>
-    <span class="cloud cloud-medium">
-      <Clouds2 />
-    </span>
-  </div>
+    <div id="cloud-board">
+      <div class="cloud-row">
+        <span class="cloud cloud-slow">
+          <Clouds3 />
+        </span>
+        <span class="cloud cloud-slow">
+          <Clouds3 />
+        </span>
+      </div>
+
+      <div class="cloud-row">
+        <span class="cloud cloud-medium">
+          <Clouds2 />
+        </span>
+        <span class="cloud cloud-medium">
+          <Clouds2 />
+        </span>
+      </div>
 
     <div class="cloud-row">
       <span class="cloud cloud-fast">
@@ -76,9 +80,6 @@
   @use "../variables.scss";
   @use "sass:math";
 
-  content {
-    margin: auto 1rem;
-  }
 
   @keyframes moveToLeft {
     from {
@@ -90,18 +91,19 @@
   }
 
   #cloud-board {
-    position: fixed;
+    position: relative;
     bottom: 0;
-    width: 100%;
     z-index: -1;
+    height: auto;
 
     .cloud-row {
       display: flex;
-      position: fixed;
+      position: absolute;
       bottom: 0;
-      width: 400%;
+      width: 520%;
+
       @media screen and (orientation: portrait) {
-        width: 680%;
+        width: 780%;
       }
     }
     .cloud {
@@ -122,11 +124,19 @@
     }
   }
 
+  main {
+    @include sky-gradient();
+    z-index: 1;
+    position: relative;
+    overflow-x: hidden;
+  }
+
   #star-board {
-    position: fixed;
+    position: absolute;
     top: 0;
     z-index: -2;
-    width: 100vw;
+    max-width: 200%;
+    overflow-x: hidden;
 
     @media (orientation: landscape) {
       width: 120vw;

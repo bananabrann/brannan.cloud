@@ -32,7 +32,7 @@
 
 <h1>Hello</h1>
 
-<div class="flex flex-col sm:flex-row max-w-6xl m-auto">
+<div class="flex flex-col max-w-6xl m-auto">
   <div class="w-full sm:w-2/3">
     <p>
       My name is Lee. I am a software developer in the USA making apps and systems Americans use
@@ -41,13 +41,12 @@
       Most of my career has been web development with JavaScript and TypeScript, but I've dabbled in
       other tech, especially in my early career.
     </p>
-    <img src={AboutMe} alt="" />
   </div>
 
-  <div class="sm:w-1/3 mx-4 my-2">
-    <h2 class="text-3xl">Quick Links</h2>
+  <h2 class="text-3xl text-center">Quick Links</h2>
+  <div class="flex mx-4 my-2 flex-col gap-5 flex-wrap justify-between sm:flex-row">
 
-    <div class=" bg-slate-800 bg-opacity-75 shadow-lg rounded-lg my-4">
+    <div class=" bg-slate-800 bg-opacity-75 shadow-lg rounded-lg flex-auto basis-1/3">
       <div class="p-6">
         <h3 class="text-2xl font-bold mb-2">Grandma's TV</h3>
         {#await data.streamed.isTvOnline}
@@ -67,7 +66,7 @@
             href="https://tv.brannan.cloud"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded decoration"
+            class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded decoration max-w-36"
           >
             Go to TV
           </a>
@@ -83,7 +82,7 @@
       </div>
     </div>
 
-    <div class=" bg-slate-800 bg-opacity-75 shadow-lg rounded-lg overflow-hidden my-4">
+    <div class=" bg-slate-800 bg-opacity-75 shadow-lg rounded-lg overflow-hidden flex-auto basis-1/3">
       <div class="p-6">
         <h3 class="text-2xl font-bold mb-2">ChatLibre</h3>
         {#await data.streamed.isChatOnline}
@@ -102,7 +101,7 @@
             href="https://example.com"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded max-w-36"
           >
             Visit
           </a>
@@ -124,7 +123,7 @@
       </div>
     </div>
 
-    <div class=" bg-slate-800 bg-opacity-75 shadow-lg rounded-lg overflow-hidden my-4">
+    <div class=" bg-slate-800 bg-opacity-75 shadow-lg rounded-lg overflow-hidden flex-auto basis-1/3">
       <div class="p-6">
         <h3 class="text-2xl font-bold mb-2">File Server</h3>
         <WebStatusBadge status="up" />
@@ -137,7 +136,7 @@
             href="https://files.brannan.cloud"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded max-w-36"
           >
             Visit
           </a>

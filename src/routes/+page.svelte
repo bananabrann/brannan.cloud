@@ -30,22 +30,21 @@
   });
 </script>
 
-<h1>Hello</h1>
-
-<div class="flex flex-col max-w-6xl m-auto">
-  <div class="w-full sm:w-2/3">
+<div class="flex flex-col max-w-6xl m-auto p-8">
+  <!-- <div class="w-full sm:w-2/3">
     <p>
       My name is Lee. I am a software developer in the USA making apps and systems Americans use
       around the world 🌐
       <br />
       Most of my career has been web development with JavaScript and TypeScript, but I've dabbled in
       other tech, especially in my early career.
+      <br />
+      The website is limbo right now, but I'm working on it. 
     </p>
-  </div>
+  </div> -->
 
-  <h2 class="text-3xl text-center">Quick Links</h2>
+  <h2 class="text-3xl text-center my-8">Quick Links</h2>
   <div class="flex mx-4 my-2 flex-col gap-5 flex-wrap justify-between sm:flex-row">
-
     <div class=" bg-slate-800 bg-opacity-75 shadow-lg rounded-lg flex-auto basis-1/3">
       <div class="p-6">
         <h3 class="text-2xl font-bold mb-2">Grandma's TV</h3>
@@ -82,7 +81,9 @@
       </div>
     </div>
 
-    <div class=" bg-slate-800 bg-opacity-75 shadow-lg rounded-lg overflow-hidden flex-auto basis-1/3">
+    <div
+      class=" bg-slate-800 bg-opacity-75 shadow-lg rounded-lg overflow-hidden flex-auto basis-1/3"
+    >
       <div class="p-6">
         <h3 class="text-2xl font-bold mb-2">ChatLibre</h3>
         {#await data.streamed.isChatOnline}
@@ -123,7 +124,9 @@
       </div>
     </div>
 
-    <div class=" bg-slate-800 bg-opacity-75 shadow-lg rounded-lg overflow-hidden flex-auto basis-1/3">
+    <div
+      class=" bg-slate-800 bg-opacity-75 shadow-lg rounded-lg overflow-hidden flex-auto basis-1/3"
+    >
       <div class="p-6">
         <h3 class="text-2xl font-bold mb-2">File Server</h3>
         <WebStatusBadge status="up" />

@@ -41,12 +41,12 @@ h1 {
 
 a {
   @include gentle-transition();
-  text-decoration: underline;
+  // text-decoration: underline;
   color: inherit;
 
   &:hover {
     @include gentle-transition();
-    text-decoration: underline;
+    // text-decoration: underline;
     color: $brand-secondary;
   }
 }

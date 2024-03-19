@@ -1,5 +1,4 @@
 <script>
-  import { version } from "$app/environment";
   import { browser } from "$app/environment";
   import { onMount } from "svelte";
   import Chat from "svelte-material-icons/Chat.svelte";
@@ -7,7 +6,6 @@
   import GitHub from "svelte-material-icons/Github.svelte";
   import Discord from "svelte-material-icons/Discord.svelte";
   import TVIcon from "svelte-material-icons/TelevisionClassic.svelte";
-  import OpenInNew from "svelte-material-icons/OpenInNew.svelte";
   import ListBox from "svelte-material-icons/ListBox.svelte";
   import WebStatusBadge from "../lib/components/WebStatusBadge/WebStatusBadge.svelte";
 
@@ -109,17 +107,6 @@
       </div>
     </section>
   </article>
-
-  <footer>
-    <p>
-      Website by me,
-      <a href="https://github.com/bananabrann/brannan.cloud/blob/main/LICENSE" target="_blank"
-        >MIT license, 2024.<OpenInNew />
-      </a>
-    </p>
-    <p>Art by various artists, all rights reserved.</p>
-    <small> v{version} </small>
-  </footer>
 </main>
 
 <style lang="scss">

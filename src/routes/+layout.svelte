@@ -19,28 +19,28 @@
 <main>
   <slot />
 
-    <div id="star-board">
-      <Stars />
+  <div id="star-board">
+    <Stars />
+  </div>
+
+  <div id="cloud-board">
+    <div class="cloud-row">
+      <span class="cloud cloud-slow">
+        <Clouds3 />
+      </span>
+      <span class="cloud cloud-slow">
+        <Clouds3 />
+      </span>
     </div>
 
-    <div id="cloud-board">
-      <div class="cloud-row">
-        <span class="cloud cloud-slow">
-          <Clouds3 />
-        </span>
-        <span class="cloud cloud-slow">
-          <Clouds3 />
-        </span>
-      </div>
-
-      <div class="cloud-row">
-        <span class="cloud cloud-medium">
-          <Clouds2 />
-        </span>
-        <span class="cloud cloud-medium">
-          <Clouds2 />
-        </span>
-      </div>
+    <div class="cloud-row">
+      <span class="cloud cloud-medium">
+        <Clouds2 />
+      </span>
+      <span class="cloud cloud-medium">
+        <Clouds2 />
+      </span>
+    </div>
 
     <div class="cloud-row">
       <span class="cloud cloud-fast">
@@ -79,7 +79,6 @@
 <style lang="scss">
   @use "../variables.scss";
   @use "sass:math";
-
 
   @keyframes moveToLeft {
     from {
@@ -135,15 +134,7 @@
     position: absolute;
     top: 0;
     z-index: -2;
-    max-width: 200%;
-    overflow-x: hidden;
-
-    @media (orientation: landscape) {
-      width: 120vw;
-    }
-
-    @media (orientation: portrait) {
-      width: 150vw;
-    }
+    width: 100vw;
+    height: 100%;
   }
 </style>

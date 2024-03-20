@@ -79,7 +79,6 @@
       <li><a href="https://github.com/bananabrann" target="_self">GitHub</a></li>
       <li><a href="https://discordapp.com/users/321317378862350346" target="_self">Discord</a></li>
       <li><a href="https://linkedin.com/in/pbrann" target="_self">LinkedIn</a></li>
-
     </ul>
   </div>
 
@@ -91,10 +90,10 @@
       </a><br />
       Art and web assets by various artists, all rights reserved.
     </p>
+    <small>Build {version}</small>
 
-    <small> Version {version} </small>
     <div class="m-auto text-white h-20 w-20 mt-4">
-      <img src={OldEGA} alt="">
+      <img src={OldEGA} alt="" />
     </div>
   </div>
 </footer>

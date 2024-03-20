@@ -1,10 +1,12 @@
 <script>
   import "../app.scss";
+  import Lock from "svelte-material-icons/Lock.svelte";
   import WebStatusBadge from "../lib/components/WebStatusBadge/WebStatusBadge.svelte";
   import Clouds1 from "$lib/assets/svg/clouds1.svg.svelte";
   import Clouds2 from "$lib/assets/svg/clouds2.svg.svelte";
   import Clouds3 from "$lib/assets/svg/clouds3.svg.svelte";
   import Stars from "$lib/assets/svg/stars.svg.svelte";
+  import OldEGA from "$lib/assets/png/old-ega.png";
   import { version } from "$app/environment";
 </script>
 
@@ -55,11 +57,28 @@
 
 <footer class="bg-slate-800 flex flex-wrap p-4 max-w-2xl m-auto">
   <div class="w-full sm:w-1/2 p-2">
-    <ul>
+    <h4 class="font-thin text-gray-400">Quick Links</h4>
+    <ul class="ml-8">
       <li><a href="/">Home</a></li>
       <li><a href="/works">Projects & Works</a></li>
-      <li><a href="https://tv.brannan.cloud">tv.brannan.cloud</a></li>
-      <li><a href="http://chat.brannan.cloud">chat.brannan.cloud</a></li>
+    </ul>
+
+    <h4 class="font-thin text-gray-400">Apps</h4>
+    <ul class="ml-8">
+      <li><a href="https://tv.brannan.cloud">Grandma's TV</a></li>
+      <li><a href="http://chat.brannan.cloud">LibreChat</a></li>
+      <li class="text-gray-400">
+        <a href="https://files.brannan.cloud" class="flex flex-row"
+          ><Lock class="mt-1 mr-1" /> Brannan File Share</a
+        >
+      </li>
+    </ul>
+
+    <h4 class="font-thin text-gray-400">Socials</h4>
+    <ul class="ml-8">
+      <li><a href="https://github.com/bananabrann" target="_self">GitHub</a></li>
+      <li><a href="https://discordapp.com/users/321317378862350346" target="_self">Discord</a></li>
+      <li><a href="https://linkedin.com/in/pbrann" target="_self">LinkedIn</a></li>
     </ul>
   </div>
 
@@ -71,8 +90,11 @@
       </a><br />
       Art and web assets by various artists, all rights reserved.
     </p>
+    <small>Build {version}</small>
 
-    <small> Version {version} </small>
+    <div class="m-auto text-white h-20 w-20 mt-4">
+      <img src={OldEGA} alt="" />
+    </div>
   </div>
 </footer>
 

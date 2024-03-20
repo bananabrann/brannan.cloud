@@ -17,7 +17,8 @@ const config = {
 
   kit: {
     version: {
-      name: process.env.npm_package_version
+      // name: `${process.env.npm_package_version}.${new Date().getTime()}`,
+      name: `${new Date().getTime()}`
     },
 
     // adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.

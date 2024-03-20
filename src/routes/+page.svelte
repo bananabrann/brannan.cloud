@@ -8,7 +8,7 @@
   import Discord from "svelte-material-icons/Discord.svelte";
   import TVIcon from "svelte-material-icons/TelevisionClassic.svelte";
   import ListBox from "svelte-material-icons/ListBox.svelte";
-  import WebStatusBadge from "../lib/components/WebStatusBadge/WebStatusBadge.svelte";
+  import WebStatusBadge from "$lib/components/WebStatusBadge/WebStatusBadge.svelte";
 
   /**
    * I do this because Azure Static Web Apps current does not support streaming responses.
@@ -120,29 +120,6 @@
             rel="noopener noreferrer"
             class="text-sm mt-2 underline">ChatLibre documentation</a
           >
-        </div>
-      </div>
-    </div>
-
-    <div
-      class=" bg-slate-800 bg-opacity-75 shadow-lg rounded-lg overflow-hidden flex-auto basis-1/3 backdrop-blur-sm"
-    >
-      <div class="p-6">
-        <h3 class="text-2xl font-bold mb-2">File Server</h3>
-        <WebStatusBadge status="up" />
-        <p class="text-sm">
-          File sharing on the brannan.cloud domain. Private access only, but you're still going to
-          click it aren't you?
-        </p>
-        <div class=" flex flex-col justify-start space-x-2 mt-4">
-          <a
-            href="https://files.brannan.cloud"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded max-w-36"
-          >
-            Visit
-          </a>
         </div>
       </div>
     </div>

@@ -1,7 +1,6 @@
 <script>
   import "../app.scss";
   import Lock from "svelte-material-icons/Lock.svelte";
-  import WebStatusBadge from "../lib/components/WebStatusBadge/WebStatusBadge.svelte";
   import Clouds1 from "$lib/assets/svg/clouds1.svg.svelte";
   import Clouds2 from "$lib/assets/svg/clouds2.svg.svelte";
   import Clouds3 from "$lib/assets/svg/clouds3.svg.svelte";

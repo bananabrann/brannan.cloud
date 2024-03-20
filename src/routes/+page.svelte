@@ -8,7 +8,7 @@
   import Discord from "svelte-material-icons/Discord.svelte";
   import TVIcon from "svelte-material-icons/TelevisionClassic.svelte";
   import ListBox from "svelte-material-icons/ListBox.svelte";
-  import WebStatusBadge from "$lib/components/WebStatusBadge/WebStatusBadge.svelte";
+  import WebStatusBadge from "$lib/components/WebStatusBadge.svelte";
 
   /**
    * I do this because Azure Static Web Apps current does not support streaming responses.
@@ -32,8 +32,9 @@
 
 <div class="flex flex-col sm:flex-row max-w-6xl m-auto p-8">
   <div class="w-full sm:w-1/2 md:w-2/3">
+    <h1 class="text-3xl text-center my-8">Welcome to the Brannan Cloud!</h1>
     <p>
-      My name is Lee. I am a software developer in the USA making apps and systems Americans use
+      --the root of most of my stuff hosted on the internet. My name is Lee. I am a software developer in the United States making apps and systems Americans use
       around the world 🌐
       <br />
       Most of my career has been web development with JavaScript and TypeScript, but I've dabbled in

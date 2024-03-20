@@ -32,12 +32,12 @@ small {
   font-size: 0.75em;
 }
 
-h1 {
-  margin-bottom: 10px;
-  font-size: 1.75em;
-  font-weight: 400;
-  font-family: "Bookmania", serif;
-}
+// h1 {
+//   margin-bottom: 10px;
+//   font-size: 1.75em;
+//   font-weight: 400;
+//   font-family: "Bookmania", serif;
+// }
 
 a {
   @include gentle-transition();

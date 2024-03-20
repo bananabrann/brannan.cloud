@@ -34,8 +34,8 @@
   <div class="w-full sm:w-1/2 md:w-2/3">
     <h1 class="text-3xl text-center my-8">Welcome to the Brannan Cloud!</h1>
     <p>
-      --the root of most of my stuff hosted on the internet. My name is Lee. I am a software developer in the United States making apps and systems Americans use
-      around the world 🌐
+      --the root of most of my stuff hosted on the internet. My name is Lee. I am a software
+      developer in the United States making apps and systems Americans use around the world 🌐
       <br />
       Most of my career has been web development with JavaScript and TypeScript, but I've dabbled in
       other tech, especially in my early career.
@@ -130,54 +130,4 @@
 </div>
 
 <style lang="scss">
-  $upper-width: 350px;
-
-  h1 {
-    text-align: center;
-  }
-
-  main {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  article {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 1rem;
-    width: 100%;
-    max-width: $upper-width;
-
-    section {
-      margin: 1rem;
-    }
-  }
-
-  footer {
-    display: flex;
-    flex-flow: column nowrap;
-    gap: 0.1rem;
-    align-items: center;
-
-    p {
-      margin: 0;
-      padding: 0 2px;
-    }
-
-    > * {
-      text-align: center;
-    }
-  }
-
-  #shutdown-message {
-    background-color: rgba(darken($light, 80%), 0.2);
-    padding: 3px 0.8rem;
-    border-radius: 6.5px;
-    margin-top: 2px;
-  }
 </style>

@@ -45,7 +45,7 @@
 
   <h2 class="text-3xl text-center my-8">Quick Links</h2>
   <div class="flex mx-4 my-2 flex-col gap-5 flex-wrap justify-between sm:flex-row">
-    <div class=" bg-slate-800 bg-opacity-75 shadow-lg rounded-lg flex-auto basis-1/3">
+    <div class=" bg-slate-800 bg-opacity-75 shadow-lg rounded-lg flex-auto basis-1/3 backdrop-blur-sm">
       <div class="p-6">
         <h3 class="text-2xl font-bold mb-2">Grandma's TV</h3>
         {#await data.streamed.isTvOnline}
@@ -82,7 +82,7 @@
     </div>
 
     <div
-      class=" bg-slate-800 bg-opacity-75 shadow-lg rounded-lg overflow-hidden flex-auto basis-1/3"
+      class=" bg-slate-800 bg-opacity-75 shadow-lg rounded-lg overflow-hidden flex-auto basis-1/3 backdrop-blur-sm"
     >
       <div class="p-6">
         <h3 class="text-2xl font-bold mb-2">ChatLibre</h3>
@@ -125,7 +125,7 @@
     </div>
 
     <div
-      class=" bg-slate-800 bg-opacity-75 shadow-lg rounded-lg overflow-hidden flex-auto basis-1/3"
+      class=" bg-slate-800 bg-opacity-75 shadow-lg rounded-lg overflow-hidden flex-auto basis-1/3 backdrop-blur-sm"
     >
       <div class="p-6">
         <h3 class="text-2xl font-bold mb-2">File Server</h3>

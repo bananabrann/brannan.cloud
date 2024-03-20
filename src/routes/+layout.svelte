@@ -53,7 +53,7 @@
   </div>
 </main>
 
-<footer class="bg-slate-800 flex flex-wrap p-4">
+<footer class="bg-slate-800 flex flex-wrap p-4 max-w-2xl m-auto">
   <div class="w-full sm:w-1/2 p-2">
     <ul>
       <li><a href="/">Home</a></li>

@@ -113,7 +113,7 @@
           </p>
           <div class=" flex flex-col justify-start space-x-2 mt-4">
             <a
-              href="https://example.com"
+              href="http://chat.brannan.cloud"
               target="_blank"
               rel="noopener noreferrer"
               class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded max-w-36"

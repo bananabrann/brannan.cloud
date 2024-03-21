@@ -56,13 +56,13 @@
 
 <footer class="bg-slate-800 flex flex-wrap p-4 max-w-2xl m-auto">
   <div class="w-full sm:w-1/2 p-2">
-    <h4 class="font-thin text-gray-400">Quick Links</h4>
+    <h4 class="font-thin text-gray-400">Index</h4>
     <ul class="ml-8">
       <li><a href="/">Home</a></li>
       <li><a href="/works">Projects & Works</a></li>
     </ul>
 
-    <h4 class="font-thin text-gray-400">Apps</h4>
+    <h4 class="font-thin text-gray-400">Sites</h4>
     <ul class="ml-8">
       <li><a href="https://tv.brannan.cloud">Grandma's TV</a></li>
       <li><a href="http://chat.brannan.cloud">LibreChat</a></li>

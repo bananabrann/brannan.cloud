@@ -32,6 +32,23 @@
 
 <div class="flex flex-col sm:flex-row max-w-6xl m-auto p-8">
   <div class="w-full sm:w-1/2 md:w-2/3">
+    <div class="p-6 max-w-md mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
+      <div class="flex-shrink-0">
+        <!-- You can put a thumbnail image here -->
+      </div>
+      <div>
+        <div class="text-xl font-medium text-black">The Title of the Article Here</div>
+        <p class="text-gray-500">The Date, The author</p>
+        <div class="mt-2 text-sm text-gray-500">
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#tag1</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#tag2</span>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#tag3</span>
+        </div>
+        <p class="mt-2 text-gray-500">Quick tidbit</p>
+      </div>
+    </div>
+
+
     <h1 class="text-3xl text-center my-8">Welcome to the Brannan Cloud!</h1>
     <p>
       --the root of most of my stuff hosted on the internet. My name is Lee. I am a software

@@ -1,13 +1,9 @@
 <script>
   import { browser } from "$app/environment";
   import { onMount } from "svelte";
-  import AboutMe from "$lib/assets/png/aboutme.png";
-  import Chat from "svelte-material-icons/Chat.svelte";
-  import FilesIcon from "svelte-material-icons/CloudUpload.svelte";
   import GitHub from "svelte-material-icons/Github.svelte";
   import Discord from "svelte-material-icons/Discord.svelte";
-  import TVIcon from "svelte-material-icons/TelevisionClassic.svelte";
-  import ListBox from "svelte-material-icons/ListBox.svelte";
+  import LinkedIn from "svelte-material-icons/Linkedin.svelte";
   import WebStatusBadge from "$lib/components/WebStatusBadge.svelte";
 
   /**
@@ -30,40 +26,39 @@
   });
 </script>
 
-<div class="flex flex-col sm:flex-row max-w-6xl m-auto p-8">
+<div class="flex flex-col sm:flex-row max-w-6xl m-auto p-2 md:p-8 gap-2 md:gap-5 lg:gap-10">
   <div class="w-full sm:w-1/2 md:w-2/3">
-    <div class="p-6 max-w-md mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
-      <div class="flex-shrink-0">
-        <!-- You can put a thumbnail image here -->
-      </div>
-      <div>
-        <div class="text-xl font-medium text-black">The Title of the Article Here</div>
-        <p class="text-gray-500">The Date, The author</p>
-        <div class="mt-2 text-sm text-gray-500">
-          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#tag1</span>
-          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#tag2</span>
-          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#tag3</span>
-        </div>
-        <p class="mt-2 text-gray-500">Quick tidbit</p>
-      </div>
-    </div>
-
-
     <h1 class="text-3xl text-center my-8">Welcome to the Brannan Cloud!</h1>
-    <p>
-      --the root of most of my stuff hosted on the internet. My name is Lee. I am a software
-      developer in the United States making apps and systems Americans use around the world 🌐
-      <br />
-      Most of my career has been web development with JavaScript and TypeScript, but I've dabbled in
-      other tech, especially in my early career.
-      <br />
-      The website is limbo right now, but I'm working on it.
-    </p>
+    <div class="bg-slate-800 bg-opacity-75 shadow-lg rounded-lg backdrop-blur-sm p-8">
+      <p>
+        <b>Hello! 👋</b> This is brannan.cloud, the root of most of my stuff hosted on the internet.
+        My name is Lee. I am a software developer in the United States making websites and systems
+        Americans use around the world.
+        <br /><br />
+        Most of my career has been web development with JavaScript and TypeScript, but I've dabbled in
+        other tech, especially in my early career.
+      </p>
+      <div class="flex flex-row h-10 text-white justify-center gap-3 mt-5 *:*:h-8 *:*:w-8">
+        <a href="https://github.com/bananabrann" target="_self">
+          <GitHub />
+        </a>
+
+        <a href="https://discordapp.com/users/321317378862350346" target="_self">
+          <Discord />
+        </a>
+
+        <a href="https://linkedin.com/in/pbrann" target="_self">
+          <LinkedIn />
+        </a>
+      </div>
+
+      <!-- TODO - Articles and readings -->
+    </div>
   </div>
 
   <div class="w-full sm:w-1/2 md:w-1/3">
     <h2 class="text-3xl text-center my-8">Quick Links</h2>
-    <div class="flex mx-4 my-2 flex-col gap-5 flex-wrap justify-between sm:flex-row">
+    <div class="flex my-2 flex-col gap-5 flex-wrap justify-between sm:flex-row">
       <div class=" bg-slate-800 bg-opacity-75 shadow-lg rounded-lg backdrop-blur-sm">
         <div class="p-6">
           <h3 class="text-2xl font-bold mb-2">Grandma's TV</h3>

@@ -17,8 +17,6 @@
 <svg
 	xmlns="http://www.w3.org/2000/svg"
 	preserveAspectRatio="xMaxYMin meet"
-	width="auto"
-	height="100%"
 	viewBox="0 0 1873 880.24"
 >
 	<g id="stars" transform="translate(-25.12 -52.99)" opacity="0.75">

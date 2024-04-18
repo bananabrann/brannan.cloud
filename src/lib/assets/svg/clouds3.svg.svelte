@@ -3,8 +3,6 @@
 	data-name="Camada 1"
 	xmlns="http://www.w3.org/2000/svg"
 	viewBox="0 0 6900 1080"
-	width=""
-	height=""
 	preserveAspectRatio="xMidYMax meet"
 	><defs
 		><style>

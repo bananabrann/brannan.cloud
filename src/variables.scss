@@ -7,29 +7,29 @@ $small-screen-breakpoint: 680px;
 
 // mixin for basic font family
 @mixin basic-font($weight: 400) {
-  font-family: system-ui, sans-serif;
-  font-weight: $weight;
-  font-style: normal;
-  font-size: 1.12em;
+	font-family: system-ui, sans-serif;
+	font-weight: $weight;
+	font-style: normal;
+	font-size: 1.12em;
 }
 
 // Basic sky background.
 // Quickly create a gradient background at https://cssgradient.io/
 @mixin sky-gradient() {
-  background: rgb(67, 24, 60);
-  background: linear-gradient(
-    180deg,
-    rgba(67, 24, 60, 1) 0%,
-    rgba(91, 139, 223, 1) 50%,
-    rgba(139, 179, 251, 1) 100%
-  );
+	background: rgb(67, 24, 60);
+	background: linear-gradient(
+		180deg,
+		rgba(67, 24, 60, 1) 0%,
+		rgba(91, 139, 223, 1) 50%,
+		rgba(139, 179, 251, 1) 100%
+	);
 }
 
 // Applies a gentle transition to the given property.
 @mixin gentle-transition($property: all, $duration: 0.15s, $timing-function: ease-in-out) {
-  -webkit-transition: $property $duration $timing-function;
-  -moz-transition: $property $duration $timing-function;
-  -ms-transition: $property $duration $timing-function;
-  -o-transition: $property $duration $timing-function;
-  transition: $property $duration $timing-function;
+	-webkit-transition: $property $duration $timing-function;
+	-moz-transition: $property $duration $timing-function;
+	-ms-transition: $property $duration $timing-function;
+	-o-transition: $property $duration $timing-function;
+	transition: $property $duration $timing-function;
 }

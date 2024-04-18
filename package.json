@@ -1,34 +1,34 @@
 {
-  "name": "brannan.cloud",
-  "version": "2.0.32",
-  "private": true,
-  "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "preview": "vite preview",
-    "lint": "prettier --plugin-search-dir . --check . && eslint .",
-    "format": "prettier --plugin-search-dir . --write .",
-    "test": "vitest run",
-    "test:watch": "vitest --watch"
-  },
-  "devDependencies": {
-    "@sveltejs/adapter-vercel": "^3.1.0",
-    "@sveltejs/kit": "^1.5.0",
-    "autoprefixer": "^10.4.18",
-    "postcss": "^8.4.35",
-    "prettier": "^2.8.0",
-    "prettier-plugin-svelte": "^2.8.1",
-    "sass": "^1.62.0",
-    "svelte": "^3.54.0",
-    "svelte-check": "^3.0.1",
-    "svelte-preprocess": "^5.0.4",
-    "tailwindcss": "^3.4.1",
-    "vite": "^4.3.0",
-    "vitest": "^0.25.3"
-  },
-  "dependencies": {
-    "moment": "^2.29.4",
-    "svelte-material-icons": "^3.0.5"
-  },
-  "type": "module"
+	"name": "brannan.cloud",
+	"version": "2.0.33",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"lint": "prettier --plugin-search-dir . --check . && eslint .",
+		"format": "prettier --plugin-search-dir . --write .",
+		"test": "vitest run",
+		"test:watch": "vitest --watch"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-vercel": "^3.1.0",
+		"@sveltejs/kit": "^1.5.0",
+		"autoprefixer": "^10.4.18",
+		"postcss": "^8.4.35",
+		"prettier": "^2.8.0",
+		"prettier-plugin-svelte": "^2.8.1",
+		"sass": "^1.62.0",
+		"svelte": "^3.54.0",
+		"svelte-check": "^3.0.1",
+		"svelte-preprocess": "^5.0.4",
+		"tailwindcss": "^3.4.1",
+		"vite": "^4.3.0",
+		"vitest": "^0.25.3"
+	},
+	"dependencies": {
+		"moment": "^2.29.4",
+		"svelte-material-icons": "^3.0.5"
+	},
+	"type": "module"
 }

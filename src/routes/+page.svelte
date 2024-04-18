@@ -39,6 +39,9 @@
 				Most of my career has been web development with JavaScript and TypeScript, but I've dabbled in
 				other tech, especially in my early career.
 			</p>
+
+
+			
 			<div class="flex flex-row h-10 text-white justify-center gap-3 mt-5 *:*:h-8 *:*:w-8">
 				<a href="https://github.com/bananabrann" target="_self">
 					<GitHub />
@@ -80,7 +83,7 @@
 						href="https://tv.brannan.cloud"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded decoration max-w-36"
+						class="inline-block bg-blue-500 hover:bg-blue-600 hover:text-white font-bold py-2 px-4 rounded decoration max-w-36"
 					>
 						Go to TV
 					</a>
@@ -112,7 +115,7 @@
 						href="http://chat.brannan.cloud"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded max-w-36"
+						class="inline-block bg-blue-500 hover:bg-blue-600 hover:text-white font-bold py-2 px-4 rounded max-w-36"
 					>
 						Visit
 					</a>

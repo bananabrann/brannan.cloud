@@ -138,7 +138,8 @@
 			<Tag>c++</Tag>
 			<p>
 				Debbie the Decibel Robot, a simple robot that detects sounds around it, then calculates and
-				displays the decibels. Kind of an old project, but it has been near and dear to me.
+				displays the decibels in under 100 lines of code. An old project, but it has been near and
+				dear to me. Debbie was dismantled in 2021.
 			</p>
 		</div>
 

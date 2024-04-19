@@ -40,8 +40,6 @@
 				other tech, especially in my early career.
 			</p>
 
-
-			
 			<div class="flex flex-row h-10 text-white justify-center gap-3 mt-5 *:*:h-8 *:*:w-8">
 				<a href="https://github.com/bananabrann" target="_self">
 					<GitHub />

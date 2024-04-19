@@ -1,6 +1,7 @@
 <script>
 	import TagOutline from "svelte-material-icons/TagOutline.svelte";
 	import Tag from "$lib/components/Tag.svelte";
+	import SimpleLine from "$lib/components/SimpleLine.svelte";
 	import GitHub from "svelte-material-icons/Github.svelte";
 	import ReadingPage from "../../lib/components/ReadingPage.svelte";
 </script>
@@ -33,6 +34,8 @@
 			<p>My personal website and the root domain of most of my stuff on the internet.</p>
 		</div>
 
+		<SimpleLine />
+
 		<div>
 			<div class="flex content-between w-full">
 				<h3>files.brannan.cloud</h3>
@@ -42,6 +45,8 @@
 				and others, and storage for all things *.brannan.cloud. Private access only, duh.
 			</p>
 		</div>
+
+		<SimpleLine />
 
 		<div>
 			<div class="flex content-between w-full">
@@ -55,6 +60,8 @@
 				telling her what shows are on what streaming service.
 			</p>
 		</div>
+
+		<SimpleLine />
 
 		<div>
 			<div class="flex content-between w-full">
@@ -70,6 +77,8 @@
 			</p>
 		</div>
 
+		<SimpleLine />
+
 		<div>
 			<div class="flex content-between w-full">
 				<h3>tims</h3>
@@ -81,6 +90,8 @@
 				United States are managed by archivists and publicly available for viewing.
 			</p>
 		</div>
+
+		<SimpleLine />
 
 		<div>
 			<div class="flex content-between w-full">

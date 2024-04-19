@@ -63,6 +63,35 @@
 
 		<div class="flex my-2 flex-col gap-5 flex-wrap justify-between sm:flex-row">
 			<GlossyDarkContent>
+				<h3 class="text-2xl font-bold mb-2">Symbols</h3>
+				<p class="text-sm">Copy and paste convenience symbol picker.</p>
+				<div class=" flex flex-col justify-start space-x-2 mt-4">
+					<a
+						href="/symbols"
+						class="inline-block bg-blue-500 hover:bg-blue-600 hover:text-white font-bold py-2 px-4 rounded decoration"
+					>
+						Go to Symbols
+					</a>
+					<a
+						href="https://coolsymbol.com/"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="text-sm mt-2 underline"
+					>
+						Complete list of unicode characters
+					</a>
+					<a
+						href="https://www.babelstone.co.uk/Unicode/whatisit.html"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="text-sm mt-2 underline"
+					>
+						Unicode identifier
+					</a>
+				</div>
+			</GlossyDarkContent>
+
+			<GlossyDarkContent>
 				<h3 class="text-2xl font-bold mb-2">Grandma's TV</h3>
 				{#await data.streamed.isTvOnline}
 					<WebStatusBadge status="loading" />
@@ -81,7 +110,7 @@
 						href="https://tv.brannan.cloud"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="inline-block bg-blue-500 hover:bg-blue-600 hover:text-white font-bold py-2 px-4 rounded decoration max-w-36"
+						class="inline-block bg-blue-500 hover:bg-blue-600 hover:text-white font-bold py-2 px-4 rounded"
 					>
 						Go to TV
 					</a>
@@ -113,7 +142,7 @@
 						href="http://chat.brannan.cloud"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="inline-block bg-blue-500 hover:bg-blue-600 hover:text-white font-bold py-2 px-4 rounded max-w-36"
+						class="inline-block bg-blue-500 hover:bg-blue-600 hover:text-white font-bold py-2 px-4 rounded"
 					>
 						Visit
 					</a>

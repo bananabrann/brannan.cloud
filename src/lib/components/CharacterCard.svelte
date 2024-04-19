@@ -23,13 +23,13 @@
 	on:keydown={copyToClipboard}
 >
 	<div class="text-center text-sm">{title}</div>
-	<div class="text-center text-7xl">{character}</div>
+	<div class="text-center text-7xl py-2">{character}</div>
 	<div class="text-center text-sm font-mono">{unicode}</div>
 
 	{#if showBanner}
 		<div
 			transition:fly={{ delay: 0, duration: 300, x: 0, y: -10, opacity: 0, easing: quintOut }}
-			class="fixed w-28 -ml-2 mt-2 bg-green-500 text-white text-center py-1 rounded-b-md"
+			class="absolute w-28 -ml-2 mt-2 bg-green-500 text-white text-center py-1 rounded-b-md"
 		>
 			Copied!
 		</div>

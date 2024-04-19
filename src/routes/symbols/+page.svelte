@@ -21,7 +21,6 @@
 	<section>
 		<CharacterCard title="bullet" character="•" unicode="U+2022" />
 		<CharacterCard title="four point" character="✦" unicode="U+2726" />
-		<CharacterCard title="alt four point" character="✧" unicode="U+2727" />
 		<CharacterCard title="not equal" character="≠" unicode="U+2260" />
 		<CharacterCard title="check mark" character="✔" unicode="U+2714" />
 		<CharacterCard title="ballot x" character="✘" unicode="U+2718" />
@@ -57,6 +56,12 @@
 		<CharacterCard title="black bishop" character="♝" unicode="U+265D" />
 		<CharacterCard title="black knight" character="♞" unicode="U+265E" />
 		<CharacterCard title="black pawn" character="♟" unicode="U+265F" />
+	</section>
+
+	<h2>Miscelaneous</h2>
+	<section>
+		<CharacterCard title="alt four point" character="✧" unicode="U+2727" />
+		<CharacterCard title="lenny face" character="( ͡° ͜ʖ ͡°)" unicode="multiple" />
 	</section>
 </ReadingPage>
 

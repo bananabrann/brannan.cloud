@@ -103,6 +103,7 @@
 			<ul class="ml-8">
 				<li><a href="/">Home</a></li>
 				<li><a href="/works">Projects & Works</a></li>
+				<li><a href="/symbols">Symbols</a></li>
 			</ul>
 
 			<h4 class="font-thin text-gray-400">Sites</h4>

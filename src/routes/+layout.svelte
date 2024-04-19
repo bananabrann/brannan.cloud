@@ -12,23 +12,37 @@
 	let cloudBoard;
 
 	onMount(() => {
+		calculateCloudBoardPosition();
+
+		window.addEventListener("scroll", () => {
+			calculateCloudBoardPosition();
+		});
+
+		window.addEventListener("resize", () => {
+			calculateCloudBoardPosition();
+		});
+	});
+
+	/*
+		Calculates the position of the cloud board so that it sticks to the bottom of the
+		viewport until the footer is reached. Once the footer is reached, the cloud board is
+		positioned above the footer, and leaves the document flow.
+	*/
+	function calculateCloudBoardPosition() {
 		const footer = document.querySelector("footer");
 		const footerHeight = footer.offsetHeight;
 
-		window.addEventListener("scroll", () => {
-			const scrollHeight = document.documentElement.scrollHeight;
-			const scrollTop = document.documentElement.scrollTop;
-			const windowHeight = window.innerHeight;
+		const scrollHeight = document.documentElement.scrollHeight;
+		const scrollTop = document.documentElement.scrollTop;
+		const windowHeight = window.innerHeight;
 
-			if (scrollHeight - scrollTop - windowHeight < footerHeight) {
-				cloudBoard.style.position = "absolute";
-				// cloudBoard.style.bottom = `${footerHeight}px`;
-			} else {
-				cloudBoard.style.position = "fixed";
-				cloudBoard.style.bottom = "0";
-			}
-		});
-	});
+		if (scrollHeight - scrollTop - windowHeight < footerHeight) {
+			cloudBoard.style.position = "absolute";
+		} else {
+			cloudBoard.style.position = "fixed";
+			cloudBoard.style.bottom = "0";
+		}
+	}
 </script>
 
 <head>

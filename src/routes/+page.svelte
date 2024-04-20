@@ -17,6 +17,9 @@
 	 */
 	export let data;
 
+	$: isTvOnline = data.streamed.isTvOnline;
+	$: isChatOnline = data.streamed.isChatOnline;
+
 	onMount(() => {
 		// If user has selected a language before, use that language.
 		if (browser) {
@@ -93,7 +96,7 @@
 
 			<GlossyDarkContent>
 				<h3 class="text-2xl font-bold mb-2">Grandma's TV</h3>
-				{#await data.streamed.isTvOnline}
+				{#await isTvOnline}
 					<WebStatusBadge status="loading" />
 				{:then isTvOnline}
 					<WebStatusBadge status={isTvOnline ? "up" : "down"} />
@@ -126,10 +129,10 @@
 			</GlossyDarkContent>
 			<GlossyDarkContent>
 				<h3 class="text-2xl font-bold mb-2">ChatLibre</h3>
-				{#await data.streamed.isChatOnline}
+				{#await isChatOnline}
 					<WebStatusBadge status="loading" />
-				{:then isTvOnline}
-					<WebStatusBadge status={isTvOnline ? "up" : "down"} />
+				{:then isChatOnline}
+					<WebStatusBadge status={isChatOnline ? "up" : "down"} />
 				{:catch error}
 					<WebStatusBadge status="error" />
 				{/await}

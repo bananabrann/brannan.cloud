@@ -17,6 +17,9 @@
 	 */
 	export let data;
 
+	$: isTvOnline = data.streamed.isTvOnline;
+	$: isChatOnline = data.streamed.isChatOnline;
+
 	onMount(() => {
 		// If user has selected a language before, use that language.
 		if (browser) {
@@ -93,7 +96,7 @@
 
 			<GlossyDarkContent>
 				<h3 class="text-2xl font-bold mb-2">Grandma's TV</h3>
-				{#await data.streamed.isTvOnline}
+				{#await isTvOnline}
 					<WebStatusBadge status="loading" />
 				{:then isTvOnline}
 					<WebStatusBadge status={isTvOnline ? "up" : "down"} />
@@ -106,14 +109,32 @@
 					service
 				</p>
 				<div class=" flex flex-col justify-start space-x-2 mt-4">
-					<a
-						href="https://tv.brannan.cloud"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="inline-block bg-blue-500 hover:bg-blue-600 hover:text-white font-bold py-2 px-4 rounded"
-					>
-						Go to TV
-					</a>
+					{#await isTvOnline}
+						<a
+							href="https://tv.brannan.cloud"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-block font-bold py-2 px-4 rounded bg-zinc-500 hover:bg-zinc-500 hover:text-zinc-300 text-zinc-300 cursor-not-allowed"
+							on:click|preventDefault={true}
+						>
+							Go to TV
+						</a>
+					{:then isTvOnline}
+						<a
+							href="https://tv.brannan.cloud"
+							target="_blank"
+							rel="noopener noreferrer"
+							class={`inline-block  font-bold py-2 px-4 rounded ${
+								isTvOnline
+									? "bg-blue-500 hover:bg-blue-600 hover:text-white"
+									: "bg-zinc-500 hover:bg-zinc-500 hover:text-zinc-300 text-zinc-300 cursor-not-allowed"
+							}`}
+							on:click|preventDefault={!isChatOnline}
+						>
+							Go to TV
+						</a>
+					{/await}
+
 					<a
 						href="https://github.com/bananabrann/tv.brannan.cloud"
 						target="_blank"
@@ -126,10 +147,10 @@
 			</GlossyDarkContent>
 			<GlossyDarkContent>
 				<h3 class="text-2xl font-bold mb-2">ChatLibre</h3>
-				{#await data.streamed.isChatOnline}
+				{#await isChatOnline}
 					<WebStatusBadge status="loading" />
-				{:then isTvOnline}
-					<WebStatusBadge status={isTvOnline ? "up" : "down"} />
+				{:then isChatOnline}
+					<WebStatusBadge status={isChatOnline ? "up" : "down"} />
 				{:catch error}
 					<WebStatusBadge status="error" />
 				{/await}
@@ -138,14 +159,32 @@
 					needed for cost savings. Need it turned on? Just ask me!
 				</p>
 				<div class=" flex flex-col justify-start space-x-2 mt-4">
-					<a
-						href="http://chat.brannan.cloud"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="inline-block bg-blue-500 hover:bg-blue-600 hover:text-white font-bold py-2 px-4 rounded"
-					>
-						Visit
-					</a>
+					{#await isChatOnline}
+						<a
+							href="http://chat.brannan.cloud"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-block font-bold py-2 px-4 rounded bg-zinc-500 hover:bg-zinc-500 hover:text-zinc-300 text-zinc-300 cursor-not-allowed"
+							on:click|preventDefault={true}
+						>
+							Visit
+						</a>
+					{:then isChatOnline}
+						<a
+							href="http://chat.brannan.cloud"
+							target="_blank"
+							rel="noopener noreferrer"
+							class={`inline-block  font-bold py-2 px-4 rounded ${
+								isChatOnline
+									? "bg-blue-500 hover:bg-blue-600 hover:text-white"
+									: "bg-zinc-500 hover:bg-zinc-500 hover:text-zinc-300 text-zinc-300 cursor-not-allowed"
+							}`}
+							on:click|preventDefault={!isChatOnline}
+						>
+							Visit
+						</a>
+					{/await}
+
 					<a
 						href="https://github.com/bananabrann/chat.brannan.cloud"
 						target="_blank"

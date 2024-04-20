@@ -109,14 +109,32 @@
 					service
 				</p>
 				<div class=" flex flex-col justify-start space-x-2 mt-4">
-					<a
-						href="https://tv.brannan.cloud"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="inline-block bg-blue-500 hover:bg-blue-600 hover:text-white font-bold py-2 px-4 rounded"
-					>
-						Go to TV
-					</a>
+					{#await isTvOnline}
+						<a
+							href="https://tv.brannan.cloud"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-block font-bold py-2 px-4 rounded bg-zinc-500 hover:bg-zinc-500 hover:text-zinc-300 text-zinc-300 cursor-not-allowed"
+							on:click|preventDefault={true}
+						>
+							Go to TV
+						</a>
+					{:then isTvOnline}
+						<a
+							href="https://tv.brannan.cloud"
+							target="_blank"
+							rel="noopener noreferrer"
+							class={`inline-block  font-bold py-2 px-4 rounded ${
+								isTvOnline
+									? "bg-blue-500 hover:bg-blue-600 hover:text-white"
+									: "bg-zinc-500 hover:bg-zinc-500 hover:text-zinc-300 text-zinc-300 cursor-not-allowed"
+							}`}
+							on:click|preventDefault={!isChatOnline}
+						>
+							Go to TV
+						</a>
+					{/await}
+
 					<a
 						href="https://github.com/bananabrann/tv.brannan.cloud"
 						target="_blank"
@@ -141,14 +159,32 @@
 					needed for cost savings. Need it turned on? Just ask me!
 				</p>
 				<div class=" flex flex-col justify-start space-x-2 mt-4">
-					<a
-						href="http://chat.brannan.cloud"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="inline-block bg-blue-500 hover:bg-blue-600 hover:text-white font-bold py-2 px-4 rounded"
-					>
-						Visit
-					</a>
+					{#await isChatOnline}
+						<a
+							href="http://chat.brannan.cloud"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-block font-bold py-2 px-4 rounded bg-zinc-500 hover:bg-zinc-500 hover:text-zinc-300 text-zinc-300 cursor-not-allowed"
+							on:click|preventDefault={true}
+						>
+							Visit
+						</a>
+					{:then isChatOnline}
+						<a
+							href="http://chat.brannan.cloud"
+							target="_blank"
+							rel="noopener noreferrer"
+							class={`inline-block  font-bold py-2 px-4 rounded ${
+								isChatOnline
+									? "bg-blue-500 hover:bg-blue-600 hover:text-white"
+									: "bg-zinc-500 hover:bg-zinc-500 hover:text-zinc-300 text-zinc-300 cursor-not-allowed"
+							}`}
+							on:click|preventDefault={!isChatOnline}
+						>
+							Visit
+						</a>
+					{/await}
+
 					<a
 						href="https://github.com/bananabrann/chat.brannan.cloud"
 						target="_blank"

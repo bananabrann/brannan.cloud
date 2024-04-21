@@ -112,7 +112,7 @@
 					{#await isTvOnline}
 						<a
 							href="https://tv.brannan.cloud"
-							target="_blank"
+							target="_self"
 							rel="noopener noreferrer"
 							class="inline-block font-bold py-2 px-4 rounded bg-zinc-500 hover:bg-zinc-500 hover:text-zinc-300 text-zinc-300 cursor-not-allowed"
 							on:click|preventDefault={true}
@@ -122,14 +122,13 @@
 					{:then isTvOnline}
 						<a
 							href="https://tv.brannan.cloud"
-							target="_blank"
+							target="_self"
 							rel="noopener noreferrer"
 							class={`inline-block  font-bold py-2 px-4 rounded ${
 								isTvOnline
 									? "bg-blue-500 hover:bg-blue-600 hover:text-white"
 									: "bg-zinc-500 hover:bg-zinc-500 hover:text-zinc-300 text-zinc-300 cursor-not-allowed"
 							}`}
-							on:click|preventDefault={!isChatOnline}
 						>
 							Go to TV
 						</a>
@@ -162,7 +161,7 @@
 					{#await isChatOnline}
 						<a
 							href="http://chat.brannan.cloud"
-							target="_blank"
+							target="_self"
 							rel="noopener noreferrer"
 							class="inline-block font-bold py-2 px-4 rounded bg-zinc-500 hover:bg-zinc-500 hover:text-zinc-300 text-zinc-300 cursor-not-allowed"
 							on:click|preventDefault={true}
@@ -172,14 +171,13 @@
 					{:then isChatOnline}
 						<a
 							href="http://chat.brannan.cloud"
-							target="_blank"
+							target="_self"
 							rel="noopener noreferrer"
 							class={`inline-block  font-bold py-2 px-4 rounded ${
 								isChatOnline
 									? "bg-blue-500 hover:bg-blue-600 hover:text-white"
 									: "bg-zinc-500 hover:bg-zinc-500 hover:text-zinc-300 text-zinc-300 cursor-not-allowed"
 							}`}
-							on:click|preventDefault={!isChatOnline}
 						>
 							Visit
 						</a>

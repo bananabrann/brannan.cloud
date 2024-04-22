@@ -11,7 +11,8 @@
 <ReadingPage>
 	<h1>About Me</h1>
 
-	<h2>Contents</h2>
+	<div class="h-6" />
+
 	<ol>
 		<li><a href="#first-beat">First Beat in Music</a></li>
 		<li><a href="#career-in-software">A Career in Software</a></li>
@@ -167,7 +168,7 @@
 
 <style lang="scss">
 	.image-text {
-		@apply text-xs md:text-sm gap-1 text-center;
+		@apply text-xs md:text-sm gap-1 text-center text-slate-500;
 
 		> p {
 			@apply w-full px-1;

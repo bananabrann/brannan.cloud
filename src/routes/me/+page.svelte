@@ -107,8 +107,8 @@
 	</div>
 
 	<p>
-		Between mostly playing a rodeo band and military band, I've played more than my fair share of
-		marches and gallops (marches in cut time). I've come to really love the genre 😛
+		Between rodeos and military bands, I've played more than my fair share of marches and gallops
+		(marches in cut time). I've come to really love the genre 😛
 	</p>
 
 	<p>My favorite marches:</p>

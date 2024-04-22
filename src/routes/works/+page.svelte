@@ -25,7 +25,7 @@
 
 	<div class="h-10" />
 
-	<section class="flex flex-col gap-4">
+	<section class="flex flex-col">
 		<div>
 			<div class="flex place-content-between w-full">
 				<h3>brannan.cloud</h3>

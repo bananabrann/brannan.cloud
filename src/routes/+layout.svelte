@@ -158,6 +158,10 @@
 		}
 	}
 
+	ul {
+		@apply list-none;
+	}
+
 	#cloud-board {
 		position: fixed;
 		width: 100%;

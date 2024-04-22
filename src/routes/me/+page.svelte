@@ -168,7 +168,7 @@
 
 <style lang="scss">
 	.image-text {
-		@apply text-xs md:text-sm gap-1 text-center text-slate-500;
+		@apply text-xs md:text-sm gap-1 text-center;
 
 		> p {
 			@apply w-full px-1;

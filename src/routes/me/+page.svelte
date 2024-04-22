@@ -54,9 +54,9 @@
 			<img src={horsePhoto} alt="" class="object-cover h-full w-full" />
 		</div>
 	</div>
-	<div class="flex text-sm mx-1 gap-2 text-center">
-		<p class="w-full px-4">Portrait of the HSU Cowboy Band.</p>
-		<p class="w-full px-4">
+	<div class="flex image-text">
+		<p>Portrait of the HSU Cowboy Band.</p>
+		<p>
 			A barrel racer at the <a
 				href="https://en.wikipedia.org/?title=Texas_Cowboy_Reunion&redirect=no"
 				target="_blank">Texas Cowboy Reunion</a
@@ -73,9 +73,11 @@
 		>.
 	</p>
 	<img src={unitPhoto} alt="" />
-	<p class="text-sm text-center px-4">
-		"The Commandant's Own", The United States Marine Drum & Bugle Corps. I'm somewhere in here.
-	</p>
+	<div class="image-text">
+		<p>
+			"The Commandant's Own", The United States Marine Drum & Bugle Corps. I'm somewhere in here.
+		</p>
+	</div>
 
 	<p>
 		After being injected from West Texas to the urban living of Washington, D.C., I traveled the
@@ -90,12 +92,12 @@
 			<img src={fhgPhoto} alt="" class="object-cover h-full w-full" />
 		</div>
 	</div>
-	<div class="flex text-sm mx-1 gap-2 text-center">
-		<p class="w-full px-4">
+	<div class="flex image-text">
+		<p>
 			Joint concert with military bands from the United States, United Kingdom, Russia, Italy, and
 			others in Avenches, Switzerland.
 		</p>
-		<p class="w-full px-4">
+		<p>
 			Celebration of the <a
 				href="https://en.wikipedia.org/wiki/Ogdensburg_Agreement"
 				target="_blank">Ogdensburg Agreement</a
@@ -163,7 +165,15 @@
 	</p>
 </ReadingPage>
 
-<style type="scss">
+<style lang="scss">
+	.image-text {
+		@apply text-xs md:text-sm gap-1 text-center;
+
+		> p {
+			@apply w-full px-1;
+		}
+	}
+
 	a {
 		@apply text-blue-600;
 

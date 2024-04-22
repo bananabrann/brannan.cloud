@@ -4,13 +4,64 @@
 	import unitPhoto from "$lib/assets/jpeg/db.jpg";
 	import avenchesPhoto from "$lib/assets/jpeg/avenches.jpg";
 	import fhgPhoto from "$lib/assets/jpeg/fhg-1954.jpg";
+	import horsePhoto from "$lib/assets/jpeg/horses.jpg";
+	import cowboyBandPhoto from "$lib/assets/jpeg/cbb.jpg";
 </script>
 
 <ReadingPage>
 	<h1>About Me</h1>
+	<!-- prettier-ignore -->
 	<p>
-		I was born and raised in the Great Plains of West Texas. After high school, I went to college as
-		a music major. After a year, I auditioned for and won a spot in "The Commandant's Own", <a
+		I was born and raised in the Great Plains of West Texas. My main <del>addiction</del> 
+		hobby growing up was playing tuba. Before becoming a software engineer, I've performed
+		in hundreds if not thousands of concerts throughout my life, including song premiers of 
+		<a href="https://en.wikipedia.org/wiki/John_Mackey_(composer)" target="_blank">John Mackey</a>.
+
+		I've performed for former U.S. president 
+		<a href="https://en.wikipedia.org/wiki/Barack_Obama" target="_blank">Barack Obama</a>
+		and his wife, Michelle, former Vice President 
+		<a href="https://en.wikipedia.org/wiki/Mike_Pence" target="_blank">Mike Pence</a>, and
+		countless generals, heads of states, and foreign dignatories and ambassasdors.
+		</p>
+
+	<!-- prettier-ignore -->
+	<p>
+		Along with tuba, I've also played bass trombone in the jazz bands for
+		<a href="https://en.wikipedia.org/wiki/Lenny_Pickett" target="_blank">Lenny Pickett</a>,
+		<a href="https://en.wikipedia.org/wiki/Tom_Malone_(musician)" target="_blank">Tom "Bones" Malone</a>,
+		<a href="https://en.wikipedia.org/wiki/Wayne_Bergeron">Wayne Bergeron</a>, and many more.
+	</p>
+
+	<SimpleLine />
+
+	<p>
+		I started off by going to college majoring in Music Education. In West Texas "big country",
+		rodeos are a popular sport. I played in my school's rodeo band, performing at competitions
+		primarily in Stamford, Texas.
+	</p>
+
+	<div class="flex gap-2">
+		<div class="flex-1">
+			<img src={cowboyBandPhoto} alt="" class="object-cover h-full w-full" />
+		</div>
+		<div class="flex-1">
+			<img src={horsePhoto} alt="" class="object-cover h-full w-full" />
+		</div>
+	</div>
+	<div class="flex text-sm mx-1 gap-2 text-center">
+		<p class="w-full px-4">Portrait of the HSU Cowboy Band.</p>
+		<p class="w-full px-4">
+			The Six White Horses at the <a
+				href="https://en.wikipedia.org/?title=Texas_Cowboy_Reunion&redirect=no"
+				target="_blank">Texas Cowboy Reunion</a
+			> rodeo in Stamford, Texas.
+		</p>
+	</div>
+
+	<p>
+		Later during my first year of college, I auditioned for and won a spot as a tuba player in "The
+		Commandant's Own",
+		<a
 			href="https://en.wikipedia.org/wiki/List_of_United_States_military_premier_ensembles"
 			target="_blank">one of the U.S. military premier bands</a
 		>.
@@ -20,7 +71,10 @@
 		"The Commandant's Own", The United States Marine Drum & Bugle Corps. I'm somewhere in here.
 	</p>
 
-	<p>I traveled the world playing tuba for foreign dignitaries and presidential audiences.</p>
+	<p>
+		After being injected from West Texas to the urban living of Washington, D.C., I traveled the
+		world playing tuba for foreign dignitaries and presidential audiences.
+	</p>
 
 	<div class="flex gap-2">
 		<div class="flex-1">
@@ -43,10 +97,15 @@
 		</p>
 	</div>
 
+	<p>
+		Between mostly playing a rodeo band and military band, I've played more than my fair share of
+		marches and gallops (marches in cut time). I've come to really love the genre 😛
+	</p>
+
 	<!-- prettier-ignore -->
 	<p>
 		My favorite marches: <br />
-		1. <a href="https://youtu.be/Fb9HkJam-WI" target="_blank">"March No. 1 in F Major", Ludwig van Beethoven (German).</a><br>
+		1. <a href="https://youtu.be/Fb9HkJam-WI" target="_blank">"March No. 1 in F Major", Ludwig van Beethoven (German/Austrian).</a><br>
 		2. <a href="https://youtu.be/W4x3LFlnfcg" target="_blank">"Hands Across the Sea", John Sousa (American).</a><br>
 		3. <a href="https://youtu.be/GF-8-avIdYI" target="_blank">"Blencathra", William Rimmer (German).</a>
 	</p>
@@ -62,20 +121,25 @@
 	<!-- prettier-ignore -->
 	<p>
 		Honorable mentions: <br />
-		• <a href="https://youtu.be/MHYIGxPdsMg" target="_blank">"Anchors Aweigh" (U.S. Navy song), Charles Zimmerman (American).</a><br>
+		• <a href="https://youtu.be/ln-3VMr7l-Y" target="_blank">"Anchors Aweigh" (U.S. Navy song), Charles Zimmerman (American).</a><br>
 		• <a href="https://youtu.be/a-7XWhyvIpE&t=57" target="_blank">"The Stars and Stripes Forever", John Sousa (American).</a><br>
 		• <a href="https://youtu.be/jZzHK4iJ1jM">"The British Grenadiers" (17th century's boss music) (British)</a>
 	</p>
 
 	<p>
 		The Marines gave me the launching pad for my life, and I would do it again in a heartbeat.
-		However, saying for a career wasn't for me.
+		However, staying for a career wasn't for me.
 	</p>
+
+	<SimpleLine />
 	<p>
 		After leaving the Marines, I attended General Assembly's web development course (now called
-		"Software Engineering Immersive"), a 3-month vocational coding school/bootcamp in Washington,
-		D.C. I made a bunch of websites, built a simple listening robot named Debbie, and passed all my
-		exams. From there, I was hired and started my journey as a software developer.
+		"Software Engineering Immersive"), a three-month vocational coding school/bootcamp in
+		Washington, D.C. I made a bunch of websites, built a simple listening robot named Debbie, and
+		passed all my exams. From there, I was hired and started my journey as a software developer.
+	</p>
+	<p class="text-sm italic text-zinc-400 text-center">
+		I don't have many photos from this time period. I regret not taking more photos.
 	</p>
 </ReadingPage>
 

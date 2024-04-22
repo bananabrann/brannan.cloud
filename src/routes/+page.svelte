@@ -4,7 +4,8 @@
 	import GitHub from "svelte-material-icons/Github.svelte";
 	import Discord from "svelte-material-icons/Discord.svelte";
 	import LinkedIn from "svelte-material-icons/Linkedin.svelte";
-	import GlossyDarkContent from "../lib/components/GlossyDarkContent.svelte";
+	import SimpleLine from "$lib/components/SimpleLine.svelte";
+	import GlossyDarkContent from "$lib/components/GlossyDarkContent.svelte";
 	import WebStatusBadge from "$lib/components/WebStatusBadge.svelte";
 
 	/**
@@ -32,16 +33,18 @@
 
 <div class="flex flex-col sm:flex-row max-w-6xl m-auto p-2 md:p-8 gap-2 md:gap-5 lg:gap-10">
 	<div class="w-full sm:w-1/2 md:w-2/3">
-		<h1 class="text-3xl text-center my-8">Welcome to the Brannan Cloud!</h1>
+		<h1 class="text-center my-8">Welcome to the Brannan Cloud!</h1>
 		<GlossyDarkContent>
+			<h2>About Me</h2>
 			<p>
-				<b>Hello! 👋</b> This is brannan.cloud, the root of most of my stuff hosted on the internet.
-				My name is Lee. I am a software developer in the United States making websites and systems
-				Americans use around the world.
+				Hello! 👋 My name is Lee. I am a software developer in the United States making websites and
+				systems Americans use around the world.
 				<br /><br />
 				Most of my career has been web development with JavaScript and TypeScript, but I've dabbled in
 				other tech, especially in my early career.
 			</p>
+
+			<SimpleLine />
 
 			<div class="flex flex-row h-10 text-white justify-center gap-3 mt-5 *:*:h-8 *:*:w-8">
 				<a href="https://github.com/bananabrann" target="_self">

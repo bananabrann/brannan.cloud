@@ -4,6 +4,7 @@
 	import GitHub from "svelte-material-icons/Github.svelte";
 	import Discord from "svelte-material-icons/Discord.svelte";
 	import LinkedIn from "svelte-material-icons/Linkedin.svelte";
+
 	import SimpleLine from "$lib/components/SimpleLine.svelte";
 	import GlossyDarkContent from "$lib/components/GlossyDarkContent.svelte";
 	import WebStatusBadge from "$lib/components/WebStatusBadge.svelte";
@@ -46,6 +47,24 @@
 
 			<SimpleLine />
 
+			<div id="homepage-links" class="flex justify-center w-full flex-col items-center gap-4">
+				<a
+					href="/works"
+					class="inline-block bg-blue-500 hover:bg-blue-600 hover:text-white font-bold py-2 px-4 rounded decoration w-5/6 sm:w-64"
+				>
+					Latest Works
+				</a>
+
+				<a
+					href="/me"
+					class="inline-block bg-blue-500 hover:bg-blue-600 hover:text-white font-bold py-2 px-4 rounded decoration w-5/6 sm:w-64"
+				>
+					About Me
+				</a>
+			</div>
+
+			<SimpleLine />
+
 			<div class="flex flex-row h-10 text-white justify-center gap-3 mt-5 *:*:h-8 *:*:w-8">
 				<a href="https://github.com/bananabrann" target="_self">
 					<GitHub />
@@ -65,7 +84,7 @@
 	</div>
 
 	<div class="w-full sm:w-1/2 md:w-1/3">
-		<h2 class="text-3xl text-center my-8">Quick Links</h2>
+		<h2 class="text-3xl text-center my-8">Quick App Links</h2>
 
 		<div class="flex my-2 flex-col gap-5 flex-wrap justify-between sm:flex-row">
 			<GlossyDarkContent>

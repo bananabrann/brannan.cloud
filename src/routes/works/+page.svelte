@@ -124,8 +124,7 @@
 			</p>
 		</div>
 
-		<SimpleLine />
-
+		<!--
 		<div>
 			<div class="flex place-content-between w-full">
 				<h3>debbie</h3>
@@ -142,6 +141,7 @@
 				dear to me. Debbie was dismantled in 2021.
 			</p>
 		</div>
+		-->
 
 		<!-- <h1>Fav Repos</h1>
 		<div>

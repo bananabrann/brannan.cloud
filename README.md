@@ -1,6 +1,6 @@
 # brannan.cloud
 
-![Version](https://shields.io/github/package-json/v/bananabrann/brannan.cloud?logo=npm&logoColor=white)
+![Version](https://shields.io/github/package-json/v/bananabrann/brannan.cloud)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/bananabrann/brannan.cloud/azure-static-web-apps.yml?logo=githubactions&logoColor=white)
 
 ## Setup and installation

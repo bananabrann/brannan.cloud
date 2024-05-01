@@ -182,7 +182,7 @@
 				<div class=" flex flex-col justify-start space-x-2 mt-4">
 					{#await isChatOnline}
 						<a
-							href="http://chat.brannan.cloud"
+							href="http://146.190.0.104"
 							target="_self"
 							rel="noopener noreferrer"
 							class="inline-block font-bold py-2 px-4 rounded bg-zinc-500 hover:bg-zinc-500 hover:text-zinc-300 text-zinc-300 cursor-not-allowed"
@@ -192,7 +192,7 @@
 						</a>
 					{:then isChatOnline}
 						<a
-							href="http://chat.brannan.cloud"
+							href="http://146.190.0.104"
 							target="_self"
 							rel="noopener noreferrer"
 							class={`inline-block  font-bold py-2 px-4 rounded ${

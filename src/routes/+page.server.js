@@ -2,7 +2,7 @@ export async function load({ params }) {
 	return {
 		streamed: {
 			isChatOnline: new Promise((fulfill) => {
-				fulfill(_isWebsiteOnline("http://20.64.87.75/"));
+				fulfill(_isWebsiteOnline("http://146.190.0.104/"));
 			}),
 			isTvOnline: new Promise((fulfill) => {
 				fulfill(_isWebsiteOnline("https://tv.brannan.cloud"));

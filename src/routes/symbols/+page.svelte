@@ -20,7 +20,7 @@
 	<h2>My Favorites</h2>
 	<section>
 		<CharacterCard title="bullet" character="•" unicode="U+2022" />
-		<CharacterCard title="four point" character="✦" unicode="U+2726" />
+		<CharacterCard title="em dash" character="—" unicode="U+2014" />
 		<CharacterCard title="not equal" character="≠" unicode="U+2260" />
 		<CharacterCard title="check mark" character="✔" unicode="U+2714" />
 		<CharacterCard title="ballot x" character="✘" unicode="U+2718" />
@@ -61,6 +61,7 @@
 	<h2>Miscelaneous</h2>
 	<section>
 		<CharacterCard title="alt four point" character="✧" unicode="U+2727" />
+		<CharacterCard title="four point" character="✦" unicode="U+2726" />
 		<CharacterCard title="lenny face" character="( ͡° ͜ʖ ͡°)" unicode="multiple" />
 	</section>
 </ReadingPage>

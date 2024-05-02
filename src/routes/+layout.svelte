@@ -102,6 +102,7 @@
 			<h4 class="font-thin text-gray-400">Index</h4>
 			<ul class="ml-8">
 				<li><a href="/">Home</a></li>
+				<li><a href="/me">About Me</a></li>
 				<li><a href="/works">Projects & Works</a></li>
 				<li><a href="/symbols">Symbols</a></li>
 			</ul>
@@ -155,6 +156,10 @@
 		to {
 			transform: translateX(-100%);
 		}
+	}
+
+	ul {
+		@apply list-none;
 	}
 
 	#cloud-board {

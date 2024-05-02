@@ -8,6 +8,7 @@ on:
 
 jobs:
   checks:
+    name: Checks
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -27,3 +28,10 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build application
+        run: npm run build

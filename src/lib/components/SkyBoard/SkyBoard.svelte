@@ -3,6 +3,7 @@
 	import CloudsMidground from "$lib/assets/png/clouds-midground.png";
 	import CloudsBackground from "$lib/assets/png/clouds-background-no-doodles.png";
 	import { onMount } from "svelte";
+	import Stars from "./Stars.svelte";
 
 	let cloudBoard: HTMLElement;
 
@@ -41,6 +42,8 @@
 <div class="sky-gradient-background min-h-[80vh] relative">
 	<!-- NOTE - CSS is in <style> -->
 	<div id="cloud-board" bind:this={cloudBoard}>
+		<Stars></Stars>
+
 		<div class="cloud-row" style="--duration: var(--speed-clouds-background);">
 			<img src={CloudsBackground} alt="Distant clouds in the background" />
 			<img src={CloudsBackground} alt="Distant clouds in the background" />

@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 
+	Using Tailwind CSS layers has performance and optimization benefits, such as 
+	automatically removing unused CSS and packaging more effeciently.
+
+	For more information on the difference between Tailwind CSS layers, see:
+	https://tailwindcss.com/docs/adding-custom-styles
+
+	Such a simple change with so many benefits. I should have learned about these sooner!
+*/
+
+@layer base {
+	h1 {
+		@apply text-2xl;
+	}
+}
+
+@layer components {
+	.sky-gradient-background {
+		background: rgb(67, 24, 60);
+		background: linear-gradient(
+			180deg,
+			rgba(67, 24, 60, 1) 0%,
+			rgba(91, 139, 223, 1) 50%,
+			rgba(139, 179, 251, 1) 100%
+		);
+	}
+}

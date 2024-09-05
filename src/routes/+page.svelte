@@ -1,1 +1,7 @@
-<h1 class="text-3xl underline">Hello world!</h1>
+<script lang="ts">
+	import Footer from "$lib/components/Footer/Footer.svelte";
+</script>
+
+<h1>Hello world!</h1>
+
+<Footer></Footer>

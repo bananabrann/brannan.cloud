@@ -1,7 +1,11 @@
 <script lang="ts">
 	import Footer from "$lib/components/Footer/Footer.svelte";
+	import SkyBoard from "$lib/components/SkyBoard/SkyBoard.svelte";
 </script>
 
-<h1>Hello world!</h1>
+<SkyBoard>
+	<h1>Hi</h1>
+</SkyBoard>
+
 
 <Footer></Footer>

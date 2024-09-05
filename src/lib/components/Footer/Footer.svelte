@@ -1,5 +1,5 @@
 <script lang="ts">
-	import lock from "$lib/assets/svg/lock.svg?raw";
+	import svgLock from "$lib/assets/svg/lock.svg?raw";
 	import { version } from "$app/environment";
 
 	const oldEgaUrl = "/old-ega.png?url";
@@ -28,7 +28,7 @@
 				<li><a href="http://chat.brannan.cloud">LibreChat</a></li>
 				<li class="text-gray-400">
 					<a href="https://files.brannan.cloud" class="flex flex-row items-center">
-						<span class="fill-gray-400 h-4 w-4"> {@html lock} </span>
+						<span class="fill-gray-400 h-4 w-4"> {@html svgLock} </span>
 						Brannan File Share
 					</a>
 				</li>

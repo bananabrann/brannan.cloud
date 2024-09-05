@@ -1,5 +1,6 @@
 <script lang="ts">
 	import CloudsForeground from "$lib/assets/png/clouds-foreground.png";
+	import CloudsMidground from "$lib/assets/png/clouds-midground.png";
 	import CloudsBackground from "$lib/assets/png/clouds-background-no-doodles.png";
 </script>
 
@@ -13,6 +14,11 @@
 			<img src={CloudsBackground} alt="Distant clouds in the background" />
 		</div>
 
+		<div class="cloud-row" style="--duration: var(--speed-clouds-midground);">
+			<img src={CloudsMidground} alt="Clouds between the clouds" />
+			<img src={CloudsMidground} alt="Clouds between the clouds" />
+		</div>
+
 		<div class="cloud-row" style="--duration: var(--speed-clouds-foreground);">
 			<img src={CloudsForeground} alt="Clouds in the foreground" />
 			<img src={CloudsForeground} alt="Clouds in the foreground" />
@@ -22,8 +28,9 @@
 
 <style lang="postcss">
 	:root {
-		--speed-clouds-foreground: 20s;
-		--speed-clouds-background: 60s;
+		--speed-clouds-foreground: 35s;
+		--speed-clouds-midground: 76s;
+		--speed-clouds-background: 160s;
 	}
 
 	#cloud-board {

@@ -63,7 +63,7 @@
 
 <style lang="postcss">
 	li a {
-		@apply hover:text-yellow-400;
+		@apply hover:text-yellow-400 text-white;
 	}
 
 	h4 {

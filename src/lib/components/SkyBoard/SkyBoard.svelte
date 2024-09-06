@@ -39,7 +39,7 @@
 	});
 </script>
 
-<div class="sky-gradient-background min-h-[80vh] relative">
+<div class="sky-gradient-background min-h-[80vh] relative pb-56">
 	<!-- NOTE - CSS is in <style> -->
 	<div id="cloud-board" bind:this={cloudBoard}>
 		<Stars></Stars>

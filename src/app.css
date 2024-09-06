@@ -13,10 +13,6 @@
 */
 
 @layer base {
-	h1 {
-		@apply text-2xl;
-	}
-	
 	p,
 	h1,
 	h2,
@@ -26,6 +22,14 @@
 	h6,
 	ul {
 		@apply text-white;
+	}
+
+	a {
+		@apply text-yellow-200;
+
+		&:hover {
+			@apply underline;
+		}
 	}
 }
 

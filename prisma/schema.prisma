@@ -27,6 +27,23 @@ model Session {
 model Tag {
   id   Int    @id @default(autoincrement())
   name String @unique
+  pots Post[]
+}
+
+model Post {
+  id        Int      @id @default(autoincrement())
+  title     String
+  slug      String   @unique
+  content   String // TODO - Maybe just use String?
+  tutorial  Boolean
+  postedOn  DateTime
+  published Boolean
+  claps     Int      @default(0)
+  likes     Int      @default(0)
+  dislikes  Int      @default(0)
+  authorId  Int
+  author    User     @relation(fields: [authorId], references: [id])
+  tags      Tag[]
 }
 
 // model PostLike {
@@ -35,17 +52,3 @@ model Tag {
 //   post      Post   @relation(fields: [postId], references: [id])
 //   postId    Int
 // }
-
-model Post {
-  id        Int      @id @default(autoincrement())
-  title     String
-  slug      String   @unique
-  content   Bytes // TODO - Maybe just use String?
-  postedOn  DateTime
-  published Boolean
-  claps     Int      @default(0)
-  likes     Int      @default(0)
-  dislikes  Int      @default(0)
-  authorId  Int
-  author    User     @relation(fields: [authorId], references: [id])
-}

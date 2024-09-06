@@ -25,6 +25,10 @@ export default {
 				twinkle: "twinkle 4s ease-in-out infinite",
 			},
 		},
+		fontFamily: {
+			// sans: [],
+			// seif: []
+		}
 	},
 	plugins: [],
 };

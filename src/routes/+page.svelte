@@ -19,7 +19,11 @@
 		<h2 class="tracking-tight font-semibold">Quick Links</h2>
 		<div class="flex gap-2 md:gap-4">
 			<div class="flex gap-2">
-				<p class="font-semibold tracking-tight ml-2">Chat</p>
+				<a
+					href="http://146.190.0.104"
+					class="font-semibold tracking-tight ml-2 text-white underline underline-offset-2 hover:text-yellow-300"
+					>Chat</a
+				>
 
 				{#await webStatuses.chat}
 					<WebStatusBadge status={WebsiteUpStatus.Loading} />
@@ -31,7 +35,11 @@
 			</div>
 
 			<div class="flex gap-2">
-				<p class="font-semibold tracking-tight">TV</p>
+				<a
+					href="https://tv.brannan.cloud"
+					class="font-semibold tracking-tight text-white underline underline-offset-2 hover:text-yellow-300"
+					>TV</a
+				>
 
 				{#await webStatuses.tv}
 					<WebStatusBadge status={WebsiteUpStatus.Loading} />
@@ -43,7 +51,11 @@
 			</div>
 
 			<div class="flex gap-2">
-				<p class="font-semibold tracking-tight">Files</p>
+				<a
+					href="https://files.brannan.cloud"
+					class="font-semibold tracking-tight text-white underline underline-offset-2 hover:text-yellow-300"
+					>Files</a
+				>
 
 				{#await webStatuses.files}
 					<WebStatusBadge status={WebsiteUpStatus.Loading} />

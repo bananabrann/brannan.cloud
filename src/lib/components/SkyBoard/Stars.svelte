@@ -5,9 +5,6 @@
 	afterUpdate(() => {
 		const stars: NodeList = document.querySelectorAll("#stars path, #stars circle");
 
-		console.log("stars");
-		console.log(stars);
-
 		let count = 0;
 		stars.forEach((star) => {
 			// @ts-ignore

@@ -5,7 +5,7 @@
 	const oldEgaUrl = "/old-ega.png?url";
 </script>
 
-<footer class="bg-slate-800 p-4 w-full z-10 relative text-white">
+<footer class="bg-slate-800 p-4 w-full z-30 relative text-white">
 	<!--
 		NOTE - Inner container is needed so that the footer covers the star board. Without
 		this container, the footer's width technicaly doesn't expand the full width therefore

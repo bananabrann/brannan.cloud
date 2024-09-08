@@ -28,6 +28,7 @@
 
 	onMount(() => {
 		calculateCloudBoardPosition();
+		console.log("calculated");
 
 		window.addEventListener("scroll", () => {
 			calculateCloudBoardPosition();
@@ -39,11 +40,17 @@
 	});
 </script>
 
-<div class="sky-gradient-background min-h-[80vh] relative pb-56">
+<div class="sky-gradient-background min-h-[80vh] relative pb-56 z-20">
+	<div class="relative z-30" id="slot-container">
+		<slot />
+	</div>
+
+	<div id="stars" class="fixed top-0 w-full -z-10">
+		<Stars></Stars>
+	</div>
+
 	<!-- NOTE - CSS is in <style> -->
 	<div id="cloud-board" bind:this={cloudBoard}>
-		<Stars></Stars>
-
 		<div class="cloud-row" style="--duration: var(--speed-clouds-background);">
 			<img src={CloudsBackground} alt="Distant clouds in the background" />
 			<img src={CloudsBackground} alt="Distant clouds in the background" />
@@ -59,10 +66,6 @@
 			<img src={CloudsForeground} alt="Clouds in the foreground" />
 		</div>
 	</div>
-
-	<div class="relative z-10">
-		<slot />
-	</div>
 </div>
 
 <style lang="postcss">
@@ -73,11 +76,13 @@
 	}
 
 	#cloud-board {
+		@apply inset-0;
 		position: absolute;
 		bottom: 0;
 		overflow: hidden;
 		height: 100%;
 		width: 100%;
+		/* z-index: 10; */
 	}
 
 	.cloud-row {
@@ -90,4 +95,8 @@
 	.cloud-row > * {
 		@apply transform scale-150;
 	}
+
+	/* #slot-container * {
+		@apply z-30;
+	} */
 </style>

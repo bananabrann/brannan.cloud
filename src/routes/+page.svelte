@@ -16,7 +16,7 @@
 
 <SkyBoard>
 	<div class="flex items-start justify-start py-4 px-8 gap-2 divide-x">
-		<h2 class="tracking-tight font-semibold">Quick Links</h2>
+		<h2 class="tracking-tight">Quick Links</h2>
 		<div class="flex gap-2 md:gap-4">
 			<div class="flex gap-2">
 				<a
@@ -68,14 +68,21 @@
 		</div>
 	</div>
 
-	<div class="flex items-center justify-center pt-10">
-		<img src={BananamanOnCloud} alt="" class="max-w-xl object-contain animate-oscillateGently" />
-		<span class="ml-16 transform scale-150">
+	<div class="flex flex-col-reverse md:flex-row items-center justify-center pt-10">
+		<img
+			src={BananamanOnCloud}
+			alt=""
+			class="max-w-xl object-contain animate-oscillateGently w-[75vw] sm:w-1/2 lg:w-1/3"
+		/>
+		<span class="ml-16 transform md:scale-100 lg:scale-150 relative">
 			{@html svgHello}
 		</span>
 	</div>
 
-	<div class="container grid grid-cols-2 mx-auto sm:px-6lg:px-8 mt-5" id="blog">
+	<div
+		class="container flex flex-col md:grid md:grid-cols-2 mx-auto px-3 sm:px-6 lg:px-8 mt-5"
+		id="blog"
+	>
 		<div>
 			<section>
 				<h2>Top</h2>

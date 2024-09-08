@@ -3,8 +3,6 @@
 	import SkyBoard from "$lib/components/SkyBoard/SkyBoard.svelte";
 	import { page } from "$app/stores";
 	import PngBananamanUpset from "$lib/assets/png/bananaman-upset.png";
-	import { error } from "console";
-	import { onMount } from "svelte";
 </script>
 
 <SkyBoard>

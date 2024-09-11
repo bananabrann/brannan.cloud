@@ -2,7 +2,7 @@ import type WebsiteUpResponse from "$lib/interfaces/WebsiteUpResponse";
 import { WebsiteUpStatus } from "$lib/enums/WebsiteUpStatus";
 import { prisma } from "$lib/server/prisma";
 import type { PageServerLoad } from "./$types";
-import type { Post, Prisma } from "@prisma/client";
+import type { Post } from "@prisma/client";
 import type { PostWithAllDetails } from "$lib/types/PostWithAllDetails";
 
 export const load: PageServerLoad = async ({ locals }) => {

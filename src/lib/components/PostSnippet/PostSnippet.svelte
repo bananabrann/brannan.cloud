@@ -9,7 +9,7 @@
 
 <article>
 	<h3 class="font-serif text-xl tracking-wide">
-		<a href=""> {post.title}</a>
+		<a href={`blog/${post.slug}`}> {post.title}</a>
 	</h3>
 	<div class="flex gap-3">
 		<div class="fill-white text-white flex gap-2 items-center justify-center align-middle">

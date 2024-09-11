@@ -5,3 +5,6 @@ yarn.lock
 
 # SVG files
 src/lib/assets/svg/
+
+# Seed stuff
+seed.*.ts

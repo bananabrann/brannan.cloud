@@ -1,0 +1,52 @@
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply font-sans tracking-normal my-5;
+}
+
+h2 {
+	@apply text-3xl md:text-4xl font-semibold;
+}
+h3 {
+	@apply text-3xl md:font-semibold;
+}
+h4 {
+	@apply text-2xl font-semibold md:text-3xl md:font-normal;
+}
+h5 {
+	@apply text-2xl;
+}
+h6 {
+	@apply text-xl font-semibold;
+}
+
+p {
+	@apply my-6;
+}
+
+pre {
+	@apply bg-gray-800 rounded-xl my-6 p-9 overflow-x-scroll text-base lg:mx-10 shadow-xl;
+}
+
+pre code {
+	@apply tracking-tight font-normal font-mono;
+}
+
+@supports (scrollbar-color: auto) {
+	pre {
+		scrollbar-color: grey rgb(31 41 55 / var(--tw-bg-opacity));
+		scrollbar-width: thin;
+	}
+}
+
+/* Fallback srcollbar style */
+@supports selector(::-webkit-scrollbar) {
+	pre::-webkit-scrollbar {
+		@apply bg-gray-300;
+	}
+	pre::-webkit-scrollbar-thumb {
+		@apply bg-slate-600;
+	}
+}

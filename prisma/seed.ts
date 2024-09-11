@@ -1,5 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import { randomInt } from "crypto";
+import exampleBlog from "./seed.exampleBlog";
 import "dotenv/config";
 
 const prisma = new PrismaClient();
@@ -28,7 +29,7 @@ async function main() {
 	console.log(`The connection URL is ${process.env.DATABASE_URL}`);
 
 	// prettier-ignore
-	const loremContent: string = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis, in dignissimos? Saepe voluptas eaque magnam neque sunt doloremque iste, at in. Exercitationem nam ab deleniti, tempore error aut ipsam magni!";
+	const loremContent: string = exampleBlog
 
 	// ---
 	// Tags

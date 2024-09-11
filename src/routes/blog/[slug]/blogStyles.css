@@ -23,7 +23,7 @@
 }
 
 #blog-article p {
-	@apply my-6;
+	@apply my-6  font-sans;
 }
 
 #blog-article pre {
@@ -50,3 +50,16 @@
 		@apply bg-slate-600;
 	}
 }
+
+#blog-article figure {
+	@apply mt-10 border-l-4 border-yellow-300 pl-9;
+}
+
+#blog-article figure blockquote {
+	@apply text-gray-900 font-sans;
+}
+
+#blog-article figure figcaption.author {
+	@apply mt-6 flex gap-x-4 text-sm leading-6 font-sans;
+}
+

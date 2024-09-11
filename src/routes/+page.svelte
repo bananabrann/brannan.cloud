@@ -21,7 +21,7 @@
 			<div class="flex gap-2">
 				<a
 					href="http://146.190.0.104"
-					class="font-semibold tracking-tight ml-2 text-white underline underline-offset-2 hover:text-yellow-300"
+					class="font-semibold tracking-tight ml-2 text-white underline underline-offset-2 hover:text-yellow-400"
 					>Chat</a
 				>
 
@@ -53,8 +53,7 @@
 			<div class="flex gap-2">
 				<a
 					href="https://files.brannan.cloud"
-					class="font-semibold tracking-tight text-white underline underline-offset-2 hover:text-yellow-300"
-					>Files</a
+					class="font-semibold tracking-tight text-white underline underline-offset-2">Files</a
 				>
 
 				{#await webStatuses.files}
@@ -79,39 +78,41 @@
 		</span>
 	</div>
 
-	<div
-		class="container flex flex-col md:grid md:grid-cols-2 mx-auto px-3 sm:px-6 lg:px-8 mt-5"
-		id="blog"
-	>
-		<div>
-			<section>
-				<h2>Top</h2>
-				<div class="flex flex-col gap-6 py-4">
-					{#each posts.top as post}
-						<PostSnippet {post}></PostSnippet>
-					{/each}
-				</div>
-			</section>
+	<div class="container px-3 sm:px-6 lg:px-8 mt-5 mx-auto">
 
-			<section>
-				<h2>Learn</h2>
+		<a role="button" href="/blog" class="button">See all articles</a>
 
-				<div class="flex flex-col gap-6 py-4">
-					{#each posts.tutorials as post}
-						<PostSnippet {post}></PostSnippet>
-					{/each}
-				</div>
-			</section>
-		</div>
-		<div>
-			<section>
-				<h2>Latest</h2>
-				<div class="flex flex-col gap-6 py-4">
-					{#each posts.latest as post}
-						<PostSnippet {post}></PostSnippet>
-					{/each}
-				</div>
-			</section>
+		<div class="flex flex-col md:grid md:grid-cols-2" id="blog">
+			<div>
+				<section>
+					<h2>Top</h2>
+					<div class="flex flex-col gap-6 py-4">
+						{#each posts.top as post}
+							<PostSnippet {post}></PostSnippet>
+						{/each}
+					</div>
+				</section>
+
+				<section>
+					<h2>Learn</h2>
+
+					<div class="flex flex-col gap-6 py-4">
+						{#each posts.tutorials as post}
+							<PostSnippet {post}></PostSnippet>
+						{/each}
+					</div>
+				</section>
+			</div>
+			<div>
+				<section>
+					<h2>Latest</h2>
+					<div class="flex flex-col gap-6 py-4">
+						{#each posts.latest as post}
+							<PostSnippet {post}></PostSnippet>
+						{/each}
+					</div>
+				</section>
+			</div>
 		</div>
 	</div>
 </SkyBoard>

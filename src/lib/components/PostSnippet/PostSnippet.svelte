@@ -8,7 +8,7 @@
 </script>
 
 <article>
-	<h3 class="font-serif text-xl tracking-wide">
+	<h3 class="font-serif text-xl tracking-wide text-yellow-200">
 		<a href={`blog/${post.slug}`}> {post.title}</a>
 	</h3>
 	<div class="flex gap-3">

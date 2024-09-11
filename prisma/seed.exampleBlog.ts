@@ -24,6 +24,15 @@ const content = `
 	condimentum porttitor. Exercitationem nam ab deleniti, tempore error aut ipsam magni!
 </p>
 
+<figure>
+    <blockquote>
+        <p>“Vel ultricies morbi odio facilisi ultrices accumsan donec lacus purus. Lectus nibh ullamcorper ac dictum justo in euismod. Risus aenean ut elit massa. In amet aliquet eget cras. Sem volutpat enim tristique.”</p>
+    </blockquote>
+    <figcaption class="author">     
+        <div><strong>Maria Hill</strong> – Marketing Manager</div>
+    </figcaption>
+</figure>
+
 <pre><code>package main
 
 import (

@@ -17,8 +17,6 @@
 			<h4>Index</h4>
 			<ul class="ml-4">
 				<li><a href="/">Home</a></li>
-				<li><a href="/me">About Me</a></li>
-				<li><a href="/works">Projects & Works</a></li>
 				<li><a href="/symbols">Symbols</a></li>
 			</ul>
 
@@ -27,8 +25,8 @@
 				<li><a href="https://tv.brannan.cloud">Grandma's TV</a></li>
 				<li><a href="http://chat.brannan.cloud">LibreChat</a></li>
 				<li class="text-gray-400">
-					<a href="https://files.brannan.cloud" class="flex flex-row items-center">
-						<span class="fill-gray-400 h-4 w-4"> {@html svgLock} </span>
+					<a href="https://files.brannan.cloud" class="flex flex-row items-center ">
+						<span class="fill-white mr-1 h-4 w-4"> {@html svgLock} </span>
 						Brannan File Share
 					</a>
 				</li>
@@ -47,7 +45,10 @@
 		<div class="w-full sm:w-1/2 p-2 text-center">
 			<p class="">
 				Website by me,
-				<a href="https://github.com/bananabrann/brannan.cloud/blob/main/LICENSE" target="_blank"
+				<a
+					href="https://github.com/bananabrann/brannan.cloud/blob/main/LICENSE"
+					target="_blank"
+					class="underline text-white hover:text-yellow-400"
 					>MIT license, 2024.
 				</a><br />
 				Art and web assets by various artists, all rights reserved.

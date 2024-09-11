@@ -27,8 +27,11 @@
 
 <div class="my-auto"></div>
 
-<section class="text-white font-serif text-lg md:text-xl">
-	<!-- NOTE - Blog styles themselves are in ./blogStyles.css -->
+<!-- 
+NOTE - Blog styles are in ./blogStyles.css. Be sure to use the id selector so that
+styles are scoped properly.
+-->
+<section id="blog-article" class="text-white font-serif text-lg md:text-xl">
 	{@html data.post.content}
 </section>
 

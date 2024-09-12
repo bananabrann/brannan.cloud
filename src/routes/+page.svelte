@@ -79,7 +79,6 @@
 	</div>
 
 	<div class="container px-3 sm:px-6 lg:px-8 mt-5 mx-auto">
-
 		<a role="button" href="/blog" class="button">See all articles</a>
 
 		<div class="flex flex-col md:grid md:grid-cols-2" id="blog">

@@ -25,7 +25,7 @@
 				<li><a href="https://tv.brannan.cloud">Grandma's TV</a></li>
 				<li><a href="http://chat.brannan.cloud">LibreChat</a></li>
 				<li class="text-gray-400">
-					<a href="https://files.brannan.cloud" class="flex flex-row items-center ">
+					<a href="https://files.brannan.cloud" class="flex flex-row items-center">
 						<span class="fill-white mr-1 h-4 w-4"> {@html svgLock} </span>
 						Brannan File Share
 					</a>

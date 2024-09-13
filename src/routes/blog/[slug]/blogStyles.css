@@ -27,7 +27,7 @@
 }
 
 #blog-article pre {
-	@apply bg-gray-800 rounded-xl my-6 p-9 overflow-x-scroll text-base lg:mx-10 shadow-xl;
+	@apply bg-gray-800 rounded-xl my-6 p-9 overflow-x-scroll text-base shadow-xl;
 }
 
 #blog-article pre code {

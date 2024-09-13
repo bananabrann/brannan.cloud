@@ -6,7 +6,6 @@ import type { PrismaClient } from "@prisma/client";
 declare global {
 	namespace App {
 		interface Error {
-			code: string;
 			message: string;
 		}
 		// interface Locals {}

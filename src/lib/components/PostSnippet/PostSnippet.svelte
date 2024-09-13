@@ -8,9 +8,11 @@
 </script>
 
 <article>
-	<h3 class="font-serif text-xl tracking-wide text-yellow-200">
-		<a href={`blog/${post.slug}`}> {post.title}</a>
-	</h3>
+	<a href={`blog/${post.slug}`}>
+		<h3 class="font-serif text-xl tracking-wide text-yellow-300 hover:text-yellow-100">
+			{post.title}
+		</h3>
+	</a>
 	<div class="flex gap-3">
 		<div class="fill-white text-white flex gap-2 items-center justify-center align-middle">
 			<span class="flex gap-1">

@@ -64,19 +64,35 @@
 
 			<div class="bg-white p-5 rounded-md shadow-lg">
 				<div class="flex mb-2">
-					<img src={pngBananamanSquare} alt="" class="rounded-full h-16 shadow-lg" />
+					<img
+						src={pngBananamanSquare}
+						alt=""
+						class="rounded-full h-20 lg:h-14 xl:h-20 shadow-lg"
+					/>
 					<div class="pl-3">
-						<h3 class="font-bold text-lg text-black">Lee Brannan</h3>
+						<h3 class="font-bold text-2xl lg:text-lg xl:text-xl text-gray-800">Lee Brannan</h3>
 						<div class="flex gap-1 items-center">
-							<a href="" class="h-6 w-6">
+							<a
+								href="https://www.linkedin.com/in/pbrann/"
+								target="_blank"
+								class="h-10 w-10 lg:h-6 lg:w-6 fill-gray-500 hover:fill-blue-600"
+							>
 								<!-- <img src={svgt} alt=""> -->
 								{@html svgLinkedIn}
 							</a>
-							<a href="" class="h-6 w-6">
+							<a
+								href="https://github.com/bananabrann"
+								target="_blank"
+								class="h-10 w-10 lg:h-6 lg:w-6 fill-gray-500 hover:fill-gray-900"
+							>
 								<!-- <img src={svgt} alt=""> -->
 								{@html svgGitHub}
 							</a>
-							<a href="" class="h-full w-6">
+							<a
+								href="https://discord.com/users/321317378862350346"
+								target="_blank"
+								class="h-10 w-10 lg:h-6 lg:w-6 fill-gray-500 hover:fill-indigo-600"
+							>
 								<!-- <img src={svgt} alt=""> -->
 								{@html svgDiscord}
 							</a>
@@ -112,7 +128,7 @@
 
 		<div id="read-next" class="bg-white text-black rounded shadow-lg p-4">
 			<h3
-				class="text-gray-600 text-center text-lg flex flex-wrap items-center gap-x-2 gap-y-px justify-center"
+				class="text-gray-700 text-center text-lg flex flex-wrap items-center gap-x-2 gap-y-px justify-center"
 			>
 				More on
 

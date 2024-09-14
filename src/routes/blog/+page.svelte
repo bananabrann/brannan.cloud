@@ -3,6 +3,9 @@
 	import { slide } from "svelte/transition";
 	import type { PageData } from "./$types";
 	import type { Tag } from "@prisma/client";
+	import { page } from "$app/stores";
+	import { goto } from "$app/navigation";
+	import { beforeUpdate, onMount } from "svelte";
 
 	export let data: PageData;
 
@@ -11,6 +14,7 @@
 
 	function handleTagSelection(tag: Tag): void {
 		const tagName = tag.name;
+		let url: URL = $page.url;
 
 		if (selectedTags.has(tagName)) {
 			selectedTags.delete(tagName);
@@ -19,17 +23,55 @@
 		}
 
 		if (selectedTags.size === 0) {
-			filteredPosts = data.posts;
+			url.searchParams.delete("tags");
 		} else {
-			filteredPosts = data.posts.filter((post) =>
-				post.tags.some((tag: Tag) => selectedTags.has(tag.name)),
-			);
+			// Combine selected tags into a concatenated string, e.g. "javascript,svelte".
+			url.searchParams.set("tags", Array.from(selectedTags).join(","));
 		}
 
 		// https://github.com/sveltejs/svelte/issues/10263
 		// This will hopefully be addressed in Svelte 5!
 		selectedTags = selectedTags;
+
+		filterPosts();
+
+		goto(url);
 	}
+
+	function filterPosts(): void {
+		if (selectedTags.size > 0) {
+			filteredPosts = data.posts.filter((post) =>
+				post.tags.some((tag: Tag) => selectedTags.has(tag.name)),
+			);
+		} else {
+			filteredPosts = data.posts;
+		}
+	}
+
+	beforeUpdate(() => {
+		const url: URL = $page.url;
+		const tagParams = url.searchParams.get("tags")?.split(",");
+
+		// Parse tags in the URL params and manage it into the selectedTags set, if
+		// applicable.
+		if (tagParams) {
+			const tagsFlattened: string[] = data.tags.map((x) => x.name);
+
+			for (let i = 0; i < tagParams.length; i++) {
+				const s = tagParams[i];
+
+				if (tagsFlattened.find((x) => x === s)) {
+					selectedTags.add(s);
+				}
+			}
+		}
+
+		filterPosts();
+
+		// https://github.com/sveltejs/svelte/issues/10263
+		// This will hopefully be addressed in Svelte 5!
+		selectedTags = selectedTags;
+	});
 </script>
 
 <div>

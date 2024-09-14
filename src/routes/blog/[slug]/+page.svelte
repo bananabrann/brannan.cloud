@@ -152,7 +152,7 @@
 
 			<hr class="my-4" />
 
-			<a href="/blog" class="text-blue-500  hover:text-blue-300 text-center block"
+			<a href="/blog" class="text-blue-500 hover:text-blue-300 text-center block"
 				>See all articles
 			</a>
 		</div>

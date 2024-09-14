@@ -8,11 +8,11 @@ export const load: PageServerLoad = async ({ locals, params }) => {
 			author: true,
 		},
 		orderBy: {
-			postedOn: "desc"
-		}
+			postedOn: "desc",
+		},
 	});
 
-	const tags = await prisma.tag.findMany()
+	const tags = await prisma.tag.findMany();
 
 	return {
 		posts: posts,

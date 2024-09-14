@@ -21,17 +21,28 @@ export const load: PageServerLoad = async ({ locals, params }) => {
 		});
 	}
 
+	// Posts that are shown in the "More on" section must have a matching tag and not be
+	// the same article that is currently displayed.
 	const postsWithMatchingTag = await prisma.post.findMany({
 		where: {
-			tags: {
-				some: {
-					name: {
-						in: post.tags.map((t) => t.name),
+			AND: [
+				{
+					title: {
+						not: post.title,
 					},
 				},
-			},
+				{
+					tags: {
+						some: {
+							name: {
+								in: post.tags.map((t) => t.name),
+							},
+						},
+					},
+				},
+			],
 		},
-		take: 6,
+		take: 8,
 		select: {
 			slug: true,
 			title: true,

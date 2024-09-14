@@ -21,8 +21,35 @@ export const load: PageServerLoad = async ({ locals, params }) => {
 		});
 	}
 
+	const postsWithMatchingTag = await prisma.post.findMany({
+		where: {
+			tags: {
+				some: {
+					name: {
+						in: post.tags.map((t) => t.name),
+					},
+				},
+			},
+		},
+		take: 6,
+		select: {
+			slug: true,
+			title: true,
+			postedOn: true,
+			tags: {
+				select: {
+					name: true,
+				},
+			},
+		},
+		orderBy: {
+			postedOn: "desc",
+		},
+	});
+
 	return {
 		post: post,
+		readNext: postsWithMatchingTag,
 		metadata: {
 			title: `TBC Blog | ${post.title}`,
 		},

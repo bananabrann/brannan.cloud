@@ -18,7 +18,7 @@
 <div class="flex flex-col lg:flex-row gap-4">
 	<article class="lg:w-3/4">
 		<p class="text-xl">
-			Posted by {data.post.author.username} on {moment(data.post.postedOn).format("MMM Do, YYYY")}
+			Posted by {data.post.author.username} on {moment(data.post.postedOn).format("MMMM Do, YYYY")}
 		</p>
 		<h1
 			class="text-4xl xl:text-7xl lg:text-6xl md:text-5xl sm:text-4xl xs:text-5xl bold font-serif tracking-tight"
@@ -47,7 +47,7 @@
 		</section>
 	</article>
 
-	<div class="lg:w-1/4 space-y-2">
+	<div id="side-panel" class="lg:w-1/4 space-y-2">
 		<div class="bg-white p-5 rounded-md flex gap-4 justify-center border-2 shadow-lg">
 			<span class="flex h-8 text-3xl gap-1 font-bold tracking-tighter fill-green-700">
 				{@html svgClap}
@@ -109,11 +109,55 @@
 				</div>
 			</div>
 		</div>
+
+		<div id="read-next" class="bg-white text-black rounded shadow-lg p-4">
+			<h3
+				class="text-gray-600 text-center text-lg flex flex-wrap items-center gap-x-2 gap-y-px justify-center"
+			>
+				More on
+
+				{#each data.post.tags as topic}
+					<span class="bg-gray-100 rounded py-px px-2 font-semibold whitespace-nowrap lg:text-sm">
+						#{topic.name}
+					</span>
+				{/each}
+			</h3>
+
+			<hr class="my-4" />
+
+			<div class="space-y-4">
+				{#each data.readNext as readNext}
+					<div>
+						<div class="text-base lg:text-xs lg:tracking-tight text-gray-500">
+							Posted on {moment(readNext.postedOn).format("MMM Do, YYYY")}
+						</div>
+						<a href={`/blog/${readNext.slug}`} class="">
+							<h5
+								class="text-blue-500 hover:text-blue-300 lg:tracking-tight font-serif text-lg lg:text-base"
+							>
+								{readNext.title}
+							</h5>
+						</a>
+
+						<div class="flex gap-2">
+							{#each readNext.tags as tag}
+								<span class="text-mono lg:text-xs text-gray-500">
+									#{tag.name}
+								</span>
+							{/each}
+						</div>
+					</div>
+				{/each}
+			</div>
+
+			<hr class="my-4" />
+
+			<a href="/blog" class="text-blue-500  hover:text-blue-300 text-center block"
+				>See all articles
+			</a>
+		</div>
 	</div>
 </div>
 
 <style lang="postcss">
-	/* #about-the-author div * {
-		@apply text-black;
-	} */
 </style>

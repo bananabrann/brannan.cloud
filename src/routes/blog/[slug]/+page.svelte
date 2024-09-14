@@ -7,6 +7,9 @@
 	import svgGitHub from "$lib/assets/svg/github.svg?raw";
 	import svgThumbsUp from "$lib/assets/svg/thumb-up.svg?raw";
 	import svgClap from "$lib/assets/svg/hand-clap.svg?raw";
+	import jpegNode from "$lib/assets/jpeg/node-75x75.jpeg";
+	import jpegPowerPlatform from "$lib/assets/jpeg/power-platform-75x75.jpeg";
+	import jpegSvelte from "$lib/assets/jpeg/svelte-75x75.jpeg";
 	import "./blogStyles.css";
 
 	export let data: PageData;
@@ -65,35 +68,44 @@
 					<div class="pl-3">
 						<h3 class="font-bold text-lg text-black">Lee Brannan</h3>
 						<div class="flex gap-1 items-center">
-							<a href="" class="h-fit flex-grow">
+							<a href="" class="h-6 w-6">
 								<!-- <img src={svgt} alt=""> -->
 								{@html svgLinkedIn}
 							</a>
-							<a href="" class="h-fit flex-grow">
+							<a href="" class="h-6 w-6">
 								<!-- <img src={svgt} alt=""> -->
 								{@html svgGitHub}
 							</a>
-							<a href="" class="h-fit flex-grow">
+							<a href="" class="h-full w-6">
 								<!-- <img src={svgt} alt=""> -->
 								{@html svgDiscord}
 							</a>
 						</div>
 					</div>
 				</div>
-				<p class="text-sm text-black">
-					<strong>Lee Brannan</strong> is an experienced software engineer in the U.S. government specializing
-					in web development and user experience design, and is the founder and organizer of the Dallas/Fort
-					Worth chapter of Code & Coffee —a 501(c)(3) nonprofit hosting in-person networking events for
-					technologists across 36 cities in the United States.
+				<p class="text-sm text-black hyphens-none my-2">
+					<strong>Lee</strong> is a prior U.S. Marine and experienced software engineer in the United
+					States public sector specializing in web development and user interfaces.
 				</p>
+
+				<p class="text-sm text-black hyphens-none my-2">
+					He primarily writes about Power Fx and vanilla JavaScript on the Microsoft Power Platform,
+					Node.js, TypeScript, and Svelte.
+				</p>
+
+				<div class="flex max-h-9 justify-center my-5 grayscale">
+					<img src={jpegPowerPlatform} alt="" class="object-contain" />
+					<img src={jpegNode} alt="" class="object-contain" />
+					<img src={jpegSvelte} alt="" class="object-contain" />
+				</div>
 
 				<div class="w-full mt-2 gap-2 flex-col flex">
 					<a
-						href=""
+						href="/blog"
 						class="button block text-center bg-blue-500 text-white hover:bg-blue-600 hover:text-white"
 						>Read more</a
 					>
-					<a href="" class="button block text-center">View website</a>
+					<a href="/" class="button block text-center">View website</a>
 				</div>
 			</div>
 		</div>

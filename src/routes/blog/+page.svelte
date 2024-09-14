@@ -74,10 +74,6 @@
 	});
 </script>
 
-<div>
-	<a role="button" href="/" class="button">Go home</a>
-</div>
-
 <div class="flex gap-x-6 gap-y-3 flex-wrap">
 	{#each data.tags as tag}
 		<!-- svelte-ignore a11y-interactive-supports-focus -->

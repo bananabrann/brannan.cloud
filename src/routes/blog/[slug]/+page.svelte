@@ -15,7 +15,7 @@
 	export let data: PageData;
 </script>
 
-<div class="flex flex-col lg:flex-row gap-4">
+<div class="flex flex-col lg:flex-row gap-4 container mx-auto px-4 sm:px-6 lg:px-8 pt-12">
 	<article class="lg:w-3/4">
 		<p class="text-xl">
 			Posted by {data.post.author.username} on {moment(data.post.postedOn).format("MMMM Do, YYYY")}

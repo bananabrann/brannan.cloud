@@ -37,9 +37,10 @@
 	</div>
 	<div class="flex gap-2">
 		{#each post.tags as tag}
-			<span
-				class="text-white text-sm font-sans tracking-tight bg-slate-100 bg-opacity-20 py-px px-2 rounded"
-				>#{tag.name}</span
+			<a
+				href={`/blog?tags=${tag.name}`}
+				class="text-white text-sm font-sans tracking-tight bg-slate-100 bg-opacity-20 py-px px-2 rounded cursor-pointer hover:text-white hover:bg-opacity-30"
+				>#{tag.name}</a
 			>
 		{/each}
 	</div>

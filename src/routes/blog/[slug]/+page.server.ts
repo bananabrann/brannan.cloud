@@ -62,7 +62,7 @@ export const load: PageServerLoad = async ({ locals, params }) => {
 		post: post,
 		readNext: postsWithMatchingTag,
 		metadata: {
-			title: `TBC Blog | ${post.title}`,
+			title: post.title,
 		},
 	};
 };

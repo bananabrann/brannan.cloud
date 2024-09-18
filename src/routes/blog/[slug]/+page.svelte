@@ -28,11 +28,12 @@
 
 		<div class="my-4 flex gap-6">
 			{#each data.post.tags as tag}
-				<span
-					class="text-white text-base font-sans tracking-tight bg-slate-100 bg-opacity-20 py-1 px-2 rounded"
+				<a
+					class="text-white text-base font-sans tracking-tight bg-slate-100 bg-opacity-20 py-1 px-2 rounded hover:bg-opacity-40 hover:text-gray-100"
+					href={`/blog?tags=${tag.name}`}
 				>
 					#{tag.name}
-				</span>
+				</a>
 			{/each}
 		</div>
 
@@ -133,9 +134,12 @@
 				More on
 
 				{#each data.post.tags as topic}
-					<span class="bg-gray-100 rounded py-px px-2 font-semibold whitespace-nowrap lg:text-sm">
+					<a
+						class="bg-gray-100 rounded py-px px-2 text-gray-700 font-semibold whitespace-nowrap lg:text-sm hover:bg-gray-50 hover:text-gray-500"
+						href={`/blog?tags=${topic.name}`}
+					>
 						#{topic.name}
-					</span>
+					</a>
 				{/each}
 			</h3>
 
@@ -157,9 +161,12 @@
 
 						<div class="flex gap-2">
 							{#each readNext.tags as tag}
-								<span class="text-mono lg:text-xs text-gray-500">
+								<a
+									class="text-mono lg:text-xs text-gray-500 hover:text-yellow-500"
+									href={`/blog?tags=${tag.name}`}
+								>
 									#{tag.name}
-								</span>
+								</a>
 							{/each}
 						</div>
 					</div>

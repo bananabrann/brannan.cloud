@@ -66,24 +66,36 @@
 			);
 		}
 
-		// if (sortOrder) {
-		// 	filteredPosts = filteredPosts.sort((a, b) => {
-		// 		switch (sortOrder) {
-		// 			case BlogPostSortByOption.AlphabeticalTitleAsc:
-		// 				return a.title.localeCompare(b.title);
-		// 			case BlogPostSortByOption.PostedDateAsc:
-		// 				return new Date(a.postedOn).getTime() - new Date(b.postedOn).getTime();
-		// 			case BlogPostSortByOption.MostClaps:
-		// 				return b.claps - a.claps; // Assuming `claps` is a property of `post`
-		// 			case BlogPostSortByOption.MostLikes:
-		// 				return b.likes - a.likes; // Assuming `likes` is a property of `post`
-		// 			case BlogPostSortByOption.Controversial:
-		// 				return b.likes - a.dislikes; // Assuming `comments` is a property of `post`
-		// 			default:
-		// 				return 0;
-		// 		}
-		// 	});
-		// }
+		if (sortOrder) {
+			filteredPosts = filteredPosts.sort((a, b) => {
+				/*
+					FIXME - There is a mismatch in the enums (see other comment regarding the enum
+					issues). sortOrder is the key (PostedDateAsc) while accessing the enums with
+					BlogPostSortByOption.AlphabeticalTitleAsc returns the value e.g. ("Post date").
+
+					This is fine for my little app, but eventually it should be addressed.
+				*/
+				switch (sortOrder.toString()) {
+					case "AlphabeticalTitleAsc":
+						return a.title.localeCompare(b.title);
+
+					case "PostedDateAsc":
+						return new Date(a.postedOn).getTime() - new Date(b.postedOn).getTime();
+
+					case "MostClaps":
+						return b.claps - a.claps;
+
+					case "MostLikes":
+						return b.likes - a.likes;
+
+					case "Controversial":
+						return b.dislikes - a.likes;
+
+					default:
+						return 0;
+				}
+			});
+		}
 	}
 
 	onMount(() => {

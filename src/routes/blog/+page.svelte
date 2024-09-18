@@ -1,18 +1,22 @@
 <script lang="ts">
 	import PostSnippet from "$lib/components/PostSnippet/PostSnippet.svelte";
-	import { fly, slide } from "svelte/transition";
+	import { fly } from "svelte/transition";
 	import type { PageData } from "./$types";
 	import type { Tag } from "@prisma/client";
 	import { page } from "$app/stores";
 	import { goto } from "$app/navigation";
-	import { beforeUpdate, onMount } from "svelte";
-	import { bounceIn, sineInOut } from "svelte/easing";
+	import { onMount } from "svelte";
+	import { sineInOut } from "svelte/easing";
+	import { BlogPostSortByOption } from "$lib/enums/BlogPostSortByOption";
 
 	export let data: PageData;
 
 	let filteredPosts = data.posts;
+	let sortOrder: BlogPostSortByOption;
 	let selectedTags = new Set<string>();
 	let inputSearch: string;
+
+	$: sortOrder, filterPosts();
 	$: inputSearch, filterPosts();
 
 	function handleTagSelection(tag: Tag): void {
@@ -41,6 +45,12 @@
 		goto(url);
 	}
 
+	function handleSortSelection(): void {
+		let url: URL = $page.url;
+		url.searchParams.set("sortOrder", sortOrder as string);
+		goto(url);
+	}
+
 	function filterPosts(): void {
 		if (selectedTags.size > 0) {
 			filteredPosts = data.posts.filter((post) =>
@@ -50,16 +60,35 @@
 			filteredPosts = data.posts;
 		}
 
-		console.log(inputSearch);
-
 		if (inputSearch) {
 			filteredPosts = filteredPosts.filter((p) =>
 				p.title.toLowerCase().includes(inputSearch.toLowerCase()),
 			);
 		}
+
+		// if (sortOrder) {
+		// 	filteredPosts = filteredPosts.sort((a, b) => {
+		// 		switch (sortOrder) {
+		// 			case BlogPostSortByOption.AlphabeticalTitleAsc:
+		// 				return a.title.localeCompare(b.title);
+		// 			case BlogPostSortByOption.PostedDateAsc:
+		// 				return new Date(a.postedOn).getTime() - new Date(b.postedOn).getTime();
+		// 			case BlogPostSortByOption.MostClaps:
+		// 				return b.claps - a.claps; // Assuming `claps` is a property of `post`
+		// 			case BlogPostSortByOption.MostLikes:
+		// 				return b.likes - a.likes; // Assuming `likes` is a property of `post`
+		// 			case BlogPostSortByOption.Controversial:
+		// 				return b.likes - a.dislikes; // Assuming `comments` is a property of `post`
+		// 			default:
+		// 				return 0;
+		// 		}
+		// 	});
+		// }
+
+		
 	}
 
-	beforeUpdate(() => {
+	onMount(() => {
 		const url: URL = $page.url;
 		const tagParams = url.searchParams.get("tags")?.split(",");
 
@@ -75,6 +104,31 @@
 					selectedTags.add(s);
 				}
 			}
+		}
+
+		const sortOrderParams = url.searchParams.get("sortOrder");
+
+		if (sortOrderParams && sortOrderParams in BlogPostSortByOption) {
+			/*
+			TODO - Fix typing on sortOrder.
+			
+			I have no idea why I'm having such difficulties casting the enum with string keys
+			into this variable. Both of these options do nothing:
+	
+			sortOrder = BlogPostSortByOption[sortOrderParams as keyof typeof BlogPostSortByOption];
+			
+			(Object.keys(BlogPostSortByOption) as Array<keyof typeof BlogPostSortByOption>)
+			.find(key => BlogPostSortByOption[key] === sortOrderParams);
+
+			A thing that works right now is to use `as unknown as BlogPostSortByOption;`, but
+			at that point why even use TypeScript? I'd rather just @ts-ignore it.
+			*/
+
+			// @ts-ignore
+			sortOrder = sortOrderParams;
+		} else {
+			// @ts-ignore
+			sortOrder = "AlphabeticalTitleAsc";
 		}
 
 		filterPosts();
@@ -128,15 +182,11 @@
 			<label for="sort" class="block text-sm font-medium leading-6 text-gray-900 mb-2"
 				>Sort by</label
 			>
-			<div class="flex gap-x-2 gap-y-2 flex-wrap justify-center">
-				<span class="tag">posted date</span>
-
-				<span class="tag">claps</span>
-
-				<span class="tag">likes</span>
-
-				<span class="tag">controversial</span>
-			</div>
+			<select name="" id="" bind:value={sortOrder} on:change={() => handleSortSelection()}>
+				{#each Object.entries(BlogPostSortByOption) as [key, value]}
+					<option value={key}>{value}</option>
+				{/each}
+			</select>
 		</div>
 	</div>
 
@@ -146,18 +196,18 @@
 		<hr class="my-4 fill-gray-900 text-gray-900" />
 
 		{#if filteredPosts.length > 0}
-		<div class="flex flex-col gap-4">
-			{#each filteredPosts as article}
-				<div transition:fly={{ delay: 0, duration: 300, easing: sineInOut }}>
-					<PostSnippet post={article} />
-				</div>
-			{/each}
-		</div>
+			<div class="flex flex-col gap-4">
+				{#each filteredPosts as article}
+					<div transition:fly={{ delay: 0, duration: 300, easing: sineInOut }}>
+						<PostSnippet post={article} />
+					</div>
+				{/each}
+			</div>
 		{:else}
-		<div class="text-center">
-			<p class="text-xl">No articles found.</p>
-			<p>Adjust your filters, or remove your gibberish.</p>
-		</div>
+			<div class="text-center">
+				<p class="text-xl">No articles found.</p>
+				<p>Adjust your filters, or remove your gibberish.</p>
+			</div>
 		{/if}
 	</div>
 </div>

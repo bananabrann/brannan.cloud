@@ -39,6 +39,10 @@
 	}
 }
 
+select {
+	@apply w-full bg-gray-50 text-gray-700 rounded py-px px-2 cursor-pointer border hover:bg-gray-100;
+}
+
 @layer components {
 	.sky-gradient-background {
 		background: rgb(67, 24, 60);

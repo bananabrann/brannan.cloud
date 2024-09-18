@@ -151,7 +151,7 @@
 
 <div class="flex flex-col md:flex-row container mx-auto px-4 sm:px-6 lg:px-8">
 	<div
-		class="w-full md:flex-initial md:w-64 md:h-[22rem] bg-white shadow-lg px-4 pt-4 pb-8 space-y-5 rounded-lg mt-4 transition-all"
+		class="w-full md:flex-initial md:w-80 md:h-[29rem] bg-white shadow-lg px-4 pt-4 pb-8 space-y-5 rounded-lg mt-4 transition-all"
 	>
 		<div>
 			<label for="search" class="block text-sm font-medium leading-6 text-gray-900 mb-2"

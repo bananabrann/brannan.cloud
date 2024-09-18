@@ -46,13 +46,23 @@ async function main() {
 		},
 	});
 
-	const tagCareer = await prisma.tag.upsert({
-		where: { name: "career" },
+	const tagMe = await prisma.tag.upsert({
+		where: { name: "me" },
 		update: {
-			name: "career",
+			name: "me",
 		},
 		create: {
-			name: "career",
+			name: "me",
+		},
+	});
+
+	const tagMethodology = await prisma.tag.upsert({
+		where: { name: "methodology" },
+		update: {
+			name: "methodology",
+		},
+		create: {
+			name: "methodology",
 		},
 	});
 
@@ -76,6 +86,56 @@ async function main() {
 		},
 	});
 
+	const tagTypeScript = await prisma.tag.upsert({
+		where: { name: "typescript" },
+		update: {
+			name: "typescript",
+		},
+		create: {
+			name: "typescript",
+		},
+	});
+
+	const tagOpinion = await prisma.tag.upsert({
+		where: { name: "opinion" },
+		update: {
+			name: "opinion",
+		},
+		create: {
+			name: "opinion",
+		},
+	});
+
+	const tagPowerPages = await prisma.tag.upsert({
+		where: { name: "power-pages" },
+		update: {
+			name: "power-pages",
+		},
+		create: {
+			name: "power-pages",
+		},
+	});
+
+	const tagPowerApps = await prisma.tag.upsert({
+		where: { name: "power-apps" },
+		update: {
+			name: "power-apps",
+		},
+		create: {
+			name: "power-apps",
+		},
+	});
+
+	const tagPowerFx = await prisma.tag.upsert({
+		where: { name: "power-fx" },
+		update: {
+			name: "power-fx",
+		},
+		create: {
+			name: "power-fx",
+		},
+	});
+
 	// ---
 	// Users
 	// ---
@@ -90,6 +150,7 @@ async function main() {
 			password: "password",
 		},
 		create: {
+			id: "seed-id",
 			email: "test@email.com",
 			username: "bananabrann",
 			password: "password",
@@ -115,7 +176,7 @@ async function main() {
 			dislikes: randomInt(0, 2),
 			tutorial: true,
 			tags: {
-				connect: [{ id: tagPowerPlatform.id }, { id: tagJavaScript.id }],
+				connect: [{ id: tagPowerPlatform.id }, { id: tagJavaScript.id }, { id: tagPowerPages.id }],
 			},
 		},
 		create: {
@@ -130,7 +191,7 @@ async function main() {
 			tutorial: true,
 			authorId: user1.id,
 			tags: {
-				connect: [{ id: tagPowerPlatform.id }, { id: tagJavaScript.id }],
+				connect: [{ id: tagPowerPlatform.id }, { id: tagJavaScript.id }, { id: tagPowerPages.id }],
 			},
 		},
 	});
@@ -149,7 +210,9 @@ async function main() {
 			likes: randomInt(0, 10),
 			tutorial: false,
 			dislikes: randomInt(0, 2),
-			tags: { connect: [{ id: tagPowerPlatform.id }] },
+			tags: {
+				connect: [{ id: tagPowerPlatform.id }, { id: tagOpinion.id }, { id: tagMethodology.id }],
+			},
 		},
 		create: {
 			title: "The Good, the Bad, and the Ugly of the Microsoft Power Platform",
@@ -162,7 +225,9 @@ async function main() {
 			tutorial: false,
 			dislikes: randomInt(0, 2),
 			authorId: user1.id,
-			tags: { connect: [{ id: tagPowerPlatform.id }] },
+			tags: {
+				connect: [{ id: tagPowerPlatform.id }, { id: tagOpinion.id }, { id: tagMethodology.id }],
+			},
 		},
 	});
 
@@ -171,30 +236,30 @@ async function main() {
 			slug: "usmc",
 		},
 		update: {
-			title: "I wasn't a fan of the Marines, but I'd do it again",
+			title: "From tuba player to software developer: my upbringing into software",
 			slug: "usmc",
 			content: loremContent,
-			postedOn: new Date("2024-08-16T20:22:00Z"),
+			postedOn: new Date("2024-03-12T20:22:00Z"),
 			published: true,
 			claps: randomInt(5, 40),
 			likes: randomInt(0, 10),
 			tutorial: false,
 			dislikes: randomInt(0, 2),
 			authorId: user1.id,
-			tags: { connect: [{ id: tagCareer.id }] },
+			tags: { connect: [{ id: tagMe.id }, { id: tagOpinion.id }] },
 		},
 		create: {
-			title: "I wasn't a fan of the Marines, but I'd do it again",
+			title: "From tuba player to software developer: my upbringing into software",
 			slug: "usmc",
 			content: loremContent,
-			postedOn: new Date("2024-08-16T20:22:00Z"),
+			postedOn: new Date("2024-03-12T20:22:00Z"),
 			published: true,
 			claps: randomInt(5, 40),
 			likes: randomInt(0, 10),
 			tutorial: false,
 			dislikes: randomInt(0, 2),
 			authorId: user1.id,
-			tags: { connect: [{ id: tagCareer.id }] },
+			tags: { connect: [{ id: tagMe.id }, { id: tagOpinion.id }] },
 		},
 	});
 
@@ -203,7 +268,7 @@ async function main() {
 			slug: "fetchxml-joins",
 		},
 		update: {
-			title: "SQL 'JOIN's for FetchXML, a guide",
+			title: "A guide to SQL JOINs for FetchXML",
 			slug: "fetchxml-joins",
 			content: loremContent,
 			postedOn: new Date("2024-08-16T20:22:00Z"),
@@ -213,7 +278,7 @@ async function main() {
 			tutorial: true,
 			dislikes: randomInt(0, 2),
 			authorId: user1.id,
-			tags: { connect: [{ id: tagPowerPlatform.id }] },
+			tags: { connect: [{ id: tagPowerPlatform.id }, { id: tagPowerPages.id }] },
 		},
 		create: {
 			title: "SQL 'JOIN's for FetchXML, a guide",
@@ -226,7 +291,7 @@ async function main() {
 			tutorial: true,
 			dislikes: randomInt(0, 2),
 			authorId: user1.id,
-			tags: { connect: [{ id: tagPowerPlatform.id }] },
+			tags: { connect: [{ id: tagPowerPlatform.id }, { id: tagPowerPages.id }] },
 		},
 	});
 
@@ -245,7 +310,7 @@ async function main() {
 			tutorial: false,
 			dislikes: randomInt(0, 2),
 			authorId: user1.id,
-			tags: { connect: [{ id: tagCareer.id }] },
+			tags: { connect: [{ id: tagMethodology.id }] },
 		},
 		create: {
 			title: "Code quality: a concern for businesses, bottoms lines, and empathetic programmers",
@@ -258,7 +323,89 @@ async function main() {
 			tutorial: false,
 			dislikes: randomInt(0, 2),
 			authorId: user1.id,
-			tags: { connect: [{ id: tagCareer.id }] },
+			tags: { connect: [{ id: tagMethodology.id }] },
+		},
+	});
+
+	const blog6 = await prisma.post.upsert({
+		where: {
+			slug: "typescript-on-svelte",
+		},
+		update: {
+			title: "My changing opinion of TypeScript and SvelteKit",
+			slug: "changing-opinion-on-ts-and-sveltekit",
+			content: loremContent,
+			postedOn: new Date("2024-06-02T22:10:00Z"),
+			published: true,
+			claps: randomInt(50, 60),
+			likes: randomInt(0, 10),
+			tutorial: false,
+			dislikes: randomInt(0, 2),
+			authorId: user1.id,
+			tags: {
+				connect: [
+					{ id: tagMethodology.id },
+					{ id: tagOpinion.id },
+					{ id: tagTypeScript.id },
+					{ id: tagSvelte.id },
+				],
+			},
+		},
+		create: {
+			title: "My changing opinion of TypeScript and SvelteKit",
+			slug: "changing-opinion-on-ts-and-sveltekit",
+			content: loremContent,
+			postedOn: new Date("2024-06-02T22:10:00Z"),
+			published: true,
+			claps: randomInt(50, 60),
+			likes: randomInt(0, 10),
+			tutorial: false,
+			dislikes: randomInt(0, 2),
+			authorId: user1.id,
+			tags: {
+				connect: [
+					{ id: tagMethodology.id },
+					{ id: tagOpinion.id },
+					{ id: tagTypeScript.id },
+					{ id: tagSvelte.id },
+				],
+			},
+		},
+	});
+
+	const blog7 = await prisma.post.upsert({
+		where: {
+			slug: "io-with-power-apps-component-libraries",
+		},
+		update: {
+			title: "I/O with Power Apps component libraries and external data sources",
+			slug: "io-with-power-apps-component-libraries",
+			content: loremContent,
+			postedOn: new Date("2024-04-03T22:10:00Z"),
+			published: true,
+			claps: randomInt(50, 60),
+			likes: randomInt(0, 10),
+			tutorial: true,
+			dislikes: randomInt(0, 2),
+			authorId: user1.id,
+			tags: {
+				connect: [{ id: tagPowerFx.id }, { id: tagPowerApps.id }, { id: tagPowerFx.id }],
+			},
+		},
+		create: {
+			title: "I/O flows with Power Apps component libraries",
+			slug: "io-with-power-apps-component-libraries",
+			content: loremContent,
+			postedOn: new Date("2024-04-03T22:10:00Z"),
+			published: true,
+			claps: randomInt(50, 60),
+			likes: randomInt(0, 10),
+			tutorial: true,
+			dislikes: randomInt(0, 2),
+			authorId: user1.id,
+			tags: {
+				connect: [{ id: tagPowerFx.id }, { id: tagPowerApps.id }, { id: tagPowerFx.id }],
+			},
 		},
 	});
 }

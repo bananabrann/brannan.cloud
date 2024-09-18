@@ -40,7 +40,7 @@
 }
 
 select {
-	@apply w-full bg-gray-50 text-gray-700 rounded py-px px-2 cursor-pointer border hover:bg-gray-100;
+	@apply w-full bg-gray-50 text-gray-700 rounded py-px px-2 cursor-pointer border hover:bg-gray-100 tracking-tight text-sm;
 }
 
 @layer components {

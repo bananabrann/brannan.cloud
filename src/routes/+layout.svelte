@@ -2,7 +2,7 @@
 	import "../app.css";
 	import { page } from "$app/stores";
 
-	$: title = `${$page.data.metadata?.title ? $page.data.metadata?.title + " |" : "" } The Brannan Cloud`;
+	$: title = `${$page.data.metadata?.title ? $page.data.metadata?.title + " |" : ""} The Brannan Cloud`;
 </script>
 
 <svelte:head>

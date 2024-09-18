@@ -14,15 +14,15 @@ export const load: PageServerLoad = async ({ locals, params }) => {
 
 	const tags = await prisma.tag.findMany({
 		orderBy: {
-			name: "asc"
-		}
+			name: "asc",
+		},
 	});
 
 	return {
 		posts: posts,
 		tags: tags,
 		metadata: {
-			title: "Blog"
-		}
+			title: "Blog",
+		},
 	};
 };

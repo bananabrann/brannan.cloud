@@ -9,7 +9,7 @@ datasource db {
 }
 
 model User {
-  id       Int       @id @default(autoincrement())
+  id       String    @id
   username String    @unique
   email    String    @unique
   password String
@@ -18,10 +18,10 @@ model User {
 }
 
 model Session {
-  id        Int      @id @default(autoincrement())
-  userId    Int
+  id        String   @id
+  userId    String
   expiresAt DateTime
-  user      User     @relation(references: [id], fields: [userId], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Tag {
@@ -41,7 +41,7 @@ model Post {
   claps     Int      @default(0)
   likes     Int      @default(0)
   dislikes  Int      @default(0)
-  authorId  Int
+  authorId  String
   author    User     @relation(fields: [authorId], references: [id])
   tags      Tag[]
 }

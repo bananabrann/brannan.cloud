@@ -19,9 +19,12 @@
 		"db-reset:local": "dotenv -e .env.local -- prisma db push --force-reset && dotenv -e .env.local -- prisma db seed"
 	},
 	"dependencies": {
-		"@prisma/client": "^5.19.1",
+		"@lucia-auth/adapter-prisma": "^4.0.1",
+		"@prisma/client": "^5.18.0",
 		"dotenv": "^16.4.5",
-		"moment": "^2.30.1"
+		"lucia": "^3.2.0",
+		"moment": "^2.30.1",
+		"oslo": "^1.2.1"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",

@@ -48,7 +48,7 @@
 		</section>
 	</article>
 
-	<div id="side-panel" class="lg:w-1/4 space-y-2">
+	<div id="side-panel" class="lg:w-2/5 xl:w-1/4 space-y-2">
 		<div class="bg-white p-5 rounded-md flex gap-4 justify-center border-2 shadow-lg">
 			<span class="flex h-8 text-3xl gap-1 font-bold tracking-tighter fill-green-700">
 				{@html svgClap}

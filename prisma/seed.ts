@@ -408,4 +408,40 @@ async function main() {
 			},
 		},
 	});
+
+	const blog8 = await prisma.post.upsert({
+		where: {
+			slug: "svelte5-runes",
+		},
+		update: {
+			title: `I don't agree with people that are against Svelte 5's new "runes" feature`,
+			slug: "svelte5-runes",
+			content: loremContent,
+			postedOn: new Date("2024-04-03T22:10:00Z"),
+			published: true,
+			claps: randomInt(50, 60),
+			likes: randomInt(0, 10),
+			tutorial: true,
+			dislikes: randomInt(0, 2),
+			authorId: user1.id,
+			tags: {
+				connect: [{ id: tagSvelte.id }, { id: tagOpinion.id }, { id: tagJavaScript.id }],
+			},
+		},
+		create: {
+			title: `I don't agree with people that are against Svelte 5's new "runes" feature`,
+			slug: "svelte5-runes",
+			content: loremContent,
+			postedOn: new Date("2024-04-03T22:10:00Z"),
+			published: true,
+			claps: randomInt(50, 60),
+			likes: randomInt(0, 10),
+			tutorial: true,
+			dislikes: randomInt(0, 2),
+			authorId: user1.id,
+			tags: {
+				connect: [{ id: tagSvelte.id }, { id: tagOpinion.id }, { id: tagJavaScript.id }],
+			},
+		},
+	});
 }

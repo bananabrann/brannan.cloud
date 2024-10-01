@@ -13,36 +13,7 @@
 		So here, the content itself lives within the footer whose width is 100% of the viewport.
 	-->
 	<div class="max-w-2xl m-auto flex flex-wrap">
-		<div class="w-full sm:w-1/2 p-2">
-			<h4>Index</h4>
-			<ul class="ml-4">
-				<li><a href="/">Home</a></li>
-				<li><a href="/symbols">Symbols</a></li>
-			</ul>
-
-			<h4>Sites</h4>
-			<ul class="ml-4">
-				<li><a href="https://tv.brannan.cloud">Grandma's TV</a></li>
-				<li><a href="http://chat.brannan.cloud">LibreChat</a></li>
-				<li class="text-gray-400">
-					<a href="https://files.brannan.cloud" class="flex flex-row items-center">
-						<span class="fill-white mr-1 h-4 w-4"> {@html svgLock} </span>
-						Brannan File Share
-					</a>
-				</li>
-			</ul>
-
-			<h4>Socials</h4>
-			<ul class="ml-4">
-				<li><a href="https://github.com/bananabrann" target="_self">GitHub</a></li>
-				<li>
-					<a href="https://discordapp.com/users/321317378862350346" target="_self">Discord</a>
-				</li>
-				<li><a href="https://linkedin.com/in/pbrann" target="_self">LinkedIn</a></li>
-			</ul>
-		</div>
-
-		<div class="w-full sm:w-1/2 p-2 text-center">
+		<div class="w-full p-2 text-center">
 			<p class="">
 				Website by me,
 				<a
@@ -57,6 +28,10 @@
 
 			<div class="m-auto text-white h-20 w-20 mt-4">
 				<img src={oldEgaUrl} alt="" />
+			</div>
+			<div class="my-1.5">
+				<p class="text-right italic">'till the wheels fall off.</p>
+				<p class="text-right text-sm">- Wee Man</p>
 			</div>
 		</div>
 	</div>

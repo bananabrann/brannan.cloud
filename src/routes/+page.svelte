@@ -2,16 +2,13 @@
 	import Footer from "$lib/components/Footer/Footer.svelte";
 	import SkyBoard from "$lib/components/SkyBoard/SkyBoard.svelte";
 	import BananamanOnCloud from "$lib/assets/png/bananaman-on-cloud.png";
-	import svgHello from "$lib/assets/svg/hello.svg?raw";
 	import { WebsiteUpStatus } from "$lib/enums/WebsiteUpStatus";
 	import type { PageData } from "./$types";
 	import WebStatusBadge from "$lib/components/WebStatusBadge/WebStatusBadge.svelte";
-	import type { PostWithAllDetails } from "$lib/types/PostWithAllDetails";
-	import PostSnippet from "$lib/components/PostSnippet/PostSnippet.svelte";
 
 	export let data: PageData;
 
-	$: ({ webStatuses, posts } = data);
+	$: ({ webStatuses } = data);
 </script>
 
 <SkyBoard>
@@ -67,59 +64,27 @@
 		</div>
 	</div>
 
-	<div class="flex flex-col-reverse md:flex-row items-center justify-center pt-10">
+	<div class="flex flex-col-reverse items-center justify-center pt-10">
 		<img
 			src={BananamanOnCloud}
 			alt=""
-			class="max-w-xl object-contain animate-oscillateGently w-[75vw] sm:w-1/2 lg:w-1/3"
+			class="max-w-xl object-contain animate-oscillateGently w-[75vw]"
 		/>
-		<span class="ml-16 transform md:scale-100 lg:scale-150 relative">
-			{@html svgHello}
-		</span>
 	</div>
 
-	<div class="container px-3 sm:px-6 lg:px-8 mt-5 mx-auto">
-		<a role="button" href="/blog" class="button">See all articles</a>
+	<div class="my-16"></div>
 
-		<div class="flex flex-col md:grid md:grid-cols-2" id="blog">
-			<div>
-				<section>
-					<h2>Top</h2>
-					<div class="flex flex-col gap-6 py-4">
-						{#each posts.top as post}
-							<PostSnippet {post}></PostSnippet>
-						{/each}
-					</div>
-				</section>
-
-				<section>
-					<h2>Learn</h2>
-
-					<div class="flex flex-col gap-6 py-4">
-						{#each posts.tutorials as post}
-							<PostSnippet {post}></PostSnippet>
-						{/each}
-					</div>
-				</section>
-			</div>
-			<div>
-				<section>
-					<h2>Latest</h2>
-					<div class="flex flex-col gap-6 py-4">
-						{#each posts.latest as post}
-							<PostSnippet {post}></PostSnippet>
-						{/each}
-					</div>
-				</section>
-			</div>
-		</div>
+	<div class="w-full flex flex-col max-w-64 mx-auto gap-4 px-4">
+		<a href="https://linkedin.com/in/pbrann" class="button text-center text-lg" role="button"
+			>LinkedIn</a
+		>
+		<a href="https://github.com/bananabrann" class="button text-center text-lg" role="button"
+			>GitHub</a
+		>
 	</div>
 </SkyBoard>
 
 <Footer></Footer>
 
 <style lang="postcss">
-	#blog h2 {
-		@apply text-3xl tracking-wide font-thin text-center;
-	}
 </style>

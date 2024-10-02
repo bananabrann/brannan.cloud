@@ -30,8 +30,8 @@
 				<img src={oldEgaUrl} alt="" />
 			</div>
 			<div class="my-1.5">
-				<p class="text-right italic">'till the wheels fall off.</p>
-				<p class="text-right text-sm">- Wee Man</p>
+				<p class="text-right text-slate-500 italic text-sm">'till the wheels fall off.</p>
+				<p class="text-right text-slate-500 text-xs">- Wee Man</p>
 			</div>
 		</div>
 	</div>

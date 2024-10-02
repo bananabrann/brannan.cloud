@@ -88,6 +88,7 @@
 	.cloud-row {
 		@apply animate-moveLeftContinuous;
 		@apply flex flex-row;
+		@apply md:w-[100%] w-[300%];
 		position: absolute;
 		bottom: 0;
 	}

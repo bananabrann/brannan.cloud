@@ -28,7 +28,6 @@
 
 	onMount(() => {
 		calculateCloudBoardPosition();
-		console.log("calculated");
 
 		window.addEventListener("scroll", () => {
 			calculateCloudBoardPosition();

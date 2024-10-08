@@ -105,13 +105,22 @@
 
 	<div class="my-16"></div>
 
-	<div class="w-full flex flex-col max-w-64 mx-auto gap-4 px-4">
-		<a href="https://linkedin.com/in/pbrann" class="button text-center text-lg" role="button"
-			>LinkedIn</a
-		>
-		<a href="https://github.com/bananabrann" class="button text-center text-lg" role="button"
-			>GitHub</a
-		>
+	<div
+		class="container px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-center sm:divide-x mx-auto max-w-xl"
+	>
+		<p class="text-xl pr-2 sm:w-2/3 py-2">
+			Hi 👋 I'm Lee, a software engineer in the United States building websites that Americans use
+			all around the world.
+		</p>
+
+		<div class="flex flex-col gap-4 px-4 sm:w-1/3 py-6 sm:py-2">
+			<a href="https://linkedin.com/in/pbrann" class="button text-center text-lg" role="button"
+				>LinkedIn</a
+			>
+			<a href="https://github.com/bananabrann" class="button text-center text-lg" role="button"
+				>GitHub</a
+			>
+		</div>
 	</div>
 </SkyBoard>
 

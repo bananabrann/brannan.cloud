@@ -12,41 +12,7 @@
 
 	// NOTE - Streaming is not currently supported for load functions. See
 	// https://github.com/bananabrann/brannan.cloud/issues/87 for more information.
-	// $: ({ webStatuses } = data);
-
-	let tvStatus: WebsiteUpStatus;
-	let chatStatus: WebsiteUpStatus;
-	let filesStatus: WebsiteUpStatus;
-
-	$: tvStatus = WebsiteUpStatus.Loading;
-	$: chatStatus = WebsiteUpStatus.Loading;
-	$: filesStatus = WebsiteUpStatus.Loading;
-
-	onMount(() => {
-		isWebsiteOnline("http://146.190.0.104").then((res) => (chatStatus = res.status));
-		isWebsiteOnline("https://tv.brannan.cloud").then((res) => (tvStatus = res.status));
-		isWebsiteOnline("https://files.brannan.cloud").then((res) => (filesStatus = res.status));
-	});
-
-	async function isWebsiteOnline(url: string): Promise<WebsiteUpResponse> {
-		try {
-			const response = await fetch(url, { method: "HEAD", mode: "no-cors" });
-
-			if (response.ok) {
-				return {
-					status: WebsiteUpStatus.Up,
-				};
-			} else {
-				return {
-					status: WebsiteUpStatus.Down,
-				};
-			}
-		} catch (error) {
-			return {
-				status: WebsiteUpStatus.Down,
-			};
-		}
-	}
+	$: ({ webStatuses } = data);
 </script>
 
 <SkyBoard>
@@ -57,40 +23,46 @@
 				<a
 					href="http://146.190.0.104"
 					class="font-semibold tracking-tight text-white underline underline-offset-2 hover:text-yellow-400"
-					>Chat</a
+					>LibreChat</a
 				>
 
 				<!-- 
-				NOTE - Streaming is not currently supported for load functions. See 
+				NOTE - Streaming is not currently supported for load functions on Azure SWA. See 
 				https://github.com/bananabrann/brannan.cloud/issues/87 for more information.
 				-->
-				<!-- 
 				{#await webStatuses.chat}
 					<WebStatusBadge status={WebsiteUpStatus.Loading} />
 				{:then status}
 					<WebStatusBadge status={status.status} />
 				{:catch error}
 					<WebStatusBadge status={WebsiteUpStatus.Error} />
-				{/await} 
-				-->
-				<WebStatusBadge status={chatStatus} />
+				{/await}
 			</div>
 
 			<div class="flex gap-2">
 				<a
 					href="https://tv.brannan.cloud"
 					class="font-semibold tracking-tight text-white underline underline-offset-2 hover:text-yellow-300"
-					>TV</a
+					>Grandma's TV</a
 				>
-				<WebStatusBadge status={tvStatus} />
+				{#await webStatuses.chat}
+					<WebStatusBadge status={WebsiteUpStatus.Loading} />
+				{:then status}
+					<WebStatusBadge status={status.status} />
+				{:catch error}
+					<WebStatusBadge status={WebsiteUpStatus.Error} />
+				{/await}
 			</div>
 
 			<div class="flex gap-2">
-				<a
-					href="https://files.brannan.cloud"
-					class="font-semibold tracking-tight text-white underline underline-offset-2">Files</a
-				>
-				<WebStatusBadge status={filesStatus} />
+				<p class="font-semibold tracking-tight text-gray-300 cursor-not-allowed">File Hosting</p>
+				{#await webStatuses.files}
+					<WebStatusBadge status={WebsiteUpStatus.Loading} />
+				{:then status}
+					<WebStatusBadge status={status.status} />
+				{:catch error}
+					<WebStatusBadge status={WebsiteUpStatus.Error} />
+				{/await}
 			</div>
 		</div>
 	</div>

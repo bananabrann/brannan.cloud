@@ -5,16 +5,14 @@ import type { PageServerLoad } from "./$types";
 export const load: PageServerLoad = async ({ locals }) => {
 	return {
 		/*
-		NOTE - Streaming is not currently supported for load functions. See 
+		NOTE - Streaming is not currently supported for load functions on Azure SWA. See 
 		https://github.com/bananabrann/brannan.cloud/issues/87 for more information.
 		*/
-		/*
 		webStatuses: {
 			tv: isWebsiteOnline("https://tv.brannan.cloud"),
 			files: isWebsiteOnline("https://files.brannan.cloud"),
 			chat: isWebsiteOnline("http://146.190.0.104"),
 		},
-		*/
 	};
 };
 

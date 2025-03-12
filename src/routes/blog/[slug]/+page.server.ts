@@ -4,6 +4,8 @@ import type { PageServerLoad } from "./$types";
 import type { PostWithAllDetails } from "$lib/types/PostWithAllDetails";
 import { error } from "@sveltejs/kit";
 
+
+
 export const load: PageServerLoad = async ({ locals, params }) => {
 	const post = await prisma.post.findUnique({
 		where: {

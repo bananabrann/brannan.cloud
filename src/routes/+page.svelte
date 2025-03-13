@@ -102,13 +102,13 @@
 		</div>
 	</div>
 
-	<div class="container mx-auto mt-20 px-4">
+	<div class="container mx-auto mt-20">
 		<h1 class="text-4xl sm:text-center mb-8">Good Reading</h1>
 
 		<div class="masonry">
 			{#each data.shareSnippets as snippet}
 				<div
-					class={`lg:max-w-md w-full m-2 bg-opacity-20 py-4 px-8 rounded-lg ${snippet.isFeatured ? "bg-green-100 backdrop-blur-md border-2 border-lime-500" : ""}`}
+					class={`lg:max-w-md lg:w-full m-2 bg-opacity-20 py-4 rounded-lg ${snippet.isFeatured ? "bg-green-100 px-8 backdrop-blur-md border-2 border-lime-500" : ""}`}
 				>
 					{#if snippet.isFeatured}
 						<img src={svgBookmark} class="h-12 absolute -top-3 -right-0.5" alt="" />
@@ -139,7 +139,7 @@
 
 <style lang="scss">
 	.masonry {
-		@apply mx-auto lg:flex lg:flex-col lg:flex-wrap;
+		@apply mx-auto lg:flex lg:flex-col lg:flex-wrap w-full;
 		max-width: fit-content;
 		gap: 0.5rem;
 		align-items: center;

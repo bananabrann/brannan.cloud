@@ -39,20 +39,19 @@ async function isWebsiteOnline(url: string): Promise<WebsiteUpResponse> {
 }
 
 function getSortedShareSnippets(): Array<ShareSnippet> {
-	const sortedSnippets: Array<ShareSnippet> = SHARE_SNIPPETS
-		.sort((a, b) => {
-			return new Date(b.date).getTime() - new Date(a.date).getTime();
-			// if (a.isFeatured === b.isFeatured) {
-			// 	return new Date(b.date).getTime() - new Date(a.date).getTime();
-			// }
-			// return a.isFeatured ? -1 : 1;
-		});
+	const sortedSnippets: Array<ShareSnippet> = SHARE_SNIPPETS.sort((a, b) => {
+		return new Date(b.date).getTime() - new Date(a.date).getTime();
+		// if (a.isFeatured === b.isFeatured) {
+		// 	return new Date(b.date).getTime() - new Date(a.date).getTime();
+		// }
+		// return a.isFeatured ? -1 : 1;
+	});
 
-	sortedSnippets.forEach(snippet => {
+	sortedSnippets.forEach((snippet) => {
 		snippet.date = new Date(snippet.date).toLocaleDateString(undefined, {
-			year: 'numeric',
-			month: 'short',
-			day: 'numeric',
+			year: "numeric",
+			month: "short",
+			day: "numeric",
 		});
 	});
 

@@ -1,6 +1,7 @@
 import type WebsiteUpResponse from "$lib/interfaces/WebsiteUpResponse";
 import { WebsiteUpStatus } from "$lib/enums/WebsiteUpStatus";
 import type { PageServerLoad } from "./$types";
+import { type ShareSnippet, SHARE_SNIPPETS } from "$lib/server/content";
 
 export const load: PageServerLoad = async ({ locals }) => {
 	return {
@@ -13,6 +14,7 @@ export const load: PageServerLoad = async ({ locals }) => {
 			files: isWebsiteOnline("https://files.brannan.cloud"),
 			chat: isWebsiteOnline("http://146.190.0.104"),
 		},
+		shareSnippets: getSortedShareSnippets(),
 	};
 };
 
@@ -34,4 +36,24 @@ async function isWebsiteOnline(url: string): Promise<WebsiteUpResponse> {
 			status: WebsiteUpStatus.Down,
 		};
 	}
+}
+
+function getSortedShareSnippets(): Array<ShareSnippet> {
+	const sortedSnippets: Array<ShareSnippet> = SHARE_SNIPPETS.sort((a, b) => {
+		return new Date(b.date).getTime() - new Date(a.date).getTime();
+		// if (a.isFeatured === b.isFeatured) {
+		// 	return new Date(b.date).getTime() - new Date(a.date).getTime();
+		// }
+		// return a.isFeatured ? -1 : 1;
+	});
+
+	sortedSnippets.forEach((snippet) => {
+		snippet.date = new Date(snippet.date).toLocaleDateString(undefined, {
+			year: "numeric",
+			month: "short",
+			day: "numeric",
+		});
+	});
+
+	return sortedSnippets;
 }

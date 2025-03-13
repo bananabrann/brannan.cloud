@@ -1,7 +1,7 @@
 {
 	"name": "brannan.cloud",
 	"description": "The private website of me, bananabrann",
-	"version": "3.0.5",
+	"version": "3.1.0",
 	"private": true,
 	"type": "module",
 	"scripts": {
@@ -14,12 +14,9 @@
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
 		"test:integration": "playwright test",
-		"test:unit": "vitest",
-		"db-migrate:local": "dotenv -e .env.local -- prisma migrate dev",
-		"db-reset:local": "dotenv -e .env.local -- prisma db push --force-reset && dotenv -e .env.local -- prisma db seed"
+		"test:unit": "vitest"
 	},
 	"dependencies": {
-		"@prisma/client": "^5.19.1",
 		"dotenv": "^16.4.5",
 		"moment": "^2.30.1"
 	},
@@ -38,6 +35,7 @@
 		"postcss": "^8.4.45",
 		"prettier": "^3.1.1",
 		"prettier-plugin-svelte": "^3.1.2",
+		"sass-embedded": "^1.85.1",
 		"svelte": "^4.2.7",
 		"svelte-adapter-azure-swa": "^0.20.1",
 		"svelte-check": "^4.0.0",

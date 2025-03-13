@@ -78,16 +78,18 @@
 		/>
 	</div>
 
-	<div class="my-16"></div>
+	<div class="my-14"></div>
 
 	<div
 		class="container px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-center sm:divide-x mx-auto max-w-xl"
 	>
-		<p class="text-xl pr-2 sm:w-2/3 py-2">
-			Hi👋 I'm Lee, a software engineer in the United States building websites that Americans use
-			all around the world.<br />
-			I work primarily with web development in the public sector.
-		</p>
+		<div class="sm:w-2/3 pr-2 py-2">
+			<h1 class="text-4xl">Hi, I'm Lee</h1>
+			<p class="text-xl">
+				A software engineer in the United States building websites that Americans use all around the
+				world.
+			</p>
+		</div>
 
 		<div class="flex flex-col gap-4 px-4 sm:w-1/3 py-6 sm:py-2">
 			<a href="https://linkedin.com/in/pbrann" class="button text-center text-lg" role="button"
@@ -100,13 +102,13 @@
 		</div>
 	</div>
 
-	<div class="container mx-auto mt-20">
-		<!-- <h1>Good Finds</h1> -->
+	<div class="container mx-auto mt-20 px-4">
+		<h1 class="text-4xl sm:text-center mb-8">Good Reading</h1>
 
-		<div class="flex flex-wrap leading-snug gap-2 justify-center">
+		<div class="masonry">
 			{#each data.shareSnippets as snippet}
 				<div
-					class={`bg-opacity-20 py-4 px-8 rounded-lg rounded-r-none m-2 max-w-md h-full ${snippet.isFeatured ? "bg-green-100 backdrop-blur-md border-2 border-lime-500" : ""}`}
+					class={`lg:max-w-md w-full m-2 bg-opacity-20 py-4 px-8 rounded-lg ${snippet.isFeatured ? "bg-green-100 backdrop-blur-md border-2 border-lime-500" : ""}`}
 				>
 					{#if snippet.isFeatured}
 						<img src={svgBookmark} class="h-12 absolute -top-3 -right-0.5" alt="" />
@@ -116,7 +118,7 @@
 						{snippet.title}
 						<img src={svgNewWindow} class="h-4 inline mb-1" alt="" />
 					</a>
-					<span class="flex flex-nowrap justify-between w-full">
+					<span class="flex flex-nowrap justify-between">
 						<p>By {snippet.author}</p>
 						<p>{snippet.date}</p>
 					</span>
@@ -124,7 +126,7 @@
 					{#if snippet.comment}
 						<div class="divide-x-2 divide-y-reverse ml-8 mt-4">
 							<img src={commentPortrait} class="rounded-full max-w-12 absolute -ml-6" alt="" />
-							<p class="italic text-sm tracking-wide pl-12">"{snippet.comment}"</p>
+							<p class="italic lg:text-sm tracking-wide pl-12">"{snippet.comment}"</p>
 						</div>
 					{/if}
 				</div>
@@ -135,5 +137,15 @@
 
 <Footer></Footer>
 
-<style lang="postcss">
+<style lang="scss">
+	.masonry {
+		@apply mx-auto lg:flex lg:flex-col lg:flex-wrap;
+		max-width: fit-content;
+		gap: 0.5rem;
+		align-items: center;
+
+		// CHANGE THIS FOR ADJUSTING MASONRY.
+		// TODO - Make this responsive.
+		@apply lg:max-h-[800px];
+	}
 </style>

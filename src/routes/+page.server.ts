@@ -49,10 +49,10 @@ function getSortedShareSnippets(): Array<ShareSnippet> {
 		});
 
 	sortedSnippets.forEach(snippet => {
-		snippet.date = new Date(snippet.date).toLocaleDateString("en-US", {
+		snippet.date = new Date(snippet.date).toLocaleDateString(undefined, {
 			year: 'numeric',
 			month: 'short',
-			day: 'numeric'
+			day: 'numeric',
 		});
 	});
 

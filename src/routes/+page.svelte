@@ -9,13 +9,13 @@
 	import type WebsiteUpResponse from "$lib/interfaces/WebsiteUpResponse";
 	import commentPortrait from "$lib/assets/jpeg/portait-60x60.jpg";
 	import svgNewWindow from "$lib/assets/svg/new-window.svg";
+	import svgBookmark from "$lib/assets/svg/bookmark.svg";
 
 	export let data: PageData;
 
 	// NOTE - Streaming is not currently supported for load functions. See
 	// https://github.com/bananabrann/brannan.cloud/issues/87 for more information.
 	$: ({ webStatuses } = data);
-
 </script>
 
 <SkyBoard>
@@ -85,7 +85,7 @@
 	>
 		<p class="text-xl pr-2 sm:w-2/3 py-2">
 			Hi👋 I'm Lee, a software engineer in the United States building websites that Americans use
-			all around the world.<br/>
+			all around the world.<br />
 			I work primarily with web development in the public sector.
 		</p>
 
@@ -100,32 +100,36 @@
 		</div>
 	</div>
 
-	<div class="container px-4 mx-auto">
-		<h1>Good Finds</h1>
+	<div class="container mx-auto mt-20">
+		<!-- <h1>Good Finds</h1> -->
 
-		<div class="flex flex-wrap leading-snug gap-2 justify-center " >
+		<div class="flex flex-wrap leading-snug gap-2 justify-center">
 			{#each data.shareSnippets as snippet}
-				<div class="bg-opacity-20 p-4 rounded-lg m-2 max-w-md">
-					
-					<a href={snippet.url} class="text-white font-semibold tracking-wide">{snippet.title} <img src={svgNewWindow} class="h-4  inline mb-1" alt=""></a>
+				<div
+					class={`bg-opacity-20 py-4 px-8 rounded-lg rounded-r-none m-2 max-w-md h-full ${snippet.isFeatured ? "bg-green-100 backdrop-blur-md border-2 border-lime-500" : ""}`}
+				>
+					{#if snippet.isFeatured}
+						<img src={svgBookmark} class="h-12 absolute -top-3 -right-0.5" alt="" />
+					{/if}
+
+					<a href={snippet.url} target="_blank" class="text-white font-semibold tracking-wide">
+						{snippet.title}
+						<img src={svgNewWindow} class="h-4 inline mb-1" alt="" />
+					</a>
 					<span class="flex flex-nowrap justify-between w-full">
-						<p>By {snippet.author} </p>
+						<p>By {snippet.author}</p>
 						<p>{snippet.date}</p>
 					</span>
 
 					{#if snippet.comment}
-					<div class="divide-x-2 divide-y-reverse ml-8 mt-4">
-						<img src={commentPortrait} class="rounded-full max-w-12 absolute -ml-6" alt="">
-						<p class="italic text-sm tracking-wide pl-12 ">"{snippet.comment}"</p>
-					</div>
+						<div class="divide-x-2 divide-y-reverse ml-8 mt-4">
+							<img src={commentPortrait} class="rounded-full max-w-12 absolute -ml-6" alt="" />
+							<p class="italic text-sm tracking-wide pl-12">"{snippet.comment}"</p>
+						</div>
 					{/if}
-
-					<!-- <a href={snippet.url} target="_blank" class="text-sm text-gray-900 bg-white px-3 py-0.5 rounded hover:text-inherit hover:bg-gray-200">Read it</a> -->
 				</div>
 			{/each}
-
 		</div>
-
 	</div>
 </SkyBoard>
 

@@ -37,7 +37,7 @@ export const SHARE_SNIPPETS: Array<ShareSnippet> = [
         title: "Code quality: a concern for businesses, bottom lines, and empathetic programmers",
         author: "Isaac Lyman for Stack Overflow Blog",
         date: "2023-10-18",
-        isFeatured: false,
+        isFeatured: true,
         comment: "",
         url: "https://stackoverflow.blog/2021/10/18/code-quality-a-concern-for-businesses-bottom-lines-and-empathetic-programmers/?cb=1",
 

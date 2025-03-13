@@ -1,7 +1,7 @@
 {
 	"name": "brannan.cloud",
 	"description": "The private website of me, bananabrann",
-	"version": "3.0.5",
+	"version": "3.1.0",
 	"private": true,
 	"type": "module",
 	"scripts": {
@@ -14,12 +14,9 @@
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
 		"test:integration": "playwright test",
-		"test:unit": "vitest",
-		"db-migrate:local": "dotenv -e .env.local -- prisma migrate dev",
-		"db-reset:local": "dotenv -e .env.local -- prisma db push --force-reset && dotenv -e .env.local -- prisma db seed"
+		"test:unit": "vitest"
 	},
 	"dependencies": {
-		"@prisma/client": "^5.19.1",
 		"dotenv": "^16.4.5",
 		"moment": "^2.30.1"
 	},

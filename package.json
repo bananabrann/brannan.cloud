@@ -1,7 +1,7 @@
 {
 	"name": "brannan.cloud",
 	"description": "The private website of me, bananabrann",
-	"version": "3.1.1",
+	"version": "3.2.0",
 	"private": true,
 	"type": "module",
 	"scripts": {
@@ -17,11 +17,11 @@
 		"test:unit": "vitest"
 	},
 	"dependencies": {
-		"dotenv": "^16.4.5",
-		"moment": "^2.30.1"
+		"dotenv": "^16.4.5"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
+		"@sveltejs/adapter-node": "^5.2.12",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"@types/eslint": "^9.6.0",
@@ -37,7 +37,6 @@
 		"prettier-plugin-svelte": "^3.1.2",
 		"sass-embedded": "^1.85.1",
 		"svelte": "^4.2.7",
-		"svelte-adapter-azure-swa": "^0.20.1",
 		"svelte-check": "^4.0.0",
 		"tailwindcss": "^3.4.10",
 		"tsx": "^4.19.0",

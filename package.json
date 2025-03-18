@@ -6,6 +6,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "dotenv -e .env.local -- vite dev",
+		"start": "node build",
 		"build": "vite build",
 		"preview": "vite preview",
 		"test": "echo 'Tests are not set up. The default script that came with Playwright is \"npm run test:integration && npm run test:unit\".'",

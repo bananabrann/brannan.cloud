@@ -25,12 +25,17 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          npm install
-          npm run build --if-present
+          npm ci --omit dev
+          npm run build
           npm run test --if-present
 
-      - name: Zip artifact for deployment
-        run: zip release.zip ./build/* -r
+      - name: Prepare and zip deployment package
+        run: |
+          mkdir deploy
+          cp -r build deploy/
+          cp package.json package-lock.json deploy/
+          cd deploy
+          zip -r ../release.zip .
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4

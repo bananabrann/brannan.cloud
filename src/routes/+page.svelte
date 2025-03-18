@@ -21,12 +21,13 @@
 <SkyBoard>
 	<div class="flex justify-start py-4 px-8 gap-2 divide-x items-center">
 		<h2 class="tracking-tight">Quick Links</h2>
+
 		<div class="flex flex-wrap gap-2 md:gap-4 pl-2">
 			<div class="flex gap-2">
 				<a
 					href="http://146.190.0.104"
 					class="font-semibold tracking-tight text-white underline underline-offset-2 hover:text-yellow-400"
-					>LibreChat</a
+					>chat.brannan</a
 				>
 
 				<!-- 
@@ -46,7 +47,7 @@
 				<a
 					href="https://tv.brannan.cloud"
 					class="font-semibold tracking-tight text-white underline underline-offset-2 hover:text-yellow-300"
-					>Grandma's TV</a
+					>tv.brannan</a
 				>
 				{#await webStatuses.chat}
 					<WebStatusBadge status={WebsiteUpStatus.Loading} />
@@ -58,7 +59,7 @@
 			</div>
 
 			<div class="flex gap-2">
-				<p class="font-semibold tracking-tight text-gray-300 cursor-not-allowed">File Hosting</p>
+				<p class="font-semibold tracking-tight text-gray-300 cursor-not-allowed">files.brannan</p>
 				{#await webStatuses.files}
 					<WebStatusBadge status={WebsiteUpStatus.Loading} />
 				{:then status}

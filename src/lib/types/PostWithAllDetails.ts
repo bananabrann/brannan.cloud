@@ -1,4 +1,4 @@
-import { Prisma } from "@prisma/client";
+// import { Prisma } from "@prisma/client";
 
 /*
 	This isn't ideal to bring in posts but unfortunately, in order for TypeScript to not
@@ -9,6 +9,6 @@ import { Prisma } from "@prisma/client";
 	https://github.com/prisma/prisma/discussions/10928 for more information.
 */
 
-export type PostWithAllDetails = Prisma.PostGetPayload<{
-	include: { tags: true; author: true };
-}>;
+// export type PostWithAllDetails = Prisma.PostGetPayload<{
+// 	include: { tags: true; author: true };
+// }>;

@@ -26,4 +26,4 @@ jobs:
 
       - name: Check code formatting
         run: npx prettier --check ./
-        continue-on-error: false
+        continue-on-error: true

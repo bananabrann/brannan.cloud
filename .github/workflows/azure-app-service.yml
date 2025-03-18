@@ -6,7 +6,7 @@ name: Build and deploy app to Azure Web App
 on:
   push:
     branches:
-      - bananabrann/azure-app-service
+      - main
   workflow_dispatch:
 
 jobs:

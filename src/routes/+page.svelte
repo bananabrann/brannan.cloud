@@ -5,6 +5,7 @@
 	import BananamanArtist from "$lib/assets/png/bananaman-artist.png";
 	import BananamanBuilding from "$lib/assets/png/bananaman-building.png";
 	import BananamanRocket from "$lib/assets/png/bananaman-rocket.png";
+	import CodeAndCoffeeLogo from "$lib/assets/png/cnc-logo.png";
 	import { WebsiteUpStatus } from "$lib/enums/WebsiteUpStatus";
 	import type { PageData } from "./$types";
 	import WebStatusBadge from "$lib/components/WebStatusBadge/WebStatusBadge.svelte";
@@ -13,6 +14,10 @@
 	import commentPortrait from "$lib/assets/jpeg/portait-60x60.jpg";
 	import svgNewWindow from "$lib/assets/svg/new-window.svg";
 	import svgBookmark from "$lib/assets/svg/bookmark.svg";
+	import svgTimer from "$lib/assets/svg/timer.svg";
+	import svgStorefront from "$lib/assets/svg/storefront.svg";
+	import svgContract from "$lib/assets/svg/contract.svg";
+	import svgBadge from "$lib/assets/svg/badge.svg";
 
 	export let data: PageData;
 
@@ -85,33 +90,136 @@
 	<div class="my-14"></div>
 
 	<div
-		class="container px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-center sm:divide-x mx-auto max-w-xl"
+		class="container px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-center sm:divide-x mx-auto max-w-4xl"
 	>
-		<div class="sm:w-2/3 pr-2 py-2 space-y-4">
+		<div class="sm:w-1/2 pr-2 py-2 space-y-4">
 			<h1 class="text-4xl">Hi, I'm Lee</h1>
 			<p class="text-xl">
-				A software engineer in the United States building websites that Americans use all around the
-				world.
+				I'm a software engineer in the United States building websites and apps that Americans use
+				all around the world.
+			</p>
+			<p class="text-xl">
+				Due to the sweeping budget reductions in the federal government, I have new availibility for
+				new work.
 			</p>
 
-			<p class="text-xl">
-				I'm also the founder and organizer of the Dallas/Fort Worth Code & Coffee, an in-person
-				meetup for programmers in 27 states across the U.S.
-			</p>
+			<div>
+				<h2 class="text-xl font-semibold">Web Development</h2>
+				<p>Everything in the world of JavaScript and Node.js.</p>
+			</div>
+
+			<div class="space-y-1.5 ml-6 sm:text-sm lg:text-base">
+				<div class="flex space-x-2">
+					<img src={svgContract} alt="" />
+					<p>Short-term contracting</p>
+					<span
+						class="bg-green-600 text-white rounded-full px-2 py-px h-5 my-auto text-xs font-semibold"
+					>
+						Available
+					</span>
+				</div>
+				<!-- <div class="flex space-x-2">
+					<img src={svgStorefront} alt="" />
+					<p>Freelance for small businesses</p>
+					<span
+						class="bg-green-600 text-white rounded-full px-2 py-px h-5 my-auto text-xs font-semibold"
+					>
+						Available
+					</span>
+				</div> -->
+
+				<div class="flex space-x-2">
+					<img src={svgBadge} alt="" />
+					<p>Full-time employment</p>
+					<span
+						class="bg-green-600 text-white rounded-full px-2 py-px h-5 my-auto text-xs font-semibold"
+					>
+						Available
+					</span>
+				</div>
+			</div>
+
+			<div>
+				<h2 class="text-xl font-semibold">Power Platform Development</h2>
+				<p>Canvas Power Apps, Power Automate, Power Pages, etc. with Power Fx and JavaScript.</p>
+			</div>
+
+			<div class="space-y-1.5 ml-6 sm:text-sm lg:text-base">
+				<div class="flex space-x-2">
+					<img src={svgContract} alt="" />
+					<p>Short-term contracting</p>
+					<span
+						class="bg-green-600 text-white rounded-full px-2 py-px h-5 my-auto text-xs font-semibold"
+					>
+						Available
+					</span>
+				</div>
+
+				<!-- <div class="flex space-x-2">
+					<img src={svgStorefront} alt="" />
+					<p>Freelance for small businesses</p>
+					<span
+						class="bg-green-600 text-white rounded-full px-2 py-px h-5 my-auto text-xs font-semibold"
+					>
+						Available
+					</span>
+				</div> -->
+
+				<div class="flex space-x-2">
+					<img src={svgBadge} alt="" class="opacity-30" />
+					<p class="opacity-30">Full-time employment</p>
+					<span
+						class="bg-gray-600 text-white rounded-full px-2 py-px h-5 my-auto text-xs font-semibold"
+					>
+						Unavailable
+					</span>
+				</div>
+			</div>
 		</div>
 
-		<div class="flex flex-col gap-4 px-4 sm:w-1/3 py-6 sm:py-2">
+		<div class="flex flex-col gap-4 px-4 sm:w-1/2 py-6 sm:py-2">
 			<a href="https://linkedin.com/in/pbrann" class="button text-center text-lg" role="button"
 				>LinkedIn</a
 			>
 			<a href="https://github.com/bananabrann" class="button text-center text-lg" role="button"
 				>GitHub</a
 			>
-			<!-- <a href="#" class="button text-center text-lg leading-tight" role="button">Resume<br/><span class="text-xs block">(Anonymized)</span></a> -->
+			<a href="#" class="button text-center text-lg leading-tight" role="button"
+				>Resume<br /><span class="text-xs block">(Anonymized)</span></a
+			>
+			<p class="text-xl mt-10">
+				I'm also a founder and volunteer organizer at <a
+					href="https://codeandcoffee.org/"
+					target="_blank"
+					class="underline underline-offset-2">Code & Coffee</a
+				>, a non-profit org that hosts meetups for programmers in 35 cities across the U.S.
+			</p>
+
+			<div class="flex items-center mx-auto justify-center">
+				<ul class="text-right underline underline-offset-1 leading-4 text-sm">
+					<li>
+						<a href="https://www.meetup.com/dfw-code-coffee/events/" target="_blank">See events</a>
+					</li>
+					<li>
+						<a href="https://www.linkedin.com/company/uscodecoffee/" target="_blank">LinkedIn</a>
+					</li>
+					<li>
+						<a href="https://discord.com/invite/JbGyY3bKTS" target="_blank">Join our Discord</a>
+					</li>
+					<li>
+						<a href="https://hcb.hackclub.com/donations/start/dfw-code-coffee" target="_blank"
+							>Donate to DFW</a
+						>
+					</li>
+				</ul>
+				<a href="https://codeandcoffee.org/">
+					<img src={CodeAndCoffeeLogo} alt="" class="h-10 ml-2" />
+				</a>
+			</div>
 		</div>
 	</div>
 
-	<div class="container mx-auto flex flex-col my-10" id="my-coding-philosophy">
+	<div class="container mx-auto flex flex-col mt-20" id="my-coding-philosophy">
 		<h2 class="mx-auto text-4xl font-semibold">My Web Dev Coding Philosphy</h2>
 
 		<div class="flex flex-col lg:flex-row pt-24 justify-center">
@@ -203,17 +311,18 @@
 		@apply lg:max-h-[800px];
 	}
 
+	.card {
+		@apply bg-white bg-opacity-5 p-8 rounded-lg shadow-lg backdrop-blur-md border-gray-50 border-opacity-15 border-2 hover:border-opacity-35 transition-all;
+		@apply flex flex-col gap-2;
+		@apply mx-4  my-4;
+
+		h3 {
+			@apply text-2xl font-semibold text-center;
+		}
+	}
+
 	#my-coding-philosophy {
 		.card {
-			@apply bg-white bg-opacity-5 p-8 rounded-lg shadow-lg backdrop-blur-md;
-			@apply flex flex-col gap-2;
-			@apply text-black;
-			@apply mx-4 lg:max-w-sm my-4;
-
-			h3 {
-				@apply text-2xl font-semibold text-center;
-			}
-
 			img {
 				@apply max-h-48 object-contain -mt-28;
 			}

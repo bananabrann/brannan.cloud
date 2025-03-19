@@ -2,6 +2,9 @@
 	import Footer from "$lib/components/Footer/Footer.svelte";
 	import SkyBoard from "$lib/components/SkyBoard/SkyBoard.svelte";
 	import BananamanOnCloud from "$lib/assets/png/bananaman-on-cloud.png";
+	import BananamanArtist from "$lib/assets/png/bananaman-artist.png";
+	import BananamanBuilding from "$lib/assets/png/bananaman-building.png";
+	import BananamanRocket from "$lib/assets/png/bananaman-rocket.png";
 	import { WebsiteUpStatus } from "$lib/enums/WebsiteUpStatus";
 	import type { PageData } from "./$types";
 	import WebStatusBadge from "$lib/components/WebStatusBadge/WebStatusBadge.svelte";
@@ -84,11 +87,16 @@
 	<div
 		class="container px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-center sm:divide-x mx-auto max-w-xl"
 	>
-		<div class="sm:w-2/3 pr-2 py-2">
+		<div class="sm:w-2/3 pr-2 py-2 space-y-4">
 			<h1 class="text-4xl">Hi, I'm Lee</h1>
 			<p class="text-xl">
 				A software engineer in the United States building websites that Americans use all around the
 				world.
+			</p>
+
+			<p class="text-xl">
+				I'm also the founder and organizer of the Dallas/Fort Worth Code & Coffee, an in-person
+				meetup for programmers in 27 states across the U.S.
 			</p>
 		</div>
 
@@ -100,6 +108,51 @@
 				>GitHub</a
 			>
 			<!-- <a href="#" class="button text-center text-lg leading-tight" role="button">Resume<br/><span class="text-xs block">(Anonymized)</span></a> -->
+		</div>
+	</div>
+
+	<div class="container mx-auto flex flex-col my-10" id="my-coding-philosophy">
+		<h2 class="mx-auto text-4xl font-semibold">My Web Dev Coding Philosphy</h2>
+
+		<div class="flex flex-col lg:flex-row pt-24 justify-center">
+			<div class="lg:w-1/3 card">
+				<img src={BananamanBuilding} alt="" />
+				<h3 class="text-2xl font-semibold">#1: Make it work</h3>
+
+				<p>
+					The most important part: it has to work. How good or fast your app is doesn't matter if it
+					doesn't do what it's suppose to do. Documentation and design docs <i>can</i> be important,
+					but it shouldn't come before proof of concepts. I like to understand the problem and
+					create a solution that makes the most sense.<br /><i>"Discovery above theory."</i><br /><i
+						>"Bias towards action"</i
+					><br />
+				</p>
+			</div>
+
+			<div class="lg:w-1/3 card">
+				<img src={BananamanArtist} alt="" />
+				<h3>#2: Make it pretty</h3>
+				<p>
+					Putting look-and-feel above performance is controversial, and I've gone back and forth on
+					this throughout my career. The reason I value making things pretty is because in my
+					experience performance differences on modern hardware is negligible.<br /> Why spend
+					$8,000 to save $145 a year? It's been proven that users that receive feedback in the UI/UX
+					are more likely to wait that extra two seconds for a request than poor feedback with
+					better performance.<br />4 times out of 5, performance complaints are <i>really</i> UI feedback
+					issues in disguise. You will get more impact from your dollars spent improving the customer
+					experience.
+				</p>
+			</div>
+
+			<div class="lg:w-1/3 card">
+				<img src={BananamanRocket} alt="" />
+				<h3>#3: Make it fast</h3>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, animi dolores,
+					pariatur voluptate nobis alias voluptates accusamus, asperiores aspernatur architecto
+					quibusdam mollitia consectetur officia numquam. Mollitia pariatur nisi natus excepturi.
+				</p>
+			</div>
 		</div>
 	</div>
 
@@ -148,5 +201,22 @@
 		// CHANGE THIS FOR ADJUSTING MASONRY.
 		// TODO - Make this responsive.
 		@apply lg:max-h-[800px];
+	}
+
+	#my-coding-philosophy {
+		.card {
+			@apply bg-white bg-opacity-5 p-8 rounded-lg shadow-lg backdrop-blur-md;
+			@apply flex flex-col gap-2;
+			@apply text-black;
+			@apply mx-4 lg:max-w-sm my-4;
+
+			h3 {
+				@apply text-2xl font-semibold text-center;
+			}
+
+			img {
+				@apply max-h-48 object-contain -mt-28;
+			}
+		}
 	}
 </style>

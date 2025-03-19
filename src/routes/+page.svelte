@@ -99,8 +99,8 @@
 				apps that Americans use all around the world.
 			</p>
 			<p class="text-xl">
-				Due to the sweeping budget reductions in the federal government, I have new availibility for
-				new work.
+				Due to sweeping budget reductions in the federal government, I have new availability for
+				work.
 			</p>
 
 			<div>

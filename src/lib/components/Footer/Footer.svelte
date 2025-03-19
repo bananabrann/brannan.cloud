@@ -14,16 +14,7 @@
 	-->
 	<div class="max-w-2xl m-auto flex flex-wrap">
 		<div class="w-full p-2 text-center">
-			<p class="">
-				Website by me,
-				<a
-					href="https://github.com/bananabrann/brannan.cloud/blob/main/LICENSE"
-					target="_blank"
-					class="underline text-white hover:text-yellow-400"
-					>MIT license, 2024.
-				</a><br />
-				Art and web assets by various artists, all rights reserved.
-			</p>
+			<p class="">Website by me. Art and web assets by various artists. All rights reserved.</p>
 			<small>Build {version}</small>
 
 			<div class="m-auto text-white h-20 w-20 mt-4">

@@ -95,8 +95,8 @@
 		<div class="sm:w-1/2 pr-2 py-2 space-y-4">
 			<h1 class="text-4xl">Hi, I'm Lee</h1>
 			<p class="text-xl">
-				I'm a software engineer in the United States building websites and apps that Americans use
-				all around the world.
+				I'm a prior U.S. Marine turned software engineer in the United States building websites and
+				apps that Americans use all around the world.
 			</p>
 			<p class="text-xl">
 				Due to the sweeping budget reductions in the federal government, I have new availibility for
@@ -175,18 +175,22 @@
 					</span>
 				</div>
 			</div>
+			<p class="text-xl">
+				Want more information on past projects?<br />Ready to connect?<br />Reach out to me on
+				LinkedIn!
+			</p>
 		</div>
 
 		<div class="flex flex-col gap-4 px-4 sm:w-1/2 py-6 sm:py-2">
 			<a href="https://linkedin.com/in/pbrann" class="button text-center text-lg" role="button"
 				>LinkedIn</a
 			>
-			<a href="https://github.com/bananabrann" class="button text-center text-lg" role="button"
+			<!-- <a href="https://github.com/bananabrann" class="button text-center text-lg" role="button"
 				>GitHub</a
-			>
-			<a href="#" class="button text-center text-lg leading-tight" role="button"
+			> -->
+			<!-- <a href="#" class="button text-center text-lg leading-tight" role="button"
 				>Resume<br /><span class="text-xs block">(Anonymized)</span></a
-			>
+			> -->
 			<p class="text-xl mt-10">
 				I'm also a founder and volunteer organizer at <a
 					href="https://codeandcoffee.org/"
@@ -219,8 +223,9 @@
 		</div>
 	</div>
 
-	<div class="container mx-auto flex flex-col mt-20" id="my-coding-philosophy">
-		<h2 class="mx-auto text-4xl font-semibold">My Web Dev Coding Philosphy</h2>
+	<div class="container mx-auto flex flex-col items-center mt-20" id="my-coding-philosophy">
+		<h2 class="text-4xl font-semibold mx-2">My Coding Philosophy</h2>
+		<p>(for web dev)</p>
 
 		<div class="flex flex-col lg:flex-row pt-24 justify-center">
 			<div class="lg:w-1/3 card">
@@ -242,13 +247,12 @@
 				<h3>#2: Make it pretty</h3>
 				<p>
 					Putting look-and-feel above performance is controversial, and I've gone back and forth on
-					this throughout my career. The reason I value making things pretty is because in my
-					experience performance differences on modern hardware is negligible.<br /> Why spend
-					$8,000 to save $145 a year? It's been proven that users that receive feedback in the UI/UX
-					are more likely to wait that extra two seconds for a request than poor feedback with
-					better performance.<br />4 times out of 5, performance complaints are <i>really</i> UI feedback
-					issues in disguise. You will get more impact from your dollars spent improving the customer
-					experience.
+					this throughout my career. The reason I usually place design above performance is because
+					most small- to mid-size businesses simply don't benefit from performance increases. You
+					got an API service to go from 4s to 3s? Great! You're still paying for one VM and have 75%
+					of your capacity available.<br /><br />Developers love endlessly optimizing (I sure do!),
+					so I think it's important to stop yourself and think about using your time to improve the
+					customer experience.
 				</p>
 			</div>
 
@@ -256,16 +260,19 @@
 				<img src={BananamanRocket} alt="" />
 				<h3>#3: Make it fast</h3>
 				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, animi dolores,
-					pariatur voluptate nobis alias voluptates accusamus, asperiores aspernatur architecto
-					quibusdam mollitia consectetur officia numquam. Mollitia pariatur nisi natus excepturi.
+					Listing performance as third does not mean I'm saying performance isn't important. It
+					obviously is. I'm just saying, in my experience and assuming competent code, performance
+					differences on modern hardware is negligible.<br /><br />However, that also doesn't mean
+					forget about performance entirely. If you've created a product for a customer that does
+					its job beautifully, or if you're a huge corporation where every second is thousands of
+					dollars (this is very uncommon), <i>then</i> it's time to start thinking about optimization.
 				</p>
 			</div>
 		</div>
 	</div>
 
-	<div class="container mx-auto mt-20">
-		<h1 class="text-4xl sm:text-center mb-8">Good Reading</h1>
+	<div class="container mx-auto mt-20 flex flex-col items-center">
+		<h2 class="text-4xl font-semibold mx-2">Good Reading</h2>
 
 		<div class="masonry">
 			{#each data.shareSnippets as snippet}
